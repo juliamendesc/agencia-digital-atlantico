@@ -1,19 +1,20 @@
+'use client'
+import React from 'react'
 
 import Image from 'next/image';
 import GifGreen from '../../assets/hero-min.png';
 import styles from './home.module.css';
 
-import  Button  from '../../components/Button';
-
-// import { Header } from '../../components/Header';
+import   Button   from '../Button';
+import  Header   from '../Header';
 
 import 'animate.css';
-import React from 'react'
 
-export function Home() {
+export function Hero() {
   return (
+    
     <div className={styles.container}>
-
+    
     <div className={styles.main}>
         <div
         id={styles.TextForm} 
@@ -40,4 +41,4 @@ export function Home() {
   )
 }
 
-export default Home
+export default Hero

@@ -3,13 +3,16 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 // import '../styles/globals.css'
 
-import { Home } from './Home';
-
+import  Hero  from '../components/Hero';
+import Header  from '../components/Header';
+import Section from '../components/Parallax';
 
 export default function Main() {
   return (
     <div>
-       <Home />
+      <Header /> 
+       <Hero />
+       <Section />
     </div>
    
    

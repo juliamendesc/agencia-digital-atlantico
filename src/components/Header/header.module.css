@@ -1,0 +1,64 @@
+
+
+.container {
+   grid-area: header;
+   position: fixed;
+   width: 100%;
+
+   border-bottom-width: 1px;
+   border-bottom-style: solid;
+}
+
+#navBar {
+
+}
+
+#navBar a {
+   color: #ffff;
+}
+
+
+
+#navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    height: 10vh;
+    list-style: none;
+    letter-spacing: 3px;
+    margin-left: 32px;  
+}
+
+#navBar a:hover{
+   opacity: 1s;
+   color: #24f903;
+}
+
+.btnNav {
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+
+ }
+
+.btnNav:hover{
+    background-color: white;
+    color: black;
+    transition: 0.8s ease-in-out;
+ }
+
+
+/* #navBar a::after{ 
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    transition: 0.7s ease-in-out;
+ }
+
+#navBar a :hover ::after{
+    width: 100%; 
+ }  */
