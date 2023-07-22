@@ -6,10 +6,13 @@
 
 body {
   background-color: black;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   
   color: white;
 
   -webkit-font-smoothing: antialiased;
+  
 }
 
 body, input, button{

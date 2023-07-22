@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 
 import  Hero  from '../components/Hero';
 import Header  from '../components/Header';
-import Section from '../components/Parallax';
+import Section from '../components/Section';
 
 export default function Main() {
   return (
