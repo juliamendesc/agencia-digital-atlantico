@@ -24,9 +24,7 @@ export function Section() {
                 <div className="container1">
                 <Image src={info} />
                 </div>
-                <Button className={Styles.bn31} href="/" title='button'> 
-                <span className={Styles.bn31span}>
-                    Button</span>
+                <Button className={Styles.bn3637}  href="/" title='Enviar mensagem'> 
                 </Button>
             </section>
         </main>

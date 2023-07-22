@@ -22,9 +22,7 @@ export function Hero() {
                 <h1>Nosso negócio é vender <div className={styles.strong}>o seu</div></h1>
                 <p>Aperte no botão e complete o cadastro para receber nossa assessoria de investimento especializada em <strong>Facebook/Instagram Ads e Google Ads.</strong></p>
                     
-                <Button className={styles.bn31} href="/" title='aplicar formulário'> 
-                <span className={styles.bn31span}>
-                    Button</span>
+                <Button className={styles.bn3637} href="/" title='aplicar formulário'> 
                 </Button>
             </div>
 

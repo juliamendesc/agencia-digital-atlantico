@@ -53,38 +53,31 @@
     transition: 2.0s ;
 }
 
-.bn31 {
-    background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
-    border-radius: 40px;
-    box-sizing: border-box;
-    color: #00a84f;
-    display: block;
-    height: 50px;
-    font-size: 1.4em;
-    padding: 4px;
-    position: relative;
-    text-decoration: none;
-    width: 7em;
-    z-index: 2;
-  }
-  
-  .bn31:hover {
-    color: #fff;
-  }
-  
-.bn31 .bn31span {
+.bn3637 {
+    
+    display: inline-flex;
     align-items: center;
-    background: #0e0e10;
-    border-radius: 40px;
-    display: flex;
     justify-content: center;
-    height: 100%;
-    transform: background 0.5s ease;
-    width: 100%;
+    padding: 0.7rem 2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    backface-visibility: hidden;
+    border: 0.3rem solid transparent;
+    border-radius: 3rem;
+   background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+    color: white;
   }
-
-
   
-  .bn31:hover .bn31span {
-    background: transparent;
+  .bn3637 {
+    border-color: white;
+    border: 3px solid;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  }
+  
+  .bn3637:hover {
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
   }
