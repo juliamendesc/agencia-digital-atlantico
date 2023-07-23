@@ -2,12 +2,10 @@
     background: linear-gradient(132deg, rgba(0,0,0,1) 50%, rgba(51, 204, 102, 0.623) 100%);
     display: grid;
     width: 100%;
-    // height: 100vh;
+    height: 100vh !important;
     margin: 0 auto;
-    // grid-template-areas: 
-    // "header"
-    // "hero"
-    // "section";
+    padding-top: 30px;
+  
 
     h1,h2,h3 {
         font-weight: 900;
@@ -46,13 +44,17 @@
         font-size: 20px;
         color: #3c6;
         }
+
     h1 {
         font-size: 60px;
     }
     
         p {
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+            font-size: 2rem;
             margin-bottom: 40px;
-            font-size: 35px;
             letter-spacing: 3px;
         }
         span {
@@ -60,7 +62,6 @@
         }
         
 }
-
 
 section.parallax1::after {
     content: " ";
@@ -79,6 +80,8 @@ section.parallax1::after {
     padding: 40px 0;
  
 }
+
+
 
 .bn3637 {
     

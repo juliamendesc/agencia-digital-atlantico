@@ -1,25 +1,57 @@
 
-
 .container {
-   grid-area: header;
-   position: fixed;
-   width: 100%;
-
-   border-bottom-width: 1px;
-   border-bottom-style: solid;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto;
+   /* border-bottom-width: 1px;
+   border-bottom-style: solid;  */
 }
 
 #navBar {
+   width: 50%;
+  display: flex;
+  justify-content: center;
+   margin-top: 30px;
 
 }
 
 #navBar a {
    color: #ffff;
+   text-decoration: none;
+   padding: 0px 70px 10px 20px;
+   font-size: 20px;
+   position: relative;
+}
+
+#navBar a::after{
+   content: " ";
+   width: 0%;
+   height: 4px;
+   background-color: #3c6;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   transition: 0.7s ease-in-out;
+}
+
+#navBar a:hover::after{
+   width: 100%;
+}
+
+.btnHeader {
+   width: 25%;
+   display: flex;
+   justify-content: flex-end;
+   padding-top: 20px;
 }
 
 
 
-#navBar {
+
+
+
+/* #navBar {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -33,32 +65,33 @@
 #navBar a:hover{
    opacity: 1s;
    color: #24f903;
-}
+} */
 
-.btnNav {
-    background-color: black;
-    color: white;
-    border: 3px solid white;
-
+.bn3637 {
+    
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0.7rem 2rem;
+   font-family: "Poppins", sans-serif;
+   font-weight: 700;
+   font-size: 18px;
+   text-align: center;
+   text-decoration: none;
+   color: black;
+   backface-visibility: hidden;
+   border: 0.3rem solid transparent;
+   border-radius: 3rem;
+   background-color: black;
+   color: white;
  }
-
-.btnNav:hover{
-    background-color: white;
-    color: black;
-    transition: 0.8s ease-in-out;
+ 
+ .bn3637 {
+   border-color: white;
+   border: 3px solid;
+   transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
  }
-
-
-/* #navBar a::after{ 
-    content: " ";
-    width: 0%;
-    height: 4px;
-    background-color: white;
-    top: 0;
-    left: 0;
-    transition: 0.7s ease-in-out;
+ 
+ .bn3637:hover {
+   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
  }
-
-#navBar a :hover ::after{
-    width: 100%; 
- }  */

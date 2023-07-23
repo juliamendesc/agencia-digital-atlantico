@@ -11,13 +11,18 @@ export function Header() {
           id={Styles.navBar} 
           className='animate__animated animate__fadeInDown'>
             {/* Logo aqui */}
-          {/* <ul className={Styles.navList}></ul> */}
           <a href="#Home">Home</a>
           <a href="#atendimento">Atendimento</a>
           <a href="#servico">Serviço</a>
           <a href="#time">Time</a>
-          <Button className={Styles.btnNav} title='Solicitar orçamento' />
           </nav>
+          <div className={Styles.btnHeader}>
+          <Button className={Styles.bn3637} title='Solicitar orçamento' />
+          </div>
+         
+          
+
+          
       </div>  
 )
   }
