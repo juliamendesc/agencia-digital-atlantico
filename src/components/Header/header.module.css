@@ -3,7 +3,7 @@
    display:flex;
    align-items: center;
    justify-content: center;
-   margin: 0 auto;
+   margin: 0 auto; /* SE TÁ DISPLAY FLEX NÃO PRECISA DE MARGIN 0 AUTO*/
    /* border-bottom-width: 1px;
    border-bottom-style: solid;  */
 }
@@ -19,7 +19,7 @@
 #navBar a {
    color: #ffff;
    text-decoration: none;
-   padding: 0px 70px 10px 20px;
+   padding: 0px 70px 10px 20px; /* TEM QUE TRANSFORMAR AS COISAS PRA REM */
    font-size: 20px;
    position: relative;
 }
@@ -48,7 +48,7 @@
 
 
 
-
+/* APAGAR COMENTÁRIOS DO QUE NÃO TÁ SENDO USADO */
 
 
 /* #navBar {
@@ -73,7 +73,7 @@
    align-items: center;
    justify-content: center;
    padding: 0.7rem 2rem;
-   font-family: "Poppins", sans-serif;
+   font-family: "Poppins", sans-serif; /* É DIFERENTE DA FONTE DA PAGE? */
    font-weight: 700;
    font-size: 18px;
    text-align: center;
@@ -86,7 +86,7 @@
    color: white;
  }
  
- .bn3637 {
+ .bn3637 { /* TÁ REPETIDO, NÃO VAI PEGAR ALGUMA*/
    border-color: white;
    border: 3px solid;
    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
