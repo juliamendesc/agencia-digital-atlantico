@@ -1,16 +1,13 @@
-"use client"
-import  styles from './styles.module.css';
-import React from 'react'
+'use client';
+import styles from './button.module.scss';
+import React from 'react';
 
 function Button({ title, loading, ...rest }) {
   return (
-    <button
-    className={styles.BtnAll}
-    disabled={loading}
-    {...rest}>
+    <button className={styles.bn3637} disabled={loading} {...rest}>
       {title}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;

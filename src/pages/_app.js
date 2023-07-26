@@ -1,7 +1,5 @@
-import '@/styles/globals.css'
-// import './Home/home.css'
-// import '../components/Button/styles.css'
+import '@/styles/globals.scss';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }

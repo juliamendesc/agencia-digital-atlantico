@@ -1,112 +1,128 @@
 .wrapper {
-    display: grid;
-    width: 100vw;
-    height: 100vh !important;
-    margin: 0 auto;
-    padding-top: 30px;
-  
+  display: grid;
+  width: 100vw;
+  height: 100vh !important;
+  margin: 0 auto;
+  padding-top: 4rem;
 
-    h1,h2,h3 {
-        font-weight: 900;
-    }
+  h1,
+  h2,
+  h3 {
+    font-weight: 900;
+  }
 }
 
 .main {
-    display: block;
-    max-width: 760px;
-    margin: 0 auto;
+  display: block;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
+.parallax1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 0rem 2rem;
+}
 
 .parallax1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  h3 {
+    font-size: 2rem;
+    color: #3c6;
+  }
 
+  h1 {
+    font-size: 6rem;
+  }
+
+  p {
     width: 100%;
-    
-    position: relative;
-    overflow: hidden;
-    
-
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 0px 20px;
-
-}
-
-.parallax1 {
-    h3 {
-        font-size: 20px;
-        color: #3c6;
-        }
-
-    h1 {
-        font-size: 60px;
-    }
-    
-        p {
-            width: 100%;
-            margin-right: 0px;
-            margin-left: 0px;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            letter-spacing: 3px;
-        }
-        span {
-            color: #3c6;
-        }
-        
+    margin-right: 0rem;
+    margin-left: 0rem;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    letter-spacing: 0.3rem;
+  }
+  span {
+    color: #3c6;
+  }
 }
 
 section.parallax1::after {
-    content: " ";
-    height: 100%;
-    width: 100%;
-    position:absolute;
-    z-index: 8;
-    background: linear-gradient(to bottom, rgba(69, 218, 10, 0) 0, rgba(55, 172, 8, 0.007) 40%, rgba(9, 206, 19, 0) 100% );
+  content: ' ';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 8;
+  background: linear-gradient(
+    to bottom,
+    rgba(69, 218, 10, 0) 0,
+    rgba(55, 172, 8, 0.007) 40%,
+    rgba(9, 206, 19, 0) 100%
+  );
 }
 
 .info {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0rem;
 }
 
-
+.bn3637 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  color: white;
+}
 
 .bn3637 {
-    
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.7rem 2rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    backface-visibility: hidden;
-    border: 0.3rem solid transparent;
-    border-radius: 3rem;
-   background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
-    color: white;
+  border-color: white;
+  border: 3px solid;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+.bn3637:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+@media screen and (max-width: 796px) {
+  .wrapper {
+    padding: 3rem 5px;
   }
-  
+
+  .parallax1 h1 {
+    font-size: 3.2rem;
+  }
+
+  .parallax1 p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
   .bn3637 {
-    border-color: white;
-    border: 3px solid;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+    font-size: 1.4rem;
   }
-  
-  .bn3637:hover {
-    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-  }
+}
