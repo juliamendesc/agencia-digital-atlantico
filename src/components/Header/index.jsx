@@ -6,7 +6,7 @@ import React from 'react';
 
 export function Header() {
   return (
-    <div className="sticky">
+    <div className={Styles.sticky}>
       <div className={Styles.container}>
         <nav
           id={Styles.navBar}
@@ -26,4 +26,3 @@ export function Header() {
   );
 }
 
-export default Header;

@@ -1,51 +1,56 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* border-bottom-width: 1px;
-    border-bottom-style: solid;  */
-}
-/* acertar o sticky com header  */
-.sticky {
-  position: sticky;
-}
+  .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //  border-bottom-width: 2px;
+      //   border-bottom-style: solid; 
+    }
 
-#navBar {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-}
 
-#navBar a {
-  color: #ffff;
-  text-decoration: none;
-  padding: 0rem 7rem 1rem 2rem; /* TEM QUE TRANSFORMAR AS COISAS PRA REM */
-  font-size: 2rem;
-  position: relative;
-}
+    .sticky {
+      position: sticky;
+      top: 0; /* Stick the header to the top of the viewport */
+      z-index: 1000; 
+      background-color: black;
+      padding-bottom: 2rem;
+    }
 
-#navBar a::after {
-  content: ' ';
-  width: 0%;
-  height: 0.4rem;
-  background-color: #3c6;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: 0.7s ease-in-out;
-}
+    #navBar {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
 
-#navBar a:hover::after {
-  width: 100%;
-}
+    #navBar a {
+      color: #ffff;
+      text-decoration: none;
+      padding: 0rem 7rem 1rem 2rem; /* TEM QUE TRANSFORMAR AS COISAS PRA REM */
+      font-size: 2rem;
+      position: relative;
+    }
 
-.btnHeader {
-  width: 25%;
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 2rem;
-}
+    #navBar a::after {
+      content: ' ';
+      width: 0%;
+      height: 0.4rem;
+      background-color: #3c6;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.7s ease-in-out;
+    }
+
+    #navBar a:hover::after {
+      width: 100%;
+    }
+
+    .btnHeader {
+      width: 25%;
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 2rem;
+    }
 
 
 

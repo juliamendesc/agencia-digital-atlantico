@@ -19,10 +19,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "prettier": "3.0.0"
-=======
+    "prettier": "3.0.0",
     "sass": "^1.64.1"
->>>>>>> 082ce2901c034b40db013b7c40893dc47d9bc320
   }
 }
