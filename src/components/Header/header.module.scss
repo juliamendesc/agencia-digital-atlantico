@@ -10,7 +10,8 @@
     .sticky {
       position: sticky;
       top: 0; /* Stick the header to the top of the viewport */
-      z-index: 1000; 
+      z-index: 1000;
+      width: 100vw;
       background-color: black;
       padding-bottom: 2rem;
     }
@@ -20,12 +21,13 @@
       display: flex;
       justify-content: center;
       margin-top: 3rem;
+      flex-wrap: wrap;
     }
 
     #navBar a {
       color: #ffff;
       text-decoration: none;
-      padding: 0rem 7rem 1rem 2rem; /* TEM QUE TRANSFORMAR AS COISAS PRA REM */
+      padding: 0rem 7rem 1rem 2rem; 
       font-size: 2rem;
       position: relative;
     }
@@ -81,17 +83,17 @@
   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
-@media screen and (max-width: 796px) {
-  #navBar {
-    margin-top: 10px;
-  }
+// @media screen and (max-width: 796px) {
+//   #navBar {
+//     margin-top: 10px;
+//   }
 
-  #navBar a {
-    padding: 5px;
-    font-size: 1.6rem;
-  }
+//   #navBar a {
+//     padding: 5px;
+//     font-size: 1.6rem;
+//   }
 
-  .btnHeader {
-    padding-top: 1rem;
-  }
-}
+//   .btnHeader {
+//     padding-top: 1rem;
+//   }
+// }

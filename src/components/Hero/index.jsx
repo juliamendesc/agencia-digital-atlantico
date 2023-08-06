@@ -5,7 +5,7 @@ import Image from 'next/image';
 import GifGreen from '../../assets/hero-min.png';
 import styles from './hero.module.scss';
 
-import Button from '../Button';
+import  Button  from '../Button';
 
 import 'animate.css';
 
@@ -16,8 +16,7 @@ export function Hero() {
       <div className={styles.main}>
         <div
           id={styles.TextForm}
-          className="TextForm animate__animated animate__fadeInUpBig"
-        >
+          className="TextForm animate__animated animate__fadeInUpBig">
           <h1>
             Nosso
             <br /> negócio é<br /> vender <span>o seu</span>{' '}
@@ -31,13 +30,13 @@ export function Hero() {
           <Button
             className={styles.bn3637}
             href="/"
-            title="aplicar formulário"
-          ></Button>
+            title="aplicar formulário"></Button>
         </div>
 
         <div id={styles.GifGreen}>
-          <Image src={GifGreen} alt="Gif" width={500} />
+          <Image src={GifGreen} alt="Gif" width={600} />
         </div>
+
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 .wrapper {
   display: grid;
   width: 100vw;
-  height: 100vh !important;
+  height: 100vh;
   margin: 0 auto;
   padding-top: 4rem;
 
@@ -14,16 +14,17 @@
 
 .main {
   display: block;
-  max-width: 760px;
+  max-width: 877px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.parallax1 {
+.parallax1, .parallax2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  flex: 1 1 450px;
   width: 100%;
 
   position: relative;
@@ -36,7 +37,7 @@
   padding: 0rem 2rem;
 }
 
-.parallax1 {
+.parallax1, .parallax2 {
   h3 {
     font-size: 2rem;
     color: #3c6;
@@ -50,7 +51,7 @@
     width: 100%;
     margin-right: 0rem;
     margin-left: 0rem;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 4rem;
     letter-spacing: 0.3rem;
   }
@@ -79,6 +80,7 @@ section.parallax1::after {
   align-items: center;
   padding: 4rem 0rem;
   padding-top: 20rem;
+ 
 }
 
 .bn3637 {
@@ -109,21 +111,9 @@ section.parallax1::after {
   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
-@media screen and (max-width: 796px) {
-  .wrapper {
-    padding: 3rem 5px;
-  }
-
-  .parallax1 h1 {
-    font-size: 3.2rem;
-  }
-
-  .parallax1 p {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .bn3637 {
-    font-size: 1.4rem;
+@media (max-width: 768px) {
+  .parallax1, .parallax2 {
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 }

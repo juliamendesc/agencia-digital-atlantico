@@ -42,6 +42,15 @@ export function Section() {
             ></Button>
           </Slide>
         </section>
+
+        <section className={Styles.parallax2}>
+        <Slide delay={1e1} cascade damping={1e-1}>
+          <p>Estamos preparados para cumprir com nosso único objetivo:
+            <br/>
+              <span>Ajudar o seu negócio e seu faturamento a crescer de forma exponencial através da internet</span>, focados em buscar soluções estratégicas 
+              e eficazes para a sua empresa.</p>
+        </Slide>
+        </section>
       </main>
     </div>
   );
