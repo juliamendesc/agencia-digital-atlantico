@@ -14,6 +14,7 @@ export function Section() {
     <div className={Styles.wrapper}>
       <main className={Styles.main}>
         <section className={Styles.parallax1}>
+          <div className="textParallax">
           <Slide>
             <h3>Atendimento</h3>
             <h1>Quem somos</h1>
@@ -28,6 +29,7 @@ export function Section() {
               mais e mais nelas.
             </p>
           </Slide>
+          </div>
         </section>
 
         <section className={Styles.info}>
@@ -45,10 +47,11 @@ export function Section() {
 
         <section className={Styles.parallax2}>
         <Slide delay={1e1} cascade damping={1e-1}>
-          <p>Estamos preparados para cumprir com nosso único objetivo:
-            <br/>
-              <span>Ajudar o seu negócio e seu faturamento a crescer de forma exponencial através da internet</span>, focados em buscar soluções estratégicas 
-              e eficazes para a sua empresa.</p>
+         <div className="textParallax">
+         <p>Estamos preparados para cumprir com nosso único objetivo:
+         <br/>
+        <span>Ajudar o seu negócio e seu faturamento a crescer de forma exponencial através da internet</span>, focados em buscar soluções estratégicas 
+              e eficazes para a sua empresa.</p></div> 
         </Slide>
         </section>
       </main>

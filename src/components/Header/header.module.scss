@@ -2,14 +2,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      //  border-bottom-width: 2px;
-      //   border-bottom-style: solid; 
     }
 
 
     .sticky {
       position: sticky;
-      top: 0; /* Stick the header to the top of the viewport */
+      top: 0; 
       z-index: 1000;
       width: 100vw;
       background-color: black;
@@ -22,14 +20,14 @@
       justify-content: center;
       margin-top: 3rem;
       flex-wrap: wrap;
-    }
 
-    #navBar a {
-      color: #ffff;
-      text-decoration: none;
-      padding: 0rem 7rem 1rem 2rem; 
-      font-size: 2rem;
-      position: relative;
+      a {
+        color: #ffff;
+        text-decoration: none;
+        padding: 0rem 7rem 1rem 2rem; 
+        font-size: 2rem;
+        position: relative;
+      }
     }
 
     #navBar a::after {
@@ -54,35 +52,34 @@
       padding-top: 2rem;
     }
 
+    .bn3637 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 2rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      backface-visibility: hidden;
+      border: 0.3rem solid transparent;
+      border-radius: 3rem;
+      background-color: black;
+      color: white;
+    }
 
+    .bn3637 {
+      border-color: white;
+      border: 3px solid;
+      transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+    }
 
-.bn3637 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.7rem 2rem;
-  font-weight: 700;
-  font-size: 1.8rem;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  backface-visibility: hidden;
-  border: 0.3rem solid transparent;
-  border-radius: 3rem;
-  background-color: black;
-  color: white;
-}
+    .bn3637:hover {
+      transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+    }
 
-.bn3637 {
-  border-color: white;
-  border: 3px solid;
-  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-}
-
-.bn3637:hover {
-  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-}
-
+// Colocar um Header lateral ao diminuir a tela 
 // @media screen and (max-width: 796px) {
 //   #navBar {
 //     margin-top: 10px;

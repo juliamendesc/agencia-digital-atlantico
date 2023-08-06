@@ -2,7 +2,7 @@
 import styles from './button.module.scss';
 import React from 'react';
 
-function Button({ title, loading, ...rest }) {
+export function Button({ title, loading, ...rest }) {
   return (
     <button className={styles.bn3637} disabled={loading} {...rest}>
       {title}
@@ -10,4 +10,6 @@ function Button({ title, loading, ...rest }) {
   );
 }
 
-export default Button;
+export default Button
+
+
