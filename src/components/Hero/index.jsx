@@ -18,15 +18,14 @@ export function Hero() {
             <br /> negócio é<br /> vender <span>o seu</span>{' '}
           </h1>
           <p>
-            Aperte no botão e complete o cadastro para receber nossa assessoria
-            de investimento especializada em{' '}
-            <strong>Facebook/Instagram Ads e Google Ads.</strong>
+          Nós analisamos o seu negócio e criamos estratégias
+          personalizadas de<strong> marketing digital.</strong>
           </p>
 
           <Button
             className={styles.bn3637}
             href="/"
-            title="aplicar formulário"></Button>
+            title="Formulário gratuito"></Button>
         </div>
 
         <div id={styles.GifGreen}>

@@ -14,9 +14,11 @@ export function Header() {
         >
           {/* Logo aqui */}
           <a href="#Home">Home</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="#faq">FAQ</a>
+          <a href="#quemsomos">Quem somos</a>
           <a href="#atendimento">Atendimento</a>
-          <a href="#servico">Serviço</a>
-          <a href="#time">Time</a>
         </nav>
         <div className={Styles.btnHeader}>
           <Button className={Styles.bn3637} title="Solicitar orçamento" />

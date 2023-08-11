@@ -1,4 +1,5 @@
 .wrapper {
+  
   display: grid;
   width: 100vw;
   height: 100vh;
@@ -14,9 +15,10 @@
 
 .main {
   display: block;
-  width: 850px;
+  width: 60vw;
   margin: 0 auto;
   flex-wrap: wrap;
+  
 }
 
 .parallax1, .parallax2 {
@@ -25,13 +27,20 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  
 
+}
+
+.parallax2 {
+  
+  height: 100vh !important;
+  
 }
 
 .parallax1, .parallax2 {
   h3 {
     font-size: 2rem;
-    color: #3c6;
+    color: #2ce6e8;
   }
 
   h1 {
@@ -47,7 +56,7 @@
     letter-spacing: 0.3rem;
   }
   span {
-    color: #3c6;
+    color: #2ce6e8;
   }
 }
 
@@ -74,7 +83,7 @@
   backface-visibility: hidden;
   border: 0.3rem solid transparent;
   border-radius: 3rem;
-  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  background-image: linear-gradient(to right, #006175 0%, #2ce6e8 100%);
   color: white;
 }
 
