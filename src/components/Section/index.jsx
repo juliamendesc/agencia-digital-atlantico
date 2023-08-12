@@ -19,7 +19,6 @@ export function Section() {
             <h3>Serviço</h3>
             <h1>Como funciona o serviço</h1>
           </Slide>
-            <p>
               <Fade cascade>
               <p>Diariamente coletamos dados indicadores,
               que nos permitem entender os nossos próximos passos,
@@ -31,18 +30,22 @@ export function Section() {
             
               <Slide>
               <span>
+              <p>
               Realização de análises e pesquisas para compreendermos
               o público-alvo, as suas necessidades, comportamentos
               e preferências.
+              </p>
               </span>
               </Slide>
               <br/>
           
               <Fade cascade>
-              <p>A criação e gestão de campanhas de publicidade online.
+              <p>
+              A criação e gestão de campanhas de publicidade online.
               Isso envolve o planeamento de orçamentos,
               </p>
-              <p> definição de
+              <p> 
+              definição de
               público-alvo, seleção de palavras-chave, criação de anúncios
               e otimização contínua das campanhas.
               </p>
@@ -51,21 +54,25 @@ export function Section() {
             
               <Slide>
               <span>
+              <p>
               Análise e criação de relatórios, onde utilizamos ferramentas
               de análise de dados, para monitorar e analisar o desempenho
               do tráfego e de todas as campanhas ativas, incluindo relatórios com
               todas as informações detalhadas das métricas.
+              </p>
               </span>
               </Slide>
+              
               <br/>
               <br/>
               <Fade>
+              <p>
               Acompanhamento das tendências do mercado, as melhores práticas e as
               atualizações algorítmicas das plataformas de anúncios.
               Vamos investir seu dinheiro em ações de marketing e validar
+              </p>
               </Fade>
               <br/>
-            </p>
           </div>
           <Button
               className={Styles.bn3637}
