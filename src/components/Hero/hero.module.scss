@@ -48,9 +48,12 @@
 
 }
 
+#GifGreen {
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
 #GifGreen:hover {
-  transform: rotate(360deg);
-  transition: 2s;
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
 .bn3637 {

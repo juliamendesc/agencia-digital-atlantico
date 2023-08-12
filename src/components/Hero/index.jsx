@@ -30,10 +30,12 @@ export function Hero() {
 
         <div id={styles.GifGreen}>
           <Image src={GifGreen} alt="Gif" width={600} />
+          
         </div>
 
       </div>
     </div>
+    
   );
 }
 
