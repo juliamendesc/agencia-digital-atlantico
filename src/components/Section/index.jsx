@@ -1,11 +1,8 @@
 'use client';
 import React from 'react';
 import Styles from './section.module.scss';
-
 import Image from 'next/image';
-import info from '../../assets/infografo-min-p-1080.png';
 import Button from '../Button';
-// problemas na importação do fade tentar resolver
 import { Fade, Slide } from 'react-awesome-reveal';
 import 'animate.css';
 
@@ -37,8 +34,7 @@ export function Section() {
               </p>
               </span>
               </Slide>
-              <br/>
-          
+              
               <Fade cascade>
               <p>
               A criação e gestão de campanhas de publicidade online.
@@ -81,15 +77,6 @@ export function Section() {
             ></Button>
         </section>
 
-        <section className={Styles.info}>
-          <Slide>
-            <div className="container1">
-              {/* <Image src={info} /> */}
-            </div>
-            
-          </Slide>
-        </section>
-
         <section className={Styles.parallax2}>
         <Slide delay={1e1} cascade damping={1e-1}>
          <div className="textParallax">
@@ -102,10 +89,12 @@ export function Section() {
               </p>
               </div> 
         </Slide>
+        
         </section>
       </main>
-    </div>
+      </div>
+    
   );
 }
 
-export default Section;
+

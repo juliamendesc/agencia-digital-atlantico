@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import GifGreen from '../../assets/hero-min.png';
+import GifGreen from '../../assets/logoatla4.png';
 import styles from './hero.module.scss';
 import   Button   from '../Button';
 import 'animate.css';
@@ -39,4 +39,3 @@ export function Hero() {
   );
 }
 
-export default Hero;

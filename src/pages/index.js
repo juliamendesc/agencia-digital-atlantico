@@ -1,8 +1,7 @@
 import Head from 'next/head';
-
-import Hero from '../components/Hero';
 import { Header } from '../components/Header';
-import Section from '../components/Section';
+import { Hero }  from '../components/Hero';
+import { Section } from '../components/Section';
 
 export default function Main() {
   return (
