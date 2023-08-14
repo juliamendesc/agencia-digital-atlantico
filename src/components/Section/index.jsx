@@ -16,6 +16,7 @@ export function Section() {
             <h3>Serviço</h3>
             <h1>Como funciona o serviço</h1>
           </Slide>
+
               <Fade cascade>
               <p>Diariamente coletamos dados indicadores,
               que nos permitem entender os nossos próximos passos,
@@ -25,15 +26,14 @@ export function Section() {
               </Fade>
               <br/>
             
-              <Slide>
-              <span>
+              <Fade cascade>
               <p>
               Realização de análises e pesquisas para compreendermos
               o público-alvo, as suas necessidades, comportamentos
               e preferências.
               </p>
-              </span>
-              </Slide>
+            
+              </Fade>
               
               <Fade cascade>
               <p>
@@ -48,19 +48,17 @@ export function Section() {
               </Fade>
               <br/>
             
-              <Slide>
-              <span>
+              <Fade cascade> 
               <p>
               Análise e criação de relatórios, onde utilizamos ferramentas
               de análise de dados, para monitorar e analisar o desempenho
               do tráfego e de todas as campanhas ativas, incluindo relatórios com
               todas as informações detalhadas das métricas.
               </p>
-              </span>
-              </Slide>
+              </Fade>
+              <br/>
+              <br/>
               
-              <br/>
-              <br/>
               <Fade>
               <p>
               Acompanhamento das tendências do mercado, as melhores práticas e as

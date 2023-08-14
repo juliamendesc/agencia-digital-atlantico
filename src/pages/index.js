@@ -2,13 +2,14 @@ import Head from 'next/head';
 import { Header } from '../components/Header';
 import { Hero }  from '../components/Hero';
 import { Section } from '../components/Section';
-
+import { FormContact } from '@/components/Form';
 export default function Main() {
   return (
     <div>
       <Header />
       <Hero />
       <Section />
+      {/* <FormContact/> */}
     </div>
   );
 }
