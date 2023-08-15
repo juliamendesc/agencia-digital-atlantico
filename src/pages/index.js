@@ -10,8 +10,8 @@ export default function Main() {
     <div>
       <Header />
       <Hero />
-      <Section />
-      <CardSocial /> 
+      <Section /> 
+      {/* <CardSocial />  */}
       {/* <FormContact/> */}
     </div>
   );
