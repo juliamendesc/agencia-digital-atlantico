@@ -8,8 +8,11 @@ import 'animate.css';
 
 export function Section() {
   return (
-    <div className={Styles.wrapper}>
+    <div 
+    id='servicos'
+    className={Styles.wrapper}>
       <main className={Styles.main}>
+        
         <section className={Styles.parallax1}>
           <div className="textParallax">
           <Slide>
@@ -76,10 +79,9 @@ export function Section() {
         </section>
 
         <section className={Styles.parallax2}>
-        <Slide delay={1e1} cascade damping={1e-1}>
+        <Slide delay={1e1} cascade>
          <div className="textParallax">
          <p><span>Estamos preparados para cumprir com nosso único objetivo:</span>
-         <br/>
          <br/>
               Ajudar o seu negócio e faturamento a crescer de forma exponencial
               através da internet, com o foco em alcançar novas soluções
@@ -87,7 +89,6 @@ export function Section() {
               </p>
               </div> 
         </Slide>
-        
         </section>
       </main>
       </div>

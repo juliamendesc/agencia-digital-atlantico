@@ -28,6 +28,21 @@
   padding-block: 16px;
  }
 
+ .navList a::after {
+  content: ' ';
+  width: 0%;
+  height: 0.4rem;
+  background-color: #2ce6e8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.7s ease-in-out;
+}
+
+.navList a:hover::after {
+  width: 100%;
+}
+
  .header {
   background: black;
   padding-inline: 16px;
@@ -202,20 +217,7 @@
   //     }
   //   }
 
-  //   #navBar a::after {
-  //     content: ' ';
-  //     width: 0%;
-  //     height: 0.4rem;
-  //     background-color: #2ce6e8;
-  //     position: absolute;
-  //     bottom: 0;
-  //     left: 0;
-  //     transition: 0.7s ease-in-out;
-  //   }
-
-  //   #navBar a:hover::after {
-  //     width: 100%;
-  //   }
+    
 
    
 

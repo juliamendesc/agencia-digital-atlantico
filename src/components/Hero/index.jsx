@@ -8,7 +8,9 @@ import 'animate.css';
 
 export function Hero() {
   return (
-    <div className={styles.container}>
+    <div 
+    id='home'
+    className={styles.container}>
       <div className={styles.main}>
         <div
           id={styles.TextForm}
