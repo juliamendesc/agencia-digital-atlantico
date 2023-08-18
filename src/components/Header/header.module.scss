@@ -1,34 +1,35 @@
- 
- .header {
-  position: fixed;
+.header {
+  position: sticky;
   top: 0;
   background: black;
-  width: 100%;
-  padding-inline: 16px;
-  z-index: 1000;
+  height: 75px;
+  margin: 0 5rem;
 }
 
-
- .navList{
+.nav {
+  max-width: calc(100vw - 10rem);
 
   display: flex;
-  gap: 32px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2.5rem;
   list-style: none;
+}
 
-  a {
-    font-family: sans-serif;
-    text-decoration: none;
-   }
-
- }
-
- .navList a {
-  font-size: 18px;
+.navList a {
+  font-size: 1.75rem;
   color: #ffff;
-  padding-block: 16px;
- }
+}
 
- .navList a::after {
+.navList a::after {
   content: ' ';
   width: 0%;
   height: 0.4rem;
@@ -43,52 +44,33 @@
   width: 100%;
 }
 
- .header {
-  background: black;
-  padding-inline: 16px;
-
- }
-
- .nav {
-  max-width: 1280px;
-  height: 70px;
-  margin-inline: auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
- }
-
- .hamburger {
+.hamburger {
   display: none;
   border: none;
   background: none;
   border-top: 3px solid #fff;
   cursor: pointer;
- }
+}
 
- .hamburger::before, 
- .hamburger::after {
-  content: " ";
+.hamburger::before,
+.hamburger::after {
+  content: ' ';
   display: block;
   width: 30px;
   height: 3px;
   background: #fff;
-  margin-top: 5px;
   position: relative;
   transition: 0.3s;
- }
+}
 
- #btnHeader {
-   background: black;
-   border-color: white;
-   order: 3px solid;
-   margin-right: 7rem;
-   transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
- }
- 
- @media (max-width: 750px) {
+#btnHeader {
+  background: black;
+  border-color: white;
+  order: 3px solid;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
 
+@media (max-width: 750px) {
   #btnHeader {
     display: none;
   }
@@ -97,7 +79,7 @@
     display: block;
     z-index: 1;
   }
-  
+
   .navList {
     position: fixed;
     top: 0;
@@ -105,10 +87,11 @@
     width: 100vw;
     height: 100vh;
     background: linear-gradient(
-    128deg,
-    rgb(15, 15, 15) 10%,
-    rgb(44, 229, 232) 100%);
-    
+      128deg,
+      rgb(15, 15, 15) 10%,
+      rgb(44, 229, 232) 100%
+    );
+
     clip-path: circle(100px at 90% -15%);
     transition: 1s ease-out;
 
@@ -141,7 +124,7 @@
   }
 
   .navList li:nth-child(5) a {
-    transition: 0.5s 1.0s;
+    transition: 0.5s 1s;
   }
 
   .navList li:nth-child(6) a {
@@ -156,7 +139,7 @@
   .nav.active .navList a {
     opacity: 1;
   }
-  
+
   .nav.active .hamburger {
     position: fixed;
     top: 26px;
@@ -172,94 +155,82 @@
     transform: rotate(-135deg);
     top: -7px;
   }
- }
- 
- 
- 
- 
- // .container {
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //   }
+}
 
-  //   .sticky {
-  //     position: sticky;
-  //     top: 0; 
-  //     z-index: 1000;
-  //     width: 100vw;
-  //     background-color: black;
-  //     padding-bottom: 1rem;
-  //   }
-    
-  //   .logo {
-  //     width: 20%;
-  //     display: flex;
-  //     justify-content:flex-start;
+// .container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
 
-  //   }
+//   .sticky {
+//     position: sticky;
+//     top: 0;
+//     z-index: 1000;
+//     width: 100vw;
+//     background-color: black;
+//     padding-bottom: 1rem;
+//   }
 
-   
+//   .logo {
+//     width: 20%;
+//     display: flex;
+//     justify-content:flex-start;
 
-  //   #navBar {
-  //     width: 50%;
-  //     display: flex;
-  //     justify-content: space-around;
+//   }
 
-  //     flex-wrap: wrap;
+//   #navBar {
+//     width: 50%;
+//     display: flex;
+//     justify-content: space-around;
 
-  //     a {
-  //       color: #ffff;
-  //       text-decoration: none;
-  //       padding: 2rem ; 
-  //       font-size: 15px;
-  //       position: relative;
-  //     }
-  //   }
+//     flex-wrap: wrap;
 
-    
+//     a {
+//       color: #ffff;
+//       text-decoration: none;
+//       padding: 2rem ;
+//       font-size: 15px;
+//       position: relative;
+//     }
+//   }
 
-   
+//   .btnHeader {
+//     width: 22%;
+//     display: flex;
+//     justify-content: flex-end;
+//     padding-top: 2rem;
+//     margin-right: 5rem;
+//   }
 
-  //   .btnHeader {
-  //     width: 22%;
-  //     display: flex;
-  //     justify-content: flex-end;
-  //     padding-top: 2rem;
-  //     margin-right: 5rem;
-  //   }
+//   .bn3637 {
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 0.7rem 2rem;
+//     font-weight: 700;
+//     font-size: 1.5rem;
+//     text-align: center;
+//     text-decoration: none;
+//     color: black;
+//     backface-visibility: hidden;
+//     border: 0.3rem solid transparent;
+//     border-radius: 3rem;
+//     background-color: black;
+//     color: white;
+//   }
 
-  //   .bn3637 {
-  //     display: inline-flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //     padding: 0.7rem 2rem;
-  //     font-weight: 700;
-  //     font-size: 1.5rem;
-  //     text-align: center;
-  //     text-decoration: none;
-  //     color: black;
-  //     backface-visibility: hidden;
-  //     border: 0.3rem solid transparent;
-  //     border-radius: 3rem;
-  //     background-color: black;
-  //     color: white;
-  //   }
+//   .bn3637 {
+//     border-color: white;
+//     border: 3px solid;
+//     transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+//   }
 
-  //   .bn3637 {
-  //     border-color: white;
-  //     border: 3px solid;
-  //     transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-  //   }
-    
-  //   .bn3637:hover {
-  //     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-  //   }
+//   .bn3637:hover {
+//     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+//   }
 
-    
-
-
-// Colocar um Header lateral ao diminuir a tela 
+// Colocar um Header lateral ao diminuir a tela
 // @media screen and (max-width: 796px) {
 //   #navBar {
 //     margin-top: 10px;

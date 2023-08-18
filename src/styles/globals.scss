@@ -3,23 +3,23 @@
 :root {
   padding: 0;
   margin: 0;
+  border: 0;
   box-sizing: border-box;
 
   font-size: 62.5%; // 62.5% = 10px
-
-  
 }
 
 body {
-
   background: linear-gradient(
     128deg,
     rgba(0, 0, 0, 1) 80%,
-    rgba(44, 230, 232, 0.74) 100%);
+    rgba(44, 230, 232, 0.74) 100%
+  );
 
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: white;
+  font-family: 'Poppins', sans-serif;
 
   -webkit-font-smoothing: antialiased;
 }
