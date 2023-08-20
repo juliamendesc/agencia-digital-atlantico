@@ -14,6 +14,10 @@ export function Header() {
     setNavActive(!navActive);
   };
 
+  const handleLinkClick = () => {
+    setNavActive(false); // Fechar a barra lateral quando se clicka no Link
+  };
+
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
@@ -26,12 +30,22 @@ export function Header() {
 
         <ul className={styles.navList}>
           <li>
-            <Link href="#home" to="home" smooth={true} duration={700}>
+            <Link href="#home"
+             to="home" 
+             smooth={true} 
+             duration={700}
+            onClick={handleLinkClick}
+              >
               Home
             </Link>
           </li>
           <li>
-            <Link href="#servicos" to="servicos" smooth={true} duration={800}>
+            <Link href="#servicos" 
+            to="servicos" 
+            smooth={true} 
+            duration={800}
+            onClick={handleLinkClick}
+            >
               Serviços
             </Link>
           </li>
@@ -41,22 +55,40 @@ export function Header() {
               to="beneficios"
               smooth={true}
               duration={700}
+              onClick={handleLinkClick}
             >
               Benefícios
             </Link>
           </li>
           <li>
-            <Link href="#faq" to="faq">
+            <Link 
+            href="#faq" 
+            to="faq"
+            smooth={true}
+            duration={700}
+            onClick={handleLinkClick}
+            >
               FAQ
             </Link>
           </li>
           <li>
-            <Link href="#quemsomos" to="quemsomos">
+            <Link 
+            href="#quemsomos" 
+            to="quemsomos"
+            smooth={true} 
+            duration={700}
+            onClick={handleLinkClick}>
               Quem somos
             </Link>
           </li>
           <li>
-            <Link href="#atendimento" to="atendimento">
+            <Link 
+            href="#atendimento" 
+            to="atendimento"
+            smooth={true} 
+            duration={700}
+            onClick={handleLinkClick}
+            >
               Atendimento
             </Link>
           </li>

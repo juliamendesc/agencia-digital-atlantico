@@ -1,9 +1,4 @@
 .container {
-  // background: linear-gradient(
-  //   132deg,
-  //   rgba(0, 0, 0, 1) 50%,
-  //   rgba(51, 204, 102, 0.322) 100%
-  // );
 
   display: grid;
   width: 100%;
@@ -27,7 +22,7 @@
   flex-wrap: wrap;
 
   h1 {
-    font-size: 8rem;
+    font-size: 9rem;
     font-family: Arial, Helvetica, sans-serif;
 
     span {
@@ -40,6 +35,7 @@
     letter-spacing: 0.2rem;
     font-family: 'Poppins', sans-serif;
     color: white;
+    margin-bottom: 3rem;
   }
   .strong {
     color: #2ce6e8;
@@ -55,33 +51,10 @@
   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
-.bn3637 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.7rem 2rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 1.8rem;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  backface-visibility: hidden;
-  border: 0.3rem solid transparent;
-  border-radius: 3rem;
-  background-image: linear-gradient(to right, #006175 0%, #2ce6e8 100%);
-  color: white;
-  border-color: white;
-  border: 3px solid;
-  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-}
 
-.bn3637:hover {
-  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-}
 
 @media screen and (max-width: 768px) {
-  #GifGreen {
+  #Logo {
     display: none;
   }
 
@@ -97,7 +70,5 @@
     font-size: 40px;
   }
 
-  .bn3637 {
-    width: 100%;
-  }
+ 
 }

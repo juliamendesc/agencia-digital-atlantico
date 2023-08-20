@@ -25,7 +25,7 @@ export function Section() {
               <p>sendo assim possível uma otimização contínua de resultados.</p>
             </Fade>
 
-            <Fade cascade>
+            <Fade>
               <p>
                 Realização de análises e pesquisas para compreendermos o
                 público-alvo, as suas necessidades, comportamentos e
@@ -62,7 +62,6 @@ export function Section() {
             </Fade>
           </div>
           <Button
-            className={styles.bn3637}
             href="/"
             title="Enviar mensagem"
           ></Button>
@@ -75,12 +74,22 @@ export function Section() {
                 <span>
                   Estamos preparados para cumprir com nosso único objetivo:
                 </span>
+                </p>
+
+                <p>
                 Ajudar o seu negócio e faturamento a crescer de forma
                 exponencial através da internet, com o foco em alcançar novas
                 soluções estratégicas e eficazes para o seu negócio.
-              </p>
+                </p>
+                
+                
             </div>
           </Slide>
+          <Fade>
+          <div className={styles.textSocial}>
+          <h1> Serviços para a sua empresa obter resultados</h1>
+          </div>
+          </Fade>
         </section>
       </main>
     </div>

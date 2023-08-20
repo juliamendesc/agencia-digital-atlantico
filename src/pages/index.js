@@ -11,7 +11,7 @@ export default function Main() {
       <Header />
       <Hero />
       <Section /> 
-      {/* <CardSocial />  */}
+      <CardSocial /> 
       {/* <FormContact/> */}
     </div>
   );

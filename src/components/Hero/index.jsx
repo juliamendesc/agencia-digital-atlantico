@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Logo from '../../assets/logoatla4.png';
 import styles from './hero.module.scss';
-import Button from '../Button';
+import { Button } from '../Button';
 import 'animate.css';
 
 export function Hero() {
@@ -23,13 +23,12 @@ export function Hero() {
           </p>
 
           <Button
-            className={styles.bn3637}
             href="/"
             title="Formulário gratuito"
           ></Button>
         </div>
 
-        <div id={styles.logo}>
+        <div id={styles.Logo}>
           <Image src={Logo} alt="Gif" width={400} />
         </div>
       </div>
