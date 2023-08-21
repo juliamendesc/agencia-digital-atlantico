@@ -81,13 +81,13 @@ export function Section() {
                 exponencial através da internet, com o foco em alcançar novas
                 soluções estratégicas e eficazes para o seu negócio.
                 </p>
-                
-                
             </div>
           </Slide>
           <Fade>
           <div className={styles.textSocial}>
-          <h1> Serviços para a sua empresa obter resultados</h1>
+          <h1> Serviços para a sua empresa 
+            <span>obter resultados</span>
+            </h1>
           </div>
           </Fade>
         </section>

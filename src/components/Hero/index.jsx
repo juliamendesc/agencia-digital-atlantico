@@ -1,7 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
-import Logo from '../../assets/logoatla4.png';
 import styles from './hero.module.scss';
 import { Button } from '../Button';
 import 'animate.css';
@@ -15,7 +13,8 @@ export function Hero() {
           className="TextForm animate__animated animate__fadeInUpBig"
         >
           <h1>
-            Nosso negócio é vender <span>o seu</span>
+            O 
+            nosso negócio é vender <span>o seu</span>
           </h1>
           <p>
             Nós analisamos o seu negócio e criamos estratégias personalizadas de
@@ -28,9 +27,6 @@ export function Hero() {
           ></Button>
         </div>
 
-        <div id={styles.Logo}>
-          <Image src={Logo} alt="Gif" width={400} />
-        </div>
       </div>
     </div>
   );

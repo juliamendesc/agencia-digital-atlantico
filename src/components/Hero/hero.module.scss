@@ -43,20 +43,9 @@
   }
 }
 
-#logo {
-  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-}
-
-#logo:hover {
-  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-}
 
 
-
-@media screen and (max-width: 768px) {
-  #Logo {
-    display: none;
-  }
+@media (max-width: 768px) {
 
   .main {
     padding: 20px;
@@ -67,7 +56,7 @@
   }
 
   #TextForm h1 {
-    font-size: 40px;
+    font-size: 5rem;
   }
 
  
