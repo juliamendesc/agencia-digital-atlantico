@@ -145,18 +145,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr ; 
     grid-gap: 10px;
-
-    margin-left: 4rem;
+    margin-left: 2rem;
     
 }
 
 .container .card .face {
-    width: 180px;
+    width: 160px;
     height: 180px;
     transition: 0.7s;
 }
 
-.card  .face.face2 {
+.card .face.face2 {
     margin-top: 20px;
     height: 180px;
     
