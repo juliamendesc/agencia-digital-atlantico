@@ -11,8 +11,8 @@ export function Section() {
     <div id="servicos" className={styles.wrapper}>
       <main className={styles.main}>
         <section className={styles.parallax1}>
-          <div className="textParallax">
-            <Slide>
+          <div className={styles.textParallax}>
+            <Slide delay={1e1} cascade>
               <h3>Serviço</h3>
               <h1>Como funciona o serviço</h1>
             </Slide>
@@ -62,6 +62,7 @@ export function Section() {
             </Fade>
           </div>
           <Button
+            id={styles.btnMsg}
             href="/"
             title="Enviar mensagem"
           ></Button>
@@ -69,7 +70,7 @@ export function Section() {
 
         <section className={styles.parallax2}>
           <Slide delay={1e1} cascade>
-            <div className="textParallax">
+            <div className={styles.textParallax}>
               <p>
                 <span>
                   Estamos preparados para cumprir com nosso único objetivo:

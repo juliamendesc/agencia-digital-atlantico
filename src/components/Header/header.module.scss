@@ -74,6 +74,11 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    display: block;
+    padding-left: 5rem;
+  }
+  
   #btnHeader {
     display: none;
   }
@@ -135,7 +140,7 @@
   }
 
   .nav.active .navList {
-    clip-path: circle(1500px at 90% -15%);
+    clip-path: circle(1500px at 100% -15%);
     pointer-events: all;
   }
 

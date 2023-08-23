@@ -139,28 +139,36 @@
     color: #414141;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr ; 
     grid-gap: 10px;
-    padding-left: 5rem;
+
+    margin-left: 4rem;
+    
 }
 
 .container .card .face {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
+    transition: 0.7s;
+}
+
+.card  .face.face2 {
+    margin-top: 20px;
+    height: 180px;
+    
 }
 
 .container .card .face.face2 .content h3 {
-    font-size: 15px;
-
+    font-size: 10px;
 
 }
 
 .container .card .face.face2 .content h4 {
-font-size: 12px;
+        font-size: 10px;
 }
 
 }

@@ -12,9 +12,15 @@
 }
 
 .main {
-  width: 60vw;
+  width: 80vw;
   margin: 0 auto;
   flex-wrap: wrap;
+}
+
+.parallax1 {
+  padding-left: 15rem;
+  padding-right: 20rem;
+
 }
 
 .parallax1,
@@ -68,29 +74,62 @@
 
 @media (max-width: 768px) {
 
-.parallax1, .parallax2 {
-  h1 {
-    font-size: 3rem;
+  .wrapper {
+    width: 100%;
   }
 
-  p {
-    font-size: 1.5rem;
-    margin-bottom: 4rem;
-    letter-spacing: 0.3rem;
+
+
+
+.parallax1 {
+    margin-right: 0; 
+    margin-left: 0;
+    
+    h1 {
+      font-size: 3rem;
+      margin-left: 4.5rem;
+    }
+
+    h3 {
+      margin-left: 3rem;
+  
+    }
+
+    p {
+    
+      margin-left: 6rem;
+    }
   }
 
-}
+  #btnMsg {
+    width: 40vh;
+  }
 
+  .parallax1,
+  .parallax2 {
+  
+    h1 {
+      font-size: 3rem;
+    }
 
-.textSocial h1 {
-   font-size: 2rem; 
-   font-weight: 500;
-}
+    p {
+      width: 60vh;
+      font-size: 1.8rem;
+      margin-bottom: 5rem;
+      letter-spacing: 0.3rem;
+    }
+  }
 
-.textSocial span {
-  display: block; 
-  margin-top: 1rem; 
-  margin-left: 7rem;
+  .textSocial h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .textSocial span {
+    display: block;
+    margin-top: 1rem;
+    margin-left: 7rem;
+  }
 }
   
-}
+
