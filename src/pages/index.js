@@ -4,6 +4,7 @@ import { Hero } from '../components/Hero';
 import { Section } from '../components/Section';
 import { CardSocial } from '@/components/CardSocial';
 import { FormContact } from '@/components/Form';
+import { Benefits } from '@/components/Benefits';
 
 export default function Main() {
   return (
@@ -11,7 +12,8 @@ export default function Main() {
       <Header />
       <Hero />
       <Section /> 
-      <CardSocial /> 
+      <CardSocial />
+      <Benefits /> 
       {/* <FormContact/> */}
     </div>
   );
