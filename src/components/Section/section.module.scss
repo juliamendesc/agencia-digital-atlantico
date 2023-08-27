@@ -75,29 +75,18 @@
 @media (max-width: 768px) {
 
   .wrapper {
-    width: 100%;
     margin-left: 2rem;
+    text-align: center;
   }
 
 .parallax1 {
     h1 {
       font-size: 3rem;
-      // margin-left: 4.5rem;
-    }
-
-    h3 {
-      // margin-left: 3rem;
-  
-    }
-
-    p {
-    
-      // margin-left: 6rem;
     }
   }
 
   #btnMsg {
-    width: 30vh;
+    width: 50vw;
     
   }
 
@@ -124,7 +113,8 @@
   .textSocial span {
     display: block;
     margin-top: 1rem;
-    margin-left: 7rem;
+    margin-right: 8.5rem;
+   
   }
 }
   

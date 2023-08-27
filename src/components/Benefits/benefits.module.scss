@@ -29,8 +29,8 @@
         list-style-type:none;
       
         li {
-          font-size: 1.5rem;
-          font-weight: 900;
+          font-size: 2rem;
+          font-weight: 500;
           letter-spacing: 0.3rem;
           margin-bottom: 2rem;
         }
@@ -43,7 +43,7 @@
 }
 
 .benefitsList {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 900;
     margin-bottom: 5rem;
     letter-spacing: 0.3rem;
@@ -51,7 +51,27 @@
 
     li {
         margin-bottom: 2rem;
-    }
-      
+    }     
+}
 
+@media screen and (max-width: 767px) {
+
+  .container {
+
+    h1{
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+  }
+
+.benefitsList{
+    li {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
 }
