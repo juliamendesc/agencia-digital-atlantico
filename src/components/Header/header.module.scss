@@ -1,8 +1,8 @@
 .header {
   position: sticky;
   top: 0;
-  width: 100vw;
-  z-index: 100000;
+  width: 100%;
+  z-index: 10000;
   background: black;
   height: 80px;
 }
@@ -76,10 +76,15 @@
 @media (max-width: 768px) {
   .header {
     display: block;
-    padding-left: 5rem;
-  
+    padding-left: 6rem;
+
   }
-  
+
+  .logoContainer {
+    display: flex;
+    margin-right: 25rem;
+  }
+
   #btnHeader {
     display: none;
   }
@@ -87,16 +92,17 @@
   .hamburger {
     display: block;
     z-index: 1;
+    margin-left: 1rem;
   }
 
   .navList {
     position: fixed;
     margin-top: 0;
-    padding: 9rem 7rem 9rem 6rem;
+    padding: 4rem 4rem 11rem ;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 88%;
     background: linear-gradient(
       128deg,
       rgb(15, 15, 15) 10%,

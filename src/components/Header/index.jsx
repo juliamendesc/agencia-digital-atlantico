@@ -20,13 +20,17 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
-        <Image src={Logo} alt="logo atlântico" height="inherit" width={75} />
+  <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
+
+    <div className={styles.logoContainer}>
+      <Image src={Logo} alt="logo atlântico"  width={75} />
+    </div>
 
         <button
           className={`${styles.hamburger} hamburger`}
           onClick={toggleNav}
-        ></button>
+        > 
+        </button>
 
         <ul className={styles.navList}>
           <li>

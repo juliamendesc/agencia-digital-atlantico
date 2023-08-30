@@ -57,11 +57,11 @@
 
 .logo span {
     font-size: 1.5rem;
-    background-color: #2ce6e8; /* Adapte a cor de fundo conforme necessário */
+
     padding: 0.5rem 4rem;
     width: 60%;
     position: absolute;
-    top: -2rem; /* Ajuste conforme necessário para posicionar o texto */
+    top: -3rem; /*  para posicionar o texto */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -93,11 +93,12 @@
 
 .logo {
     display: grid;
-    grid-template-columns: 1fr 1fr ; 
-    gap: 4rem;
+    grid-template-columns: 1fr; 
+    gap: 3rem;
 }
 
-.logoAtla {
-    display: block;
+.logo span {
+    font-size: 1.5rem;   
 }
+
 }
