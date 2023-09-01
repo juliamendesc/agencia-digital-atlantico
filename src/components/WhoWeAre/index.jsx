@@ -21,11 +21,9 @@ export function Who() {
         <Fade delay={1e3} cascade damping={1e-1}>
         <h1>Digital Atlântico</h1>
         <div className={Styles.logoAtla}>
-        <Image src={logoantlantico} width={300}/>
+        <Image src={logoantlantico} width={200} height={200}/>
         </div>
        
-
-        
         <p>
         Somos uma agência de marketing especializada
         em <span>publicidade online</span>
@@ -59,7 +57,7 @@ export function Who() {
         
         <div className={Styles.line}></div>
         
-        <div className="container2">
+        <div className={Styles.container2}>
         <h1>+30</h1>
         <h2>mais de 30 empresas já tiveram a nossa ajuda.                                                    
         Algumas empresas que já confiam:   

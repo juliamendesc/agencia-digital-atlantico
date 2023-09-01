@@ -1,8 +1,7 @@
 .wrapper {
-
   height: fit-content;
 
-  padding-top: 10rem;
+  
 
   h1,
   h2,
@@ -12,29 +11,20 @@
 }
 
 .main {
-  width: 80vw;
+  // width: 80vw;
   margin: 0 auto;
   flex-wrap: wrap;
 }
 
-.parallax1 {
-  padding-left: 15rem;
-  padding-right: 20rem;
 
-}
 
 .parallax1,
 .parallax2 {
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-.parallax2 {
-  margin-top: 10rem;
-}
-
 
 .parallax1,
 .parallax2 {
@@ -49,10 +39,8 @@
 
   p {
     width: 100%;
-    margin-right: 0rem;
-    margin-left: 0rem;
+    margin: 0rem;
     font-size: 3rem;
-    margin-bottom: 5rem;
     letter-spacing: 0.3rem;
   }
   span {
@@ -60,26 +48,22 @@
   }
 }
 
-.textSocial h1{
-  margin-top: 10rem;
+.textSocial h1 {
   font-size: 3rem;
   font-weight: 900;
 }
 
 .textSocial span {
-  display: block; 
-  margin-top: 1rem; 
-  margin-left: 9rem;
+  display: block;
 }
 
 @media (max-width: 768px) {
-
   .wrapper {
-    margin-left: 2rem;
-    text-align: center;
+    margin: 5rem 1rem 0 1rem;
+    
   }
 
-.parallax1 {
+  .parallax1 {
     h1 {
       font-size: 3rem;
     }
@@ -87,20 +71,20 @@
 
   #btnMsg {
     width: 50vw;
-    
+    margin-top: 2rem;
   }
 
   .parallax1,
   .parallax2 {
-  
+    margin-bottom: 5rem;
+
     h1 {
       font-size: 3rem;
     }
 
     p {
-      width: 80vw;
+      margin-bottom: 2rem;
       font-size: 1.8rem;
-      margin-bottom: 4rem;
       letter-spacing: 0.3rem;
     }
   }
@@ -112,10 +96,5 @@
 
   .textSocial span {
     display: block;
-    margin-top: 1rem;
-    margin-right: 8.5rem;
-   
   }
 }
-  
-

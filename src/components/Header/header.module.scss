@@ -8,10 +8,9 @@
 }
 
 .nav {
-  max-width: calc(100vw - 10rem);
-
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -23,26 +22,26 @@
   align-items: center;
   gap: 2.5rem;
   list-style: none;
-}
 
-.navList a {
-  font-size: 1.75rem;
-  color: #ffff;
-}
+  a {
+    font-size: 1.75rem;
+    color: #ffff;
 
-.navList a::after {
-  content: ' ';
-  width: 0%;
-  height: 0.4rem;
-  background-color: #2ce6e8;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: 0.7s ease-in-out;
-}
+    &::after {
+      content: ' ';
+      width: 0%;
+      height: 0.4rem;
+      background-color: #2ce6e8;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.7s ease-in-out;
+    }
 
-.navList a:hover::after {
-  width: 100%;
+    &:hover::after {
+      width: 100%;
+    }
+  }
 }
 
 .hamburger {
@@ -51,18 +50,18 @@
   background: none;
   border-top: 3px solid #fff;
   cursor: pointer;
-}
 
-.hamburger::before,
-.hamburger::after {
-  content: ' ';
-  display: block;
-  width: 30px;
-  height: 3px;
-  background: #fff;
-  position: relative;
-  margin-top: 5px;
-  transition: 0.3s;
+  &::before,
+  &::after {
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    position: relative;
+    margin-top: 5px;
+    transition: 0.3s;
+  }
 }
 
 #btnHeader {
@@ -75,14 +74,14 @@
 
 @media (max-width: 768px) {
   .header {
-    display: block;
-    padding-left: 6rem;
-
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
   }
 
   .logoContainer {
     display: flex;
-    margin-right: 25rem;
+    // margin-right: 25rem;
   }
 
   #btnHeader {
@@ -92,17 +91,20 @@
   .hamburger {
     display: block;
     z-index: 1;
-    margin-left: 1rem;
+    // margin-left: 1rem;
+  }
+
+  .nav {
+    margin: 0 1rem;
   }
 
   .navList {
     position: fixed;
     margin-top: 0;
-    padding: 4rem 4rem 11rem ;
+    height: 100vh;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 88%;
     background: linear-gradient(
       128deg,
       rgb(15, 15, 15) 10%,
@@ -113,7 +115,7 @@
     transition: 1s ease-out;
 
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     gap: 0;
     pointer-events: none;

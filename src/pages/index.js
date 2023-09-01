@@ -11,11 +11,11 @@ export default function Main() {
     <div>
       <Header />
       <Hero />
-      <Section /> 
+      <Section />
       <CardSocial />
       <Benefits />
-      <Who/> 
-      {/* <FormContact/> */}
-    </div>
+      <Who />
+{/*       <FormContact />
+ */}    </div>
   );
 }

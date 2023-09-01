@@ -2,8 +2,7 @@
 
     // height: fit-content;
 
-    padding-top: 10rem;
-
+    
     h3 {
         font-size: 2rem;
     }
@@ -71,7 +70,10 @@
 
 
 @media (max-width: 768px) {
+.logoAtla {
+    display: block;
 
+}
 .container {
     text-align: center;
 
@@ -84,10 +86,16 @@
     }
 
       p {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin-bottom: 4rem;
       letter-spacing: 0.3rem;
       font-weight: 500;
+    }
+}
+
+.container2 {
+    h2 {
+        font-size: 2rem;
     }
 }
 
@@ -95,10 +103,15 @@
     display: grid;
     grid-template-columns: 1fr; 
     gap: 3rem;
+    
 }
 
 .logo span {
-    font-size: 1.5rem;   
+    font-size: 1.75rem;   
+}
+
+.logo a {
+    margin-bottom: 2rem;
 }
 
 }

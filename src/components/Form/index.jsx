@@ -5,7 +5,7 @@ import React from 'react'
 export  function FormContact() {
     return (
     // Usar o react hook form
-    <body className='body'>
+    <body className={Styles.body}>
     <div className={Styles.loginBox}>
   <h2>Formulário de Contato</h2>
   <form>

@@ -27,7 +27,7 @@ export function Header() {
     </div>
 
         <button
-          className={`${styles.hamburger} hamburger`}
+          className={`${styles.hamburger} `}
           onClick={toggleNav}
         > 
         </button>

@@ -17,12 +17,10 @@ export function Section() {
               <h1>Como funciona o serviço</h1>
             </Slide>
 
-            <Fade delay={1e3} cascade damping={1e-1}>
+            <Fade delay={1e2} cascade damping={1e-1}>
               <p>
                 Diariamente coletamos dados indicadores, que nos permitem
-                entender os nossos próximos passos,
-              </p>
-              <p>sendo assim possível uma otimização contínua de resultados.</p>
+                entender os nossos próximos passos, sendo assim possível uma otimização contínua de resultados.</p>
 
               <p>
                 Realização de análises e pesquisas para compreendermos o
@@ -32,9 +30,7 @@ export function Section() {
 
               <p>
                 A criação e gestão de campanhas de publicidade online. Isso
-                envolve o planeamento de orçamentos,
-              </p>
-              <p>
+                envolve o planeamento de orçamentos, 
                 definição de público-alvo, seleção de palavras-chave, criação de
                 anúncios e otimização contínua das campanhas.
               </p>

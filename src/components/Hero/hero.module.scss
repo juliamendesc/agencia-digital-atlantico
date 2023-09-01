@@ -1,20 +1,18 @@
 .container {
-
-  display: grid;
+  display: flex;
   width: 100%;
   height: fit-content;
-  margin-top: calc(75px + 1.5rem);
-
-  grid-template-areas:
-    'header'
-    'hero';
+  @media (max-width: 768px) {
+      margin: 0 1rem;  
+      }
 }
 
 .main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 5rem;
+  
+
 }
 
 #TextForm {
@@ -37,28 +35,13 @@
     color: white;
     margin-bottom: 3rem;
   }
-  .strong {
-    color: #2ce6e8;
-    text-transform: uppercase;
-  }
-}
 
 
-
-@media (max-width: 768px) {
-
-  .main {
-    padding: 10px;
-    text-align: center;
-  }
-
-  #TextForm {
+  @media (max-width: 768px) {
     width: 100%;
-  }
 
-  #TextForm h1 {
-    font-size: 5rem;
+    h1 {
+      font-size: 5rem;
+    }
   }
-
- 
 }
