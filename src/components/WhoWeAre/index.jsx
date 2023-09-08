@@ -2,7 +2,7 @@
 import React from "react";
 import Styles from './who.module.scss'
 import Image from 'next/image';
-import { Fade, Slide } from 'react-awesome-reveal';
+// import { Fade, Slide } from 'react-awesome-reveal';
 import 'animate.css';
 
 import LightLogo from '../../assets/LightLogo.png';
@@ -14,11 +14,11 @@ import logoantlantico from '../../assets/logoatlantico.png'
 export function Who() {
     return(
     <div id='quemsomos' className={Styles.container}>
-        <Slide>
+        {/* <Slide> */}
         <h3><span>Quem Somos</span></h3>
-        </Slide>
+        {/* </Slide> */}
 
-        <Fade delay={1e3} cascade damping={1e-1}>
+        {/* <Fade delay={1e3} cascade damping={1e-1}> */}
         <h1>Digital Atlântico</h1>
         <div className={Styles.logoAtla}>
         <Image src={logoantlantico} width={200} height={200}/>
@@ -53,7 +53,7 @@ export function Who() {
         retorno sobre o investimento <span>(ROI)</span>
         </p>
         </div>
-        </Fade>
+        {/* </Fade> */}
         
         <div className={Styles.line}></div>
         

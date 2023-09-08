@@ -3,7 +3,9 @@
   width: 100%;
   height: fit-content;
   @media (max-width: 768px) {
-      margin: 0 1rem;  
+      margin: 0 1rem;
+
+
       }
 }
 
@@ -43,5 +45,9 @@
     h1 {
       font-size: 5rem;
     }
+    p {
+      font-size: 1.75rem;
+    }
+
   }
 }

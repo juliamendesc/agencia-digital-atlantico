@@ -26,7 +26,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     text-align: center;
-    list-style-type: none;
+    
 
     p {
       font-size: 1.75rem;
@@ -34,17 +34,34 @@
       letter-spacing: 0.3rem;
       margin-bottom: 2rem;
     }
+
+    @media screen and (max-width: 767px) {
+      margin: 0 1rem;
+      h1 {
+        font-size: 2rem;
+      h3 {
+        font-size: 1.75rem;
+      }
+    }
   }
+}
 
   @media screen and (max-width: 767px) {
       margin: 0 1rem;
       h1 {
-        font-size: 2.25rem;
+        font-size: 2rem;
       }
 
       h3 {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
+      li {
+        text-align: initial;
+        font-size: 1.5rem;
+        font-weight: 500;
+       
+      }
+      margin-bottom: 5rem;
     }
   }
 
@@ -53,12 +70,14 @@
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: 0.3rem;
-  list-style-type: none;
+  
 
   @media screen and (max-width: 767px) {
-    p {
+    li {
+      text-align: initial;
       font-size: 1.75rem;
       font-weight: 500;
+      margin-bottom: 1rem;
     }
     margin-bottom: 5rem;
   }

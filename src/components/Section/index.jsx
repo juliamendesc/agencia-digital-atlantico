@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './section.module.scss';
 import Image from 'next/image';
 import Button from '../Button';
-import { Fade, Slide } from 'react-awesome-reveal';
+// import { Fade, Slide } from 'react-awesome-reveal';
 import 'animate.css';
 
 export function Section() {
@@ -12,12 +12,12 @@ export function Section() {
       <main className={styles.main}>
         <section className={styles.parallax1}>
           <div className={styles.textParallax}>
-            <Slide>
+            {/* <Slide> */}
               <h3>Serviço</h3>
               <h1>Como funciona o serviço</h1>
-            </Slide>
+            {/* </Slide> */}
 
-            <Fade delay={1e2} cascade damping={1e-1}>
+            {/* <Fade delay={1e2} cascade damping={1e-1}> */}
               <p>
                 Diariamente coletamos dados indicadores, que nos permitem
                 entender os nossos próximos passos, sendo assim possível uma otimização contínua de resultados.</p>
@@ -47,7 +47,7 @@ export function Section() {
                 as atualizações algorítmicas das plataformas de anúncios. Vamos
                 investir seu dinheiro em ações de marketing e validar
               </p>
-            </Fade>
+            {/* </Fade> */}
           </div>
           <Button
             id={styles.btnMsg}
@@ -57,7 +57,7 @@ export function Section() {
         </section>
 
         <section className={styles.parallax2}>
-          <Slide delay={1e1} cascade>
+          {/* <Slide delay={1e1} cascade> */}
             <div className={styles.textParallax}>
               <p>
                 <span>
@@ -71,14 +71,14 @@ export function Section() {
                 soluções estratégicas e eficazes para o seu negócio.
                 </p>
             </div>
-          </Slide>
-          <Fade>
+          {/* </Slide> */}
+          {/* <Fade> */}
           <div className={styles.textSocial}>
           <h1> Serviços para a sua empresa 
             <span>obter resultados</span>
             </h1>
           </div>
-          </Fade>
+          {/* </Fade> */}
         </section>
       </main>
     </div>
