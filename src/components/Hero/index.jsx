@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './hero.module.scss';
 import { Button } from '../Button';
 import 'animate.css';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -13,20 +14,17 @@ export function Hero() {
           className="TextForm animate__animated animate__fadeInUpBig"
         >
           <h1>
-            O 
-            nosso negócio é vender <span>o seu</span>
+            O nosso negócio é vender <span>o seu</span>
           </h1>
           <p>
             Nós analisamos o seu negócio e criamos estratégias personalizadas de
             <strong> marketing digital.</strong>
           </p>
 
-          <Button
-            href="/"
-            title="Formulário gratuito"
-          ></Button>
+          <Link href="/formulario">
+            <Button title="Formulário gratuito"></Button>
+          </Link>
         </div>
-
       </div>
     </div>
   );
