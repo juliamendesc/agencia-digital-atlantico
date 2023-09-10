@@ -4,15 +4,18 @@ import React from 'react';
 import { Accordion, AccordionItem } from '@nextui-org/react';
 import  Styles  from './faq.module.scss';
 
+
 export function Faq() {
   return (
     <div className={Styles.container}>
-        <h3 id='faq'>FAQ</h3>
+        <h3 id='faq'><span>FAQ</span></h3>
         <h1>Perguntas Frequentes</h1>
     <Accordion 
     variant="splitted"
-    className={Styles.accordion}>
+    className={Styles.accordion}
+    >
       <AccordionItem 
+      
       className={Styles.accordionItem}
         key="1"
         aria-label="O que é publicidade online ou tráfego pago ?"
@@ -32,49 +35,18 @@ export function Faq() {
       <AccordionItem
         key="2"
         aria-label="Accordion 2"
-        title="Que tipos de formas existem, de publicidade online ou tráfego pago ?"
+        className={Styles.accordionItem}
+        title="É possível ter consultoria em vez de contratos de gestão de marketing?"
       >
         <p>
-          Anúncios de Pesquisa: São os anúncios exibidos nos mecanismos de
-          busca, como o Google, quando os usuários realizam uma pesquisa
-          relacionada a determinadas palavras-chave. Esses anúncios são exibidos
-          no topo ou na parte inferior da página de resultados de pesquisa e
-          geralmente têm um formato textual.
-        </p>
-
-        <p>
-          Anúncios de Display: São anúncios visuais exibidos em sites, blogs,
-          aplicativos móveis e em redes de anúncios. Eles podem ter formatos de
-          imagem, gráficos, animações ou até mesmo vídeos. Os anunciantes podem
-          segmentar o público-alvo com base em características demográficas,
-          interesses ou comportamentos de navegação.
-        </p>
-
-        <p>
-          Anúncios em Redes Sociais: São anúncios exibidos em plataformas de
-          mídia social, como Facebook, Instagram, Twitter, LinkedIn e outras.
-          Esses anúncios podem incluir imagens, vídeos ou carrosséis e podem ser
-          segmentados com base em dados demográficos, interesses, comportamentos
-          e conexões sociais dos usuários.
-        </p>
-
-        <p>
-          Anúncios em Vídeo: São anúncios em formato de vídeo exibidos em
-          plataformas como o YouTube e outras redes de vídeo. Os anúncios podem
-          ser exibidos antes, durante ou após vídeos selecionados e podem ser
-          segmentados com base em interesses, idade, localização e outros dados
-          demográficos.
-        </p>
-
-        <p>
-          Anúncios de Remarketing: São anúncios exibidos para usuários que já
-          visitaram um website específico. Esses anúncios são direcionados aos
-          usuários que demonstraram interesse anteriormente, com o objetivo de
-          reconectar, engajar e converter esses visitantes em clientes.
+        Sim, é possível. Entre em contato conosco.
         </p>
       </AccordionItem>
 
+      
+
       <AccordionItem
+      className={Styles.accordionItem}
         key="3"
         aria-label="Accordion 3"
         title="O que são métricas e para que servem ?"
@@ -94,6 +66,88 @@ export function Faq() {
       <AccordionItem
         key="4"
         aria-label="Accordion 4"
+        className={Styles.accordionItem}
+        title="Qual é o tempo mínimo para podermos ver resultados ?"
+      >
+        <p>
+        Em 3 meses, já será possível ver alguns resultados.
+        </p>
+      </AccordionItem>
+
+      
+      <AccordionItem
+        key="5"
+        className={Styles.accordionItem}
+        aria-label="Accordion 5"
+        title="Devo anunciar através do Facebook/Instagram Ads ou do Google Ads ?"
+      >
+        <p>
+          Dependendo do objetivo e do tipo de negócio, é possível anunciar em
+          ambas, porém têm objetivos diferentes e benefícios diferentes. Essa
+          questão é algo analisado e estudado pela nossa agência quando
+          assumimos o controlo da gestão de marketing do seu negócio.
+        </p>
+      </AccordionItem>
+
+      <AccordionItem
+        key="6"
+        aria-label="Accordion 6"
+        className={Styles.accordionItem}
+        title="As plataformas de publicidade existentes, funcionam mesmo ?"
+      >
+        <p>
+          Costumamos dizer que se não funcionasse, nós (Agência Digital
+          Atlântico) não existiríamos. Assim como milhares de negócios e
+          empresas que utilizam com sucesso, diariamente esta ferramenta muito
+          poderosa.{' '}
+        </p>
+      </AccordionItem>
+
+      <AccordionItem
+        key="7"
+        aria-label="Accordion 7"
+        className={Styles.accordionItem}
+        title="É possível anunciar o meu negócio sozinho/a ?"
+      >
+        <p>
+          Claro que sim, é sempre possível. Será sempre necessário várias horas
+          de estudo e compreensão do que queremos fazer ou ferramentas que
+          queremos usar, mas com dedicação tudo é possível. Contudo é importante
+          não esquecer que a nossa empresa existe por termos profissionais
+          qualificados com conhecimento e ferramentas que nos permitem executar
+          a gestão de anúncios de forma extremamente profissional, assim como
+          análise dos mesmos. Resumidamente tudo depende do que queremos,
+          podemos realizar ações de marketing mais simples ou mais complexas,
+          mais amadoras ou mais profissionais, etc.
+        </p>
+      </AccordionItem>
+
+      <AccordionItem
+        key="8"
+        className={Styles.accordionItem}
+        aria-label="Accordion 8"
+        title="Qual valor mínimo de investimento??"
+      >
+        <p>
+          O valor mínimo de investimento é de 6 Euros, 20 Reais, 7 dólares, por
+          dia
+        </p>
+      </AccordionItem>
+      <AccordionItem
+        key="9"
+        className={Styles.accordionItem}
+        aria-label="Accordion 9"
+        title="Quais são os períodos de contrato possíveis com a agência ?"
+      >
+        <p>
+        Podemos acordar contratos de 3, 6 ou 12 meses.
+        </p>
+      </AccordionItem>
+
+      <AccordionItem
+        key="10"
+        className={Styles.accordionItem}
+        aria-label="Accordion 10"
         title="Quantas métricas existem e quais ?"
       >
         <p>Algumas métricas comuns de tráfego pago:</p>
@@ -137,86 +191,50 @@ export function Faq() {
           recursos investidos.
         </p>
       </AccordionItem>
-      <AccordionItem
-        key="5"
-        aria-label="Accordion 5"
-        title="Devo anunciar através do Facebook/Instagram Ads ou do Google Ads ?"
-      >
-        <p>
-          Dependendo do objetivo e do tipo de negócio, é possível anunciar em
-          ambas, porém têm objetivos diferentes e benefícios diferentes. Essa
-          questão é algo analisado e estudado pela nossa agência quando
-          assumimos o controlo da gestão de marketing do seu negócio.
-        </p>
-      </AccordionItem>
-
-      <AccordionItem
-        key="6"
-        aria-label="Accordion 6"
-        title="As plataformas de publicidade existentes, funcionam mesmo ?"
-      >
-        <p>
-          Costumamos dizer que se não funcionasse, nós (Agência Digital
-          Atlântico) não existiríamos. Assim como milhares de negócios e
-          empresas que utilizam com sucesso, diariamente esta ferramenta muito
-          poderosa.{' '}
-        </p>
-      </AccordionItem>
-
-      <AccordionItem
-        key="7"
-        aria-label="Accordion 7"
-        title="É possível anunciar o meu negócio sozinho/a ?"
-      >
-        <p>
-          Claro que sim, é sempre possível. Será sempre necessário várias horas
-          de estudo e compreensão do que queremos fazer ou ferramentas que
-          queremos usar, mas com dedicação tudo é possível. Contudo é importante
-          não esquecer que a nossa empresa existe por termos profissionais
-          qualificados com conhecimento e ferramentas que nos permitem executar
-          a gestão de anúncios de forma extremamente profissional, assim como
-          análise dos mesmos. Resumidamente tudo depende do que queremos,
-          podemos realizar ações de marketing mais simples ou mais complexas,
-          mais amadoras ou mais profissionais, etc.
-        </p>
-      </AccordionItem>
-
-      <AccordionItem
-        key="8"
-        aria-label="Accordion 8"
-        title="Qual valor mínimo de investimento??"
-      >
-        <p>
-          O valor mínimo de investimento é de 6 Euros, 20 Reais, 7 dólares, por
-          dia
-        </p>
-      </AccordionItem>
-      <AccordionItem
-        key="9"
-        aria-label="Accordion 9"
-        title="Quais são os períodos de contrato possíveis com a agência ?"
-      >
-        <p>
-        Podemos acordar contratos de 3, 6 ou 12 meses.
-        </p>
-      </AccordionItem>
-      <AccordionItem
-        key="10"
-        aria-label="Accordion 10"
-        title="Qual é o tempo mínimo para podermos ver resultados ?"
-      >
-        <p>
-        Em 3 meses, já será possível ver alguns resultados.
-        </p>
-      </AccordionItem>
-
+      
       <AccordionItem
         key="11"
+        className={Styles.accordionItem}
         aria-label="Accordion 11"
-        title="É possível ter consultoria em vez de contratos de gestão de marketing?"
+        title="Que tipos de formas existem, de publicidade online ou tráfego pago ?"
       >
         <p>
-        Sim, é possível. Entre em contato conosco.
+          Anúncios de Pesquisa: São os anúncios exibidos nos mecanismos de
+          busca, como o Google, quando os usuários realizam uma pesquisa
+          relacionada a determinadas palavras-chave. Esses anúncios são exibidos
+          no topo ou na parte inferior da página de resultados de pesquisa e
+          geralmente têm um formato textual.
+        </p>
+
+        <p>
+          Anúncios de Display: São anúncios visuais exibidos em sites, blogs,
+          aplicativos móveis e em redes de anúncios. Eles podem ter formatos de
+          imagem, gráficos, animações ou até mesmo vídeos. Os anunciantes podem
+          segmentar o público-alvo com base em características demográficas,
+          interesses ou comportamentos de navegação.
+        </p>
+
+        <p>
+          Anúncios em Redes Sociais: São anúncios exibidos em plataformas de
+          mídia social, como Facebook, Instagram, Twitter, LinkedIn e outras.
+          Esses anúncios podem incluir imagens, vídeos ou carrosséis e podem ser
+          segmentados com base em dados demográficos, interesses, comportamentos
+          e conexões sociais dos usuários.
+        </p>
+
+        <p>
+          Anúncios em Vídeo: São anúncios em formato de vídeo exibidos em
+          plataformas como o YouTube e outras redes de vídeo. Os anúncios podem
+          ser exibidos antes, durante ou após vídeos selecionados e podem ser
+          segmentados com base em interesses, idade, localização e outros dados
+          demográficos.
+        </p>
+
+        <p>
+          Anúncios de Remarketing: São anúncios exibidos para usuários que já
+          visitaram um website específico. Esses anúncios são direcionados aos
+          usuários que demonstraram interesse anteriormente, com o objetivo de
+          reconectar, engajar e converter esses visitantes em clientes.
         </p>
       </AccordionItem>
     </Accordion>
