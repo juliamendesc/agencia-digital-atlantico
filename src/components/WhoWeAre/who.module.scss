@@ -1,6 +1,7 @@
 .container {
 
     h3 {
+        margin-top: 10rem;
         font-size: 2rem;
     }
 
@@ -9,22 +10,19 @@
     }
 
     p {
-        font-size: 2rem;
+        font-size: 1.75rem;
         letter-spacing: 0.3rem;
+        width: 50%;
     }
     
     span {
-        color:#2ce6e8 ;
+        color:var(--color-primary);
+        font-weight: bold;
     }
 }
 
 .logoAtla{
     display: none;  
-}
-
-.lineBreak p{
-    display: block;
-    margin-top: 2rem; /* Adicione espaço entre as linhas */
 }
 
 .line {
@@ -64,37 +62,49 @@
     color: white;
 }
 
+.container2 {
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
 
 
 @media (max-width: 768px) {
 .logoAtla {
     display: block;
+    margin-bottom: 2rem;
 
 }
 .container {
+    
     text-align: center;
-
-    h1 {
-        font-size: 3rem;
-      }
     
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
       p {
-      font-size: 2rem;
-      margin-bottom: 4rem;
-      letter-spacing: 0.3rem;
+      font-size: 1.25rem;
+      margin: 0;
+      margin-bottom: 0.5rem;
       font-weight: 500;
+      width: 100%;
     }
 }
 
-.container2 {
-    h2 {
-        font-size: 2rem;
-    }
-}
+
 
 .logo {
     display: grid;
@@ -110,5 +120,6 @@
 .logo a {
     margin-bottom: 2rem;
 }
+
 
 }

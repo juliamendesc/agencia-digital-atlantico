@@ -20,7 +20,8 @@ export function Section() {
             {/* <Fade delay={1e2} cascade damping={1e-1}> */}
               <p>
                 Diariamente coletamos dados indicadores, que nos permitem
-                entender os nossos próximos passos, sendo assim possível uma otimização contínua de resultados.</p>
+                entender os nossos próximos passos, sendo assim possível uma otimização contínua de resultados.
+                </p>
 
               <p>
                 Realização de análises e pesquisas para compreendermos o
@@ -43,9 +44,10 @@ export function Section() {
               </p>
 
               <p>
-                Acompanhamento das tendências do mercado, as melhores práticas e
-                as atualizações algorítmicas das plataformas de anúncios. Vamos
-                investir seu dinheiro em ações de marketing e validar
+              Acompanhamento das tendências do mercado, as melhores práticas
+               e as atualizações algorítmicas das 
+              plataformas de anúncios.
+
               </p>
             {/* </Fade> */}
           </div>
@@ -58,22 +60,22 @@ export function Section() {
 
         <section className={styles.parallax2}>
           {/* <Slide delay={1e1} cascade> */}
-            <div className={styles.textParallax}>
-              <p>
+          <div className={styles.textGoals}>
+              <h2>
                 <span>
                   Estamos preparados para cumprir com nosso único objetivo:
                 </span>
-                </p>
+                </h2>
 
-                <p>
+                <h2>
                 Ajudar o seu negócio e faturamento a crescer de forma
                 exponencial através da internet, com o foco em alcançar novas
                 soluções estratégicas e eficazes para o seu negócio.
-                </p>
+                </h2>
             </div>
           {/* </Slide> */}
           {/* <Fade> */}
-          <div className={styles.textSocial}>
+           <div className={styles.textSocial}>
           <h1> Serviços para a sua empresa 
             <span>obter resultados</span>
             </h1>

@@ -9,105 +9,59 @@ import Google from '../../assets/google.png';
 export function CardSocial() {
     return(
     <div className={Styles.container}>
+        <section className={Styles.cardsSocial}>
+            <div className={Styles.cardFace}>
+            <div className={Styles.row}>
         <div className={Styles.card}>
-            <div className={`${Styles.face} ${Styles.face1}`}>
-                <div className={Styles.content}>
-                    <div className={Styles.icon}>
-                        <Image src={Facebook}
-                        width={70}
-                        height={70}
-                        className={`${Styles.fa} ${Styles.i}`}
-                        alt="Facebook Icon"/>
-                    </div>
-                </div>
-            </div>
-            <div className={`${Styles.face} ${Styles.face2}`}>
-                <div className={Styles.content}>
-                    <h3>
-                    Ao anunciar no Facebook,
+            <h1>Facebook</h1>
+            <p>Ao anunciar no Facebook,
                     pode atrair novos clientes,
                     aumentar o reconhecimento da marca,
-                    realizar vendas, entre outras ações.
-                    </h3>
-                </div>
-            </div>
-        </div>
-        <div className={Styles.card}>
-            <div className={`${Styles.face} ${Styles.face1}`}>
-                <div className={Styles.content}>
-                    <div className={Styles.icon}>
-                        <Image src={Instagram} 
-                        width={70}
-                        height={70}
-                        className={`${Styles.fa} ${Styles.i}`}
-                        alt="Instagram Icon"/>
-                    </div>
-                </div>
-            </div>
-            <div className={`${Styles.face} ${Styles.face2}`}>
-                <div className={Styles.content}>
-                    <h3>
-                    Ao anunciar no Instagram,
-                    pode atrair novos clientes,
-                    aumentar o reconhecimento da marca,
-                    realizar vendas, entre outras ações.
-
-                    </h3>
-                    
-                </div>
-            </div>
-        </div>
-        <div className={Styles.card}>
-            <div className={`${Styles.face} ${Styles.face1}`}>
-                <div className={Styles.content}>
-                    <div className={Styles.icon}>
-                        <Image src={Youtube} 
-                        width={70}
-                        height={70}
-                        className={`${Styles.fa} ${Styles.i}`}
-                        alt="Youtube Icon"
-                        />
-                    </div>
-                </div>
-            </div>
-            <div className={`${Styles.face} ${Styles.face2}`}>
-                <div className={Styles.content}>
-                    <h3>
-                    Os anúncios do YouTube permitem a seleção
-                    de pessoas por interesse, localidade, 
-                    palavra-chave ou por conteúdo.
-                    </h3>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div className={Styles.card}>
-            <div className={`${Styles.face} ${Styles.face1}`}>
-                <div className={Styles.content}>
-                    <div className={Styles.icon}>
-                        <Image src={Google}
-                        width={70}
-                        height={70}
-                        className={`${Styles.fa} ${Styles.i}`}
-                        alt="Google Icon" />
-                    </div>
-                </div>
-            </div>
-            <div className={`${Styles.face} ${Styles.face2}`}>
-                <div className={Styles.content}>
-                    <h4>
-                    O Google é o maior navegador do mundo,
-                    com 98% do tráfego de pesquisas. 
-                    Anunciar através do Google é uma ferramenta
-                    ou estratégia usada para qualquer negócio, 
-                    porém para alguns tipos de negócio é fundamental.
-                    </h4>
-                </div>
-            </div>
+                    realizar vendas, entre outras ações.</p>
         </div>
     </div>
-
-
+            </div>
+        
+        <div className={Styles.cardInsta}>
+        <div className={Styles.row}>
+        <div className={Styles.card}>
+            <h1>Instagram</h1>
+            <p>Ao anunciar no Instagram,
+                pode atrair novos clientes,
+                aumentar o reconhecimento da marca,
+                realizar vendas, entre outras ações.
+                </p>
+        </div>
+         </div>
+        </div>
+    
+    <div className={Styles.cardYoutube}>
+    <div className={Styles.row}>
+        <div className={Styles.card}>
+            <h1>Youtube</h1>
+            <p>Os anúncios do YouTube permitem a seleção
+            de pessoas por interesse, localidade, 
+            palavra-chave ou por conteúdo. 
+            </p>
+        </div>
+    </div>
+    </div>
+    
+        <div className={Styles.cardGoogle}>
+        <div className={Styles.row}>
+        <div className={Styles.card}>
+            <h1>Google</h1>
+            <p>O Google é o maior navegador do mundo,
+                com 98% do tráfego de pesquisas. 
+                Anunciar através do Google é uma ferramenta
+                ou estratégia usada para qualquer negócio, 
+                porém para alguns tipos de negócio é fundamental.
+                </p>
+        </div>
+    </div>
+        </div>
+    
+    </section>
+    </div>
 ); 
 }

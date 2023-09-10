@@ -6,6 +6,7 @@ import { CardSocial } from '@/components/CardSocial';
 import { FormContact } from '@/components/Form';
 import { Benefits } from '@/components/Benefits';
 import { Who } from '@/components/WhoWeAre';
+import { Faq }  from '@/components/Faq';
 export default function Main() {
   return (
     <div>
@@ -15,7 +16,8 @@ export default function Main() {
       <CardSocial />
       <Benefits />
       <Who />
-{/*       <FormContact />
- */}    </div>
+      <Faq />
+      {/*       <FormContact />*/}{' '}
+    </div>
   );
 }

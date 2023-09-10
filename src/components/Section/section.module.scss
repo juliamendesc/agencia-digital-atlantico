@@ -1,44 +1,50 @@
 .wrapper {
   height: fit-content;
-
   h1,
-  h2,
   h3 {
-    font-weight: 900;
+    font-weight: 700;
   }
 }
 
 .main {
-  // width: 80vw;
+ 
   margin: 0 auto;
   flex-wrap: wrap;
 }
-
-
 
 .parallax1,
 .parallax2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .parallax1,
 .parallax2 {
-  h3 {
-    font-size: 2rem;
-    color: #2ce6e8;
-  }
+  margin-left: 1rem;
 
   h1 {
-    font-size: 6rem;
+    font-size: 4rem;
+    margin: 0;
   }
 
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    color: #2ce6e8;
+    margin-top: 5rem;
+  }
+
+
   p {
-    width: 100%;
-    margin: 0rem;
-    font-size: 3rem;
+
+    text-align: initial;
+    width: 50%;
+    margin-left: 1rem;
+    font-size: 1.75rem;
     letter-spacing: 0.3rem;
   }
   span {
@@ -46,13 +52,31 @@
   }
 }
 
+.parallax2 {
+  margin-top: 5rem;
+}
+
+.textGoals {
+  span {
+    font-size: 2rem;
+  }
+
+  p, h2{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+}
+
 .textSocial h1 {
-  font-size: 3rem;
-  font-weight: 900;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 5rem;
 }
 
 .textSocial span {
-  display: block;
+  margin-left: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -73,21 +97,23 @@
     h1 {
       font-size: 2.75rem;
     }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
 
     p {
-      margin-bottom: 2rem;
+      text-align: center;
+      width: 100%;
       font-size: 1.5rem;
       letter-spacing: 0.3rem;
     }
   }
 
   .textSocial h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
+    margin-bottom: 0;
   }
 
-  .textSocial span {
-    display: block;
-    text-align: center;
-  }
 }

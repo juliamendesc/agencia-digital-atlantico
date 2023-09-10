@@ -20,35 +20,38 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-  <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
+      <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
+        <div className={styles.logoContainer}>
+          <Image src={Logo} alt="logo atlântico" width={75} height={75} />
+          <div className={styles.textLogo}>
+            <h1>
+              Agência
+            </h1>
+              <h1>Digital Atlântico</h1>
+          </div>
+        </div>
 
-    <div className={styles.logoContainer}>
-      <Image src={Logo} alt="logo atlântico"  width={75} />
-    </div>
-
-        <button
-          className={`${styles.hamburger} `}
-          onClick={toggleNav}
-        > 
-        </button>
+        <button className={`${styles.hamburger} `} onClick={toggleNav}></button>
 
         <ul className={styles.navList}>
           <li>
-            <Link href="#home"
-             to="home" 
-             smooth={true} 
-             duration={700}
-            onClick={handleLinkClick}
-              >
+            <Link
+              href="#home"
+              to="home"
+              smooth={true}
+              duration={700}
+              onClick={handleLinkClick}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link href="#servicos" 
-            to="servicos" 
-            smooth={true} 
-            duration={800}
-            onClick={handleLinkClick}
+            <Link
+              href="#servicos"
+              to="servicos"
+              smooth={true}
+              duration={800}
+              onClick={handleLinkClick}
             >
               Serviços
             </Link>
@@ -65,33 +68,32 @@ export function Header() {
             </Link>
           </li>
           <li>
-            <Link 
-            href="#faq" 
-            to="faq"
-            smooth={true}
-            duration={700}
-            onClick={handleLinkClick}
+            <Link
+              href="#quemsomos"
+              to="quemsomos"
+              smooth={true}
+              duration={700}
+              onClick={handleLinkClick}
             >
-              FAQ
-            </Link>
-          </li>
-          <li>
-            <Link 
-            href="#quemsomos" 
-            to="quemsomos"
-            smooth={true} 
-            duration={700}
-            onClick={handleLinkClick}>
               Quem somos
             </Link>
           </li>
+            <Link
+              href="#faq"
+              to="faq"
+              smooth={true}
+              duration={700}
+              onClick={handleLinkClick}
+            >
+              FAQ
+            </Link>
           <li>
-            <Link 
-            href="#atendimento" 
-            to="atendimento"
-            smooth={true} 
-            duration={700}
-            onClick={handleLinkClick}
+            <Link
+              href="#atendimento"
+              to="atendimento"
+              smooth={true}
+              duration={700}
+              onClick={handleLinkClick}
             >
               Atendimento
             </Link>
