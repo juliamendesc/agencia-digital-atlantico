@@ -46,6 +46,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-right: 1rem;
   align-items: center;
   gap: 1.2rem;
   list-style: none;
@@ -53,21 +54,6 @@
   a {
     font-size: 1.75rem;
      color: #ffff;
-
-    &::after {
-      content: ' ';
-      width: 0%;
-      height: 0.4rem;
-      background-color:var(--color-primary);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      transition: 0.7s ease-in-out;
-    }
-
-    &:hover::after {
-      width: 100%;
-    }
   }
 }
 
@@ -124,14 +110,16 @@
   }
 
   .nav {
-    margin: 0 1rem;
+      margin: 0 1rem;
   }
 
   .navList {
     position: fixed;
     margin-top: 0;
+    margin-left: -3vi;
     height: 100%;
     top: 0;
+    
     left: 3%;
     
     width: 400px;
@@ -141,7 +129,7 @@
       rgb(44, 229, 232) 100%
     );
 
-    clip-path: circle(100px at 90% -15%);
+    clip-path: circle(100px at 90% -20%);
     transition: 1s ease-out;
 
     flex-direction: column;
@@ -192,7 +180,7 @@
   .nav.active .hamburger {
     position: fixed;
     top: 26px;
-    right: 16px;
+    right: 15px;
     border-top-color: transparent;
   }
 

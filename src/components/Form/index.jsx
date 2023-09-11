@@ -17,7 +17,7 @@ export function FormContact() {
         atendimento, entrará em contato para ajudar nas suas necessidades.
       </p>
       </div>
-      
+      <div className={Styles.box1}>
       <div className={Styles.loginBox}>
         <h2>Formulário de Contato</h2>
         <form>
@@ -49,6 +49,7 @@ export function FormContact() {
             Solicitar contato
           </a>
         </form>
+      </div>
       </div>
 
 

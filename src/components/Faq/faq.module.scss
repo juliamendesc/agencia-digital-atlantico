@@ -23,15 +23,15 @@
 
 .accordion {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-gap: 10px; 
+    grid-template-columns: repeat(2, 1fr); 
+    // grid-gap: 10px; 
 
+    button{
 
-    button {
-        width: 200px;
-        height: 150px;
-        background: #018791;
-        color: white;
+        width: 400px;
+        height: 80px;
+        background: white;
+        color: black;
         border-radius: 10px;
     }
 
@@ -40,21 +40,22 @@
         width: 100%;
     }
 
-    @media (max-width: 768px) {
+}
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Definir 5 colunas */
-    grid-gap: 10px; /* Espaço entre os itens */
+@media (max-width: 768px) {
+    .accordion {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    }
-
+    
     button {
-        width: 150px;
-        height: 120px;
-        background: #05565b;
-        color: white;
+        width: 300px;
+        height: 60px;
+        background: white;
+        color: black;
         border-radius: 10px;
         
     }
+}
 }

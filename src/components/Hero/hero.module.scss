@@ -3,29 +3,26 @@
   width: 100%;
   height: fit-content;
   @media (max-width: 768px) {
-      margin: 0 1rem;
-      }
+    text-align: center;
+        }
 }
 
 .main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 
 }
 
 
 #TextForm {
+  margin-left: 2rem;
   width: 50%;
   flex-wrap: wrap;
-  margin-left: 1rem;
-
-
   h1 {
     font-size: 9rem;
     font-family: Arial, Helvetica, sans-serif;
-  //  text-transform: capitalize;
+   text-transform: capitalize;
 
     span {
       color: #2ce6e8;
@@ -33,7 +30,7 @@
   }
 
   p {
-    font-size: 2rem;
+    font-size: 1.75rem;
     letter-spacing: 0.2rem;
     font-family: 'Poppins', sans-serif;
     color: white;
@@ -43,7 +40,7 @@
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 100vw;
+    height: 100%;
 
     h1 {
       font-size: 5rem;
