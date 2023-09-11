@@ -15,10 +15,6 @@
     font-family: var(--font-primary);
     }
 
-    // span {
-    //     color: var(--color-primary);
-    // }
-
     @media (max-width: 768px) {
     
    }
@@ -27,11 +23,10 @@
 
 .accordion {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Definir 5 colunas */
-    grid-gap: 20px; /* Espaço entre os itens */
-    justify-content: center;
-    align-items: center;
-    
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 10px; 
+
+
     button {
         width: 200px;
         height: 150px;
@@ -57,13 +52,9 @@
     button {
         width: 150px;
         height: 120px;
-        background: #018791;
+        background: #05565b;
         color: white;
         border-radius: 10px;
         
     }
-}
-
-.accordionItem {
-
 }

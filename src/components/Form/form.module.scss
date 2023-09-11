@@ -1,6 +1,6 @@
 .container {
+  background: linear-gradient(#215c72, #243b55);
   margin-top: 10rem;
-  margin-left: 2rem;
   h3 {
     color: var(--color-primary);
     font-size: 1.75rem;
@@ -46,15 +46,12 @@
   @media screen and (max-width: 767px) {
     display: block;
     margin-top: 5rem;
-    left: 5%;
+    left: 6%;
     width: 300px;
     padding: 20px;
   }
 }
 
-.box2 {
-
-}
 
 .loginBox h2 {
   margin: 0 0 30px;

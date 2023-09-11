@@ -7,6 +7,7 @@ import { FormContact } from '@/components/Form';
 import { Benefits } from '@/components/Benefits';
 import { Who } from '@/components/WhoWeAre';
 import { Faq }  from '@/components/Faq';
+import { Footer } from '@/components/Footer';
 export default function Main() {
   return (
     <div>
@@ -18,6 +19,7 @@ export default function Main() {
       <Who />
       <Faq />
       <FormContact />
+      <Footer />
     </div>
   );
 }

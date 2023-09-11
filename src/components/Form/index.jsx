@@ -7,6 +7,7 @@ export function FormContact() {
 
   return (
     <div id='atendimento' className={Styles.container}>
+      <div className={Styles.textForm}>
       <h3>Atendimento</h3>
       <h1>Entre em contato conosco</h1>
       <p>
@@ -15,12 +16,18 @@ export function FormContact() {
         utilizando as nossas informações de contato. A nossa equipa de
         atendimento, entrará em contato para ajudar nas suas necessidades.
       </p>
+      </div>
+      
       <div className={Styles.loginBox}>
         <h2>Formulário de Contato</h2>
         <form>
           <div className={Styles.userBox}>
-            <input type="text" name="name" required />
+            <input type="text" name="name"  required />
             <label>Nome</label>
+          </div>
+          <div className={Styles.userBox}>
+            <input type="number" name="assunto" placeholder='+351' required />
+            <label>Contato</label>
           </div>
           <div className={Styles.userBox}>
             <input type="email" name="password" required />
@@ -39,15 +46,16 @@ export function FormContact() {
             <span></span>
             <span></span>
             <span></span>
-            Enviar mensagem
+            Solicitar contato
           </a>
         </form>
       </div>
 
-      <div className={Styles.box2}>
+
+      {/* <div className={Styles.box2}>
       <div className={Styles.loginBox}>
-        <h2>Fale conosco</h2>
-        <form>
+      <h2>Fale conosco</h2>
+      <form>
           <div className={Styles.userBox}>
             <input type="text" name="name" required />
             <label>Nome</label>
@@ -69,7 +77,7 @@ export function FormContact() {
           </a>
         </form>
       </div>
-      </div>
+      </div> */}
     </div>
   );
 }
