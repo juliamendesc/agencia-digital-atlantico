@@ -1,0 +1,62 @@
+.container {
+
+    margin-top: 15rem;
+    margin-left: 2rem;
+    h3 {
+        color: var(--color-primary);
+        font-size: 1.75rem;
+    }
+    
+    h1 {
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    }
+
+    @media (max-width: 768px) {
+        margin: 0 2rem 0 2rem;
+    
+   }
+}
+
+
+.accordion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    // grid-gap: 10px; 
+
+    button{
+
+        width: 400px;
+        height: 80px;
+        background: white;
+        color: black;
+        border-radius: 10px;
+    }
+
+    p {
+        font-size: 1.5rem ;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    button {
+        width: 350px;
+        height: 60px;
+        background: white;
+        color: black;
+        border-radius: 10px;
+        
+    }
+}
+}

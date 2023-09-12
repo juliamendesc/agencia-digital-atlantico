@@ -16,7 +16,7 @@ export default function Main() {
       <Benefits />
       <Who />
       <Faq />
-      <FormContact />
+      {/* <FormContact /> */}
       <Footer />
     </div>
   );
