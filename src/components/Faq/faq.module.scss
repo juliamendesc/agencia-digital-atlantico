@@ -16,6 +16,7 @@
     }
 
     @media (max-width: 768px) {
+        margin: 0 2rem 0 2rem;
     
    }
 }
@@ -47,10 +48,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     
     button {
-        width: 300px;
+        width: 350px;
         height: 60px;
         background: white;
         color: black;

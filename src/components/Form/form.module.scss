@@ -30,9 +30,12 @@
       font-size:1.5rem;
       width: 100%;
     }
+    .textForm {
+      margin: 0 2rem 0 2rem;
+    }
+  
   }
 
-  // background: linear-gradient(#141e30, #243b55);
 }
 
 .loginBox {
@@ -52,7 +55,7 @@
 
   @media screen and (max-width: 767px) {
     display: block;
-    margin-top: 5rem;
+    margin:5rem 2rem 0 2rem;
     left: 6%;
     width: 300px;
     padding: 20px;

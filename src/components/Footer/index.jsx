@@ -82,12 +82,7 @@ export function Footer() {
       </div>
 
       <div className={Styles.footerRight}>
-        <p className={Styles.footerCompanyAbout}>
-          <span>About the company</span>
-          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-          euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
-
+       
         <div className={Styles.footerIcons}>
           <a href="#">
             <i class="fa fa-facebook"></i>
