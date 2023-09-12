@@ -13,20 +13,17 @@ export function Hero() {
           className="TextForm animate__animated animate__fadeInUpBig"
         >
           <h1>
-            O 
-            nosso negócio é vender <span>o seu</span>
+            O nosso negócio é vender <span>o seu</span>
           </h1>
           <p>
             Nós analisamos o seu negócio e criamos estratégias personalizadas de
-            <strong> marketing digital.</strong>
+            marketing digital.
           </p>
 
-          <Button
-            href="/"
-            title="Formulário gratuito"
-          ></Button>
+          <div>
+            <Button href="/" title="Formulário gratuito"></Button>
+          </div>
         </div>
-
       </div>
     </div>
   );
