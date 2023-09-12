@@ -18,6 +18,8 @@
     "dotenv": "^16.3.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
+    "fa-icons": "^0.2.0",
+    "framer-motion": "^10.16.4",
     "next": "13.4.10",
     "nodemailer": "^6.9.5",
     "react": "18.2.0",
