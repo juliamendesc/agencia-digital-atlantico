@@ -18,7 +18,7 @@ export function Hero() {
           </h1>
           <p>
             Nós analisamos o seu negócio e criamos estratégias personalizadas de
-            <strong> marketing digital.</strong>
+            marketing digital.
           </p>
 
           <Link href="/formulario">

@@ -1,22 +1,14 @@
 .bn3637 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: 0.7rem 2rem;
-  font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.8rem;
   text-align: center;
-  text-decoration: none;
-  color: black;
   backface-visibility: hidden;
-  border: 0.3rem solid transparent;
+  border: 0.3rem solid white;
   border-radius: 3rem;
   background-image: linear-gradient(to right, #006175 0%, #2ce6e8 100%);
   color: white;
 
-  border-color: white;
-  border: 3px solid;
   transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
 
   &:hover {
