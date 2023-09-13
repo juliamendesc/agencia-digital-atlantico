@@ -10,6 +10,10 @@
   padding-bottom: 1rem;
 }
 
+.navLink.active {
+  color: #ff0000; /* Defina a cor desejada para os links ativos */
+}
+
 .logoContainer {
   display: flex;
   width: 45%;

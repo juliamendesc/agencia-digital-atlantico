@@ -6,9 +6,18 @@ import Image from 'next/image';
 import Logo from '../../assets/logoatla3.png';
 import Button from '../Button';
 import { Link } from 'react-scroll';
+import Scrollspy from 'react-scrollspy';
 
 export function Header() {
   const [navActive, setNavActive] = useState(false);
+
+  const GoToAtendimento = () => {
+    const atendimento = document.getElementById('atendimento');
+
+    if (atendimento) {
+      atendimento.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const toggleNav = () => {
     setNavActive(!navActive);
@@ -24,13 +33,14 @@ export function Header() {
         <div className={styles.logoContainer}>
           <Image src={Logo} alt="logo atlântico" width={75} height={75} />
           <div className={styles.textLogo}>
-            <h1>
-              Agência
-            </h1>
-              <h1>Digital Atlântico</h1>
+            <h1>Agência</h1>
+            <h1>Digital Atlântico</h1>
           </div>
         </div>
-
+        <Scrollspy
+          items={['home', 'servicos', 'beneficios', 'quemsomos', 'faq', 'atendimento']}
+          ClassName={styles.active} // Classe para o link ativo
+        />
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>
 
         <ul className={styles.navList}>
@@ -38,6 +48,7 @@ export function Header() {
             <Link
               href="#home"
               to="home"
+              spy={true}
               smooth={true}
               duration={700}
               onClick={handleLinkClick}
@@ -49,6 +60,7 @@ export function Header() {
             <Link
               href="#servicos"
               to="servicos"
+              className={styles.navLink}
               smooth={true}
               duration={800}
               onClick={handleLinkClick}
@@ -78,15 +90,15 @@ export function Header() {
               Quem somos
             </Link>
           </li>
-            <Link
-              href="#faq"
-              to="faq"
-              smooth={true}
-              duration={700}
-              onClick={handleLinkClick}
-            >
-              FAQ
-            </Link>
+          <Link
+            href="#faq"
+            to="faq"
+            smooth={true}
+            duration={700}
+            onClick={handleLinkClick}
+          >
+            FAQ
+          </Link>
           <li>
             <Link
               href="#atendimento"
@@ -100,7 +112,11 @@ export function Header() {
           </li>
         </ul>
 
-        <Button id={styles.btnHeader} title="Solicitar orçamento" />
+        <Button
+          id={styles.btnHeader}
+          onClick={GoToAtendimento}
+          title="Solicitar orçamento"
+        />
       </nav>
     </header>
   );

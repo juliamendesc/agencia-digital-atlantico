@@ -82,17 +82,6 @@ export function Footer() {
       </div>
 
       <div className={Styles.footerRight}>
-       
-        <div className={Styles.footerIcons}>
-          <a href="#">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a href="#">
-            <i class="fa fa-instagram"></i>
-          </a>
-    
-        
-        </div>
       </div>
     </footer>
   );
