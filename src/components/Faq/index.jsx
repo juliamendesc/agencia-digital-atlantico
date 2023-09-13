@@ -1,8 +1,8 @@
 'use client';
-// import Styles from './faq.module.scss';
 import React from 'react';
 import { Accordion, AccordionItem } from '@nextui-org/react';
 import  Styles  from './faq.module.scss';
+
 
 
 export function Faq() {
