@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Logo from '../../assets/logoatla3.png';
 import Button from '../Button';
 import { Link } from 'react-scroll';
-import Scrollspy from 'react-scrollspy';
 
 export function Header() {
   const [navActive, setNavActive] = useState(false);
@@ -37,10 +36,6 @@ export function Header() {
             <h1>Digital Atlântico</h1>
           </div>
         </div>
-        <Scrollspy
-          items={['home', 'servicos', 'beneficios', 'quemsomos', 'faq', 'atendimento']}
-          ClassName={styles.active} // Classe para o link ativo
-        />
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>
 
         <ul className={styles.navList}>

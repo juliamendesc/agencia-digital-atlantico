@@ -10,10 +10,6 @@
   padding-bottom: 1rem;
 }
 
-.navLink.active {
-  color: #ff0000; /* Defina a cor desejada para os links ativos */
-}
-
 .logoContainer {
   display: flex;
   width: 45%;
@@ -27,11 +23,10 @@
   flex-direction: column;
   margin-left: 2rem;
 
-  h1{
-    margin-bottom:0;
-    margin-top:0;
+  h1 {
+    margin-bottom: 0;
+    margin-top: 0;
   }
-
 }
 
 .nav {
@@ -40,7 +35,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .navList {
@@ -57,7 +51,7 @@
 
   a {
     font-size: 1.75rem;
-     color: #ffff;
+    color: #ffff;
   }
 }
 
@@ -114,7 +108,7 @@
   }
 
   .nav {
-      margin: 0 1rem;
+    margin: 0 1rem;
   }
 
   .navList {
