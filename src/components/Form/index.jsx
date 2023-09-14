@@ -51,34 +51,6 @@ export function FormContact() {
         </form>
       </div>
       </div>
-
-
-      {/* <div className={Styles.box2}>
-      <div className={Styles.loginBox}>
-      <h2>Fale conosco</h2>
-      <form>
-          <div className={Styles.userBox}>
-            <input type="text" name="name" required />
-            <label>Nome</label>
-          </div>
-          <div className={Styles.userBox}>
-            <input type="number" name="name" required />
-            <label>Contato</label>
-          </div>
-          <div className={Styles.userBox}>
-            <input type="email" name="password" required />
-            <label>Email</label>
-          </div>
-          <a href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Solicitar  Contato
-          </a>
-        </form>
-      </div>
-      </div> */}
     </div>
   );
 }
