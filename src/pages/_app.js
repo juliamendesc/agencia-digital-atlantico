@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Header />
       <Component {...pageProps} />
-      <Analytics />
+      <Analytics mode={'production'} />
     </>
   );
 }
