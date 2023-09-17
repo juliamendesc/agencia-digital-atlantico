@@ -9,13 +9,13 @@ export const accordionData = [
   {
     key: '2',
     ariaLabel:
-      'Que tipos de formas existem, de publicidade online ou tráfego pago ?',
+      'Que tipos de formas existem, de publicidade online ou tráfego pago?',
     title:
-      'Que tipos de formas existem, de publicidade online ou tráfego pago ?',
+      'Que tipos de formas existem, de publicidade online ou tráfego pago?',
     content: (
       <>
         <p>
-          <strong>Anúncios de Pesquisa:</strong>
+          <strong>Anúncios de Pesquisa: </strong>
           São os anúncios exibidos nos mecanismos de busca, como o Google,
           quando os usuários realizam uma pesquisa relacionada a determinadas
           palavras-chave. Esses anúncios são exibidos no topo ou na parte
@@ -24,7 +24,7 @@ export const accordionData = [
         </p>
 
         <p>
-          <strong>Anúncios de Display:</strong>
+          <strong>Anúncios de Display: </strong>
           São anúncios visuais exibidos em sites, blogs, aplicativos móveis e em
           redes de anúncios. Eles podem ter formatos de imagem, gráficos,
           animações ou até mesmo vídeos. Os anunciantes podem segmentar o
@@ -33,7 +33,7 @@ export const accordionData = [
         </p>
 
         <p>
-          <strong>Anúncios em Redes Sociais:</strong>
+          <strong>Anúncios em Redes Sociais: </strong>
           São anúncios exibidos em plataformas de mídia social, como Facebook,
           Instagram, Twitter, LinkedIn e outras. Esses anúncios podem incluir
           imagens, vídeos ou carrosséis e podem ser segmentados com base em
@@ -42,7 +42,7 @@ export const accordionData = [
         </p>
 
         <p>
-          <strong>Anúncios em Vídeo:</strong>
+          <strong>Anúncios em Vídeo: </strong>
           São anúncios em formato de vídeo exibidos em plataformas como o
           YouTube e outras redes de vídeo. Os anúncios podem ser exibidos antes,
           durante ou após vídeos selecionados e podem ser segmentados com base
@@ -50,7 +50,7 @@ export const accordionData = [
         </p>
 
         <p>
-          <strong>Anúncios de Remarketing:</strong>
+          <strong>Anúncios de Remarketing: </strong>
           São anúncios exibidos para usuários que já visitaram um website
           específico. Esses anúncios são direcionados aos usuários que
           demonstraram interesse anteriormente, com o objetivo de reconectar,
@@ -68,29 +68,29 @@ export const accordionData = [
   },
   {
     key: '4',
-    ariaLabel: 'Quantas métricas existem e quais ?',
-    title: 'Quantas métricas existem e quais ?',
+    ariaLabel: 'Quantas métricas existem e quais?',
+    title: 'Quantas métricas existem e quais?',
     content: (
       <>
         <p>Algumas métricas comuns de tráfego pago:</p>
         <p>
-          <strong>Impressões:</strong>O número de vezes que um anúncio foi
+          <strong>Impressões: </strong>O número de vezes que um anúncio foi
           exibido para os usuários. Essa métrica indica a visibilidade e alcance
           do anúncio.
         </p>
         <p>
-          <strong>Cliques:</strong>O número de vezes que os usuários clicaram no
-          anúncio para visitar o website ou plataforma anunciada. Esse indicador
-          mostra o engajamento inicial dos usuários.
+          <strong>Cliques: </strong>O número de vezes que os usuários clicaram
+          no anúncio para visitar o website ou plataforma anunciada. Esse
+          indicador mostra o engajamento inicial dos usuários.
         </p>
         <p>
-          <strong>Taxa de Cliques (CTR):</strong>A proporção entre o número de
+          <strong>Taxa de Cliques (CTR): </strong>A proporção entre o número de
           cliques e o número de impressões do anúncio, expressa em porcentagem.
           Essa métrica ajuda a avaliar a atratividade do anúncio e a relevância
           para o público-alvo.
         </p>
         <p>
-          <strong>Taxa de Conversão:</strong>A proporção entre o número de
+          <strong>Taxa de Conversão: </strong>A proporção entre o número de
           conversões e o número de cliques no anúncio. Uma conversão pode ser
           definida de acordo com o objetivo da campanha, como uma venda,
           preenchimento de formulário, assinatura de newsletter, entre outros.
@@ -98,18 +98,20 @@ export const accordionData = [
           desejadas.
         </p>
         <p>
-          <strong>Custo por Clique (CPC):</strong>O custo médio para cada clique
-          recebido no anúncio. Essa métrica ajuda a avaliar o custo-benefício da
-          campanha e a comparar diferentes canais ou anúncios.
+          <strong>Custo por Clique (CPC): </strong>O custo médio para cada
+          clique recebido no anúncio. Essa métrica ajuda a avaliar o
+          custo-benefício da campanha e a comparar diferentes canais ou
+          anúncios.
         </p>
         <p>
-          <strong>Custo por Aquisição (CPA):</strong>O custo médio para adquirir
-          uma conversão. Essa métrica é especialmente relevante para campanhas
-          com foco em vendas ou geração de leads. Ela ajuda a avaliar o retorno
-          sobre o investimento e a eficiência da campanha em gerar resultados.
+          <strong>Custo por Aquisição (CPA): </strong>O custo médio para
+          adquirir uma conversão. Essa métrica é especialmente relevante para
+          campanhas com foco em vendas ou geração de leads. Ela ajuda a avaliar
+          o retorno sobre o investimento e a eficiência da campanha em gerar
+          resultados.
         </p>
         <p>
-          <strong>Retorno sobre o Investimento (ROI):</strong>A relação entre o
+          <strong>Retorno sobre o Investimento (ROI): </strong>A relação entre o
           lucro obtido e o investimento em publicidade. Essa métrica é crucial
           para determinar se a campanha está gerando um retorno positivo ou
           negativo em relação aos recursos investidos.
@@ -120,22 +122,22 @@ export const accordionData = [
   {
     key: '5',
     ariaLabel:
-      'Devo anunciar através do Facebook/Instagram Ads ou do Google Ads ?',
-    title: 'Devo anunciar através do Facebook/Instagram Ads ou do Google Ads ?',
+      'Devo anunciar através do Facebook/Instagram Ads ou do Google Ads?',
+    title: 'Devo anunciar através do Facebook/Instagram Ads ou do Google Ads?',
     content:
       'Dependendo do objetivo e do tipo de negócio, é possível anunciar em ambas, porém têm objetivos diferentes e benefícios diferentes. Essa questão é algo analisado e estudado pela nossa agência quando assumimos o controlo da gestão de marketing do seu negócio.',
   },
   {
     key: '6',
-    ariaLabel: 'As plataformas de publicidade existentes, funcionam mesmo ?',
-    title: 'As plataformas de publicidade existentes, funcionam mesmo ?',
+    ariaLabel: 'As plataformas de publicidade existentes, funcionam mesmo?',
+    title: 'As plataformas de publicidade existentes, funcionam mesmo?',
     content:
       'Costumamos dizer que se não funcionasse, nós (Agência Digital Atlântico) não existiríamos. Assim como milhares de negócios e empresas que utilizam com sucesso, diariamente esta ferramenta muito poderosa.',
   },
   {
     key: '7',
-    ariaLabel: 'É possível anunciar o meu negócio sozinho/a ?',
-    title: 'É possível anunciar o meu negócio sozinho/a ?',
+    ariaLabel: 'É possível anunciar o meu negócio sozinho/a?',
+    title: 'É possível anunciar o meu negócio sozinho/a?',
     content:
       'Claro que sim, é sempre possível. Será sempre necessário várias horas de estudo e compreensão do que queremos fazer ou ferramentas que queremos usar, mas com dedicação tudo é possível. Contudo é importante não esquecer que a nossa empresa existe por termos profissionais qualificados com conhecimento e ferramentas que nos permitem executar a gestão de anúncios de forma extremamente profissional, assim como análise dos mesmos. Resumidamente tudo depende do que queremos, podemos realizar ações de marketing mais simples ou mais complexas, mais amadoras ou mais profissionais, etc.',
   },
@@ -148,14 +150,14 @@ export const accordionData = [
   },
   {
     key: '9',
-    ariaLabel: 'Quais são os períodos de contrato possíveis com a agência ?',
-    title: 'Quais são os períodos de contrato possíveis com a agência ?',
+    ariaLabel: 'Quais são os períodos de contrato possíveis com a agência?',
+    title: 'Quais são os períodos de contrato possíveis com a agência?',
     content: 'Podemos acordar contratos de 3, 6 ou 12 meses.',
   },
   {
     key: '10',
-    ariaLabel: 'Qual é o tempo mínimo para podermos ver resultados ?',
-    title: 'Qual é o tempo mínimo para podermos ver resultados ?',
+    ariaLabel: 'Qual é o tempo mínimo para podermos ver resultados?',
+    title: 'Qual é o tempo mínimo para podermos ver resultados?',
     content: 'Em 3 meses, já será possível ver alguns resultados.',
   },
   {

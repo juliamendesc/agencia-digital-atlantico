@@ -26,6 +26,12 @@
 }
 
 .accordionWrapper {
-  font-size: 3rem;
-  border-radius: 5rem;
+  padding-top: 5rem;
+  width: 70%;
+  margin: 0 auto;
+
+  @media (max-width: 1400px) {
+    width: 100%;
+    padding-top: 2rem;
+  }
 }

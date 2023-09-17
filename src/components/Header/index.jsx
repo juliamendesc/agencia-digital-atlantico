@@ -15,7 +15,7 @@ export function Header() {
 
   const handleLinkClick = (id) => {
     handleScrollClick(id);
-    setNavActive(false); // Fechar a barra lateral quando se clica no Link
+    setNavActive(false);
   };
 
   function handleScrollClick(id) {

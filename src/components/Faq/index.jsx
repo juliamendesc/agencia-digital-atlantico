@@ -6,17 +6,30 @@ import { accordionData } from '../../data/accordionData';
 import { Accordion, AccordionItem } from '@nextui-org/react';
 
 export function Faq() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
+
   return (
     <div className={styles.container}>
       <h2 id="faq">
         <span>Perguntas Frequentes</span>
       </h2>
 
-      {/* {accordionData.map((item) => (
-        <CustomizedAccordions defaultContent={item} />
-      ))} */}
+      <div className={styles.accordionWrapper}>
+        {accordionData.map((item) => (
+          <CustomizedAccordions
+            defaultContent={item}
+            key={item.key}
+            expanded={expanded === item.key}
+            onChange={handleChange(item.key)}
+          />
+        ))}
+      </div>
 
-      <Accordion variant="splitted" className={styles.accordion}>
+      {/* <Accordion variant="splitted" className={styles.accordion}>
         <AccordionItem
           className={styles.accordionItem}
           key="1"
@@ -230,7 +243,7 @@ export function Faq() {
             reconectar, engajar e converter esses visitantes em clientes.
           </p>
         </AccordionItem>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 }
