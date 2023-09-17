@@ -1,52 +1,88 @@
 import styles from './benefits.module.scss';
 import React from 'react';
-// import { Fade, Slide } from 'react-awesome-reveal';
+import Image from 'next/image';
+import checkLogo from '@/assets/checklogo.svg';
+
+const benefitsList = [
+  'Otimização e Maximização do investimento aplicado em publicidade.',
+  'Aumento de tráfego qualificado, com técnicas de direcionamento e segmentação.',
+  'Análise e monitoramento contínuo de resultados.',
+  'Conhecimento especializado em plataformas de anúncios.',
+  'Aumento da visibilidade e reconhecimento da marca.',
+  'Foco nos resultados e metas do seu negócio.',
+];
+
+const beneficiosCheckList = [
+  {
+    description: ' Estratégias exclusivas e personalizadas',
+    alt: 'checkmark',
+    src: checkLogo,
+  },
+  {
+    description: ' Aos nossos processos e métodos',
+    alt: 'checkmark',
+    src: checkLogo,
+  },
+  {
+    description: ' Profissionais especializados e capacitados',
+    alt: 'checkmark',
+    src: checkLogo,
+  },
+  {
+    description: ' Textos e imagens personalizadas',
+    alt: 'checkmark',
+    src: checkLogo,
+  },
+  {
+    description: ' Relatórios personalizados',
+    alt: 'checkmark',
+    src: checkLogo,
+  },
+  {
+    description: ' Relatórios mensais de resultados',
+    alt: 'checkmark',
+    src: checkLogo,
+  },
+];
 
 export function Benefits() {
   return (
-    <div id="beneficios" className={styles.container}>
-      {/* <Slide> */}
-        <h3>Benefícios</h3>
-      {/* </Slide> */}
-
-      {/* <Fade delay={1e1} cascade damping={1e-1}> */}
+    <>
+      <h2 className={styles.benefitsSectionIntro}>Benefícios</h2>
+      <div id="beneficios" className={styles.container}>
         <h1>
           A melhor forma de expandir a sua presença online e alcançar novos
-          clientes, <span>são com anúncios online</span>.
+          clientes, <span>é com anúncios online</span>.
         </h1>
-      {/* </Fade> */}
 
-      {/* <Fade delay={1e3} cascade damping={2e-1}> */}
-        <ul className={styles.benefitsList}>
-          <li>
-            Otimização e Maximização do investimento aplicado em publicidade.
-          </li>
-          <li>
-            Aumento de tráfego qualificado, com técnicas de direcionamento e
-            segmentação.
-          </li>
-          <li>Análise e monitoramento contínuo de resultados.</li>
-          <li>Conhecimento especializado em plataformas de anúncios.</li>
-          <li>Aumento da visibilidade e reconhecimento da marca.</li>
-          <li>Foco nos resultados e metas do seu negócio.</li>
-        </ul>
-      {/* </Fade> */}
-
-      {/* <Slide> */}
         <h1>
-          <span>Você terá acesso</span>
+          <span className={styles.benefitsListHeading}>Benefícios</span> em
+          contratar um gestor especializado em marketing digital :
         </h1>
-      {/* </Slide> */}
-      {/* <Fade delay={1e3} cascade damping={3e-1}> */}
-        <ul className={styles.list2}>
-          <li>Estratégias exclusivas e personalizadas</li>
-          <li>Aos nossos processos e métodos</li>
-          <li>Profissionais especializados e capacitados</li>
-          <li>Textos e imagens personalizadas</li>
-          <li>Relatórios personalizados</li>
-          <li>Relatórios mensais de resultados</li>
-        </ul>
-      {/* </Fade> */}
-    </div>
+        <div className={styles.benefitsList}>
+          {benefitsList.map((benefit, index) => (
+            <li key={index}>{benefit}</li>
+          ))}
+        </div>
+
+        <h1>
+          <span>Você terá acesso:</span>
+        </h1>
+
+        <div className={styles.beneficiosCheckList}>
+          {beneficiosCheckList.map((benefit, index) => (
+            <p key={index}>
+              <Image
+                src={benefit.src}
+                width={30}
+                height={30}
+                alt={benefit.alt}
+              />
+              {benefit.description}
+            </p>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

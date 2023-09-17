@@ -8,7 +8,7 @@ import Link from 'next/link';
 export function Hero() {
   return (
     <div id="home" className={styles.container}>
-      <div className={styles.main}>
+      <div  className={styles.main}>
         <div
           id={styles.TextForm}
           className="TextForm animate__animated animate__fadeInUpBig"

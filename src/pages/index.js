@@ -1,5 +1,5 @@
-import { Hero } from '../components/Hero';
-import { Section } from '../components/Section';
+import { Hero } from '@/components/Hero';
+import { Servicos } from '@/components/Servicos';
 import { CardSocial } from '@/components/CardSocial';
 import { FormContact } from '@/components/Form';
 import { Benefits } from '@/components/Benefits';
@@ -11,7 +11,7 @@ export default function Main() {
   return (
     <div>
       <Hero />
-      <Section />
+      <Servicos />
       <CardSocial />
       <Benefits />
       <Who />

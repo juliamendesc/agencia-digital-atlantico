@@ -10,6 +10,14 @@ import { Link } from 'react-scroll';
 export function Header() {
   const [navActive, setNavActive] = useState(false);
 
+  const GoToAtendimento = () => {
+    const atendimento = document.getElementById('atendimento');
+
+    if (atendimento) {
+      atendimento.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const toggleNav = () => {
     setNavActive(!navActive);
   };
@@ -28,7 +36,6 @@ export function Header() {
             <h1>Digital Atlântico</h1>
           </div>
         </div>
-
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>
 
         <ul className={styles.navList}>
@@ -36,6 +43,7 @@ export function Header() {
             <Link
               href="#home"
               to="home"
+              spy={true}
               smooth={true}
               duration={700}
               onClick={handleLinkClick}
@@ -47,6 +55,7 @@ export function Header() {
             <Link
               href="#servicos"
               to="servicos"
+              className={styles.navLink}
               smooth={true}
               duration={800}
               onClick={handleLinkClick}

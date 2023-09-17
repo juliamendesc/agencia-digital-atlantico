@@ -2,7 +2,6 @@
 import React from "react";
 import Styles from './who.module.scss'
 import Image from 'next/image';
-// import { Fade, Slide } from 'react-awesome-reveal';
 import 'animate.css';
 
 import LightLogo from '../../assets/LightLogo.png';
