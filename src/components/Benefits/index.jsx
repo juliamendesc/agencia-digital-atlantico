@@ -59,7 +59,7 @@ export function Benefits() {
 
         <h1>
           <span className={styles.benefitsListHeading}>Benefícios</span> em
-          contratar um gestor especializado em marketing digital :
+          contratar um gestor especializado em marketing digital:
         </h1>
         <div className={styles.benefitsList}>
           {benefitsList.map((benefit, index) => (

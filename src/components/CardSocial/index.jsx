@@ -5,7 +5,7 @@ export function CardSocial() {
   return (
     <div className={styles.container}>
       <div className={styles.textSocial}>
-        <h1>Serviços para a sua empresa obter resultados</h1>
+        <h1>Serviços para a sua empresa obter resultados:</h1>
       </div>
 
       <section className={styles.cardsSocial}>

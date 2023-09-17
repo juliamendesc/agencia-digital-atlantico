@@ -34,7 +34,7 @@ export function WhoWeAre() {
 
         <p>
           A nossa principal função é maximizar o retorno sobre o investimento
-          feito em publicidade, através de métricas importantes, como taxa de
+          feito em publicidade. Através de métricas importantes, como taxa de
           cliques
           <span> (CTR)</span>, taxa de conversão, custo por aquisição
           <span> (CPA)</span> e retorno sobre o investimento <span>(ROI)</span>.
@@ -43,25 +43,26 @@ export function WhoWeAre() {
         <div className={styles.line}></div>
 
         <h1>
-          <span>+30:</span> mais de 30 empresas já tiveram a nossa ajuda.
+          <span>+30:</span> mais de 30 empresas já tiveram a nossa{' '}
+          <span>ajuda.</span>
         </h1>
         <p>Algumas empresas que já confiam:</p>
 
         <div className={styles.logo}>
           <div>
-            <p>Copportunity</p>
-            <Image src={CopLogo} alt="cop-logo" />
-          </div>
-          <div>
             <p>Lights & bottles</p>
             <Image src={LightLogo} alt="light-logo" />
+          </div>
+          <div>
+            <p>Copportunity</p>
+            <Image src={CopLogo} alt="cop-logo" />
           </div>
           <div>
             <p>Lombok</p>
             <Image src={LobLogo} alt="lob-logo" />
           </div>
           <div>
-            <p>Orange Store</p>
+            <p>OrangeStore</p>
             <Image src={OrangeLogo} alt="orange-logo" />
           </div>
         </div>

@@ -52,7 +52,7 @@ export function Servicos() {
         <div className={styles.textGoals}>
           <h1>
             <span>
-              Estamos preparados para cumprir com nosso único objetivo:
+              Estamos preparados para cumprir com o nosso único objectivo:
             </span>
           </h1>
 
