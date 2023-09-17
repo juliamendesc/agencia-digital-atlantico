@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import styles from './header.module.scss';
 import 'animate.css';
 import Image from 'next/image';
-import Logo from '../../assets/logoatla3.png';
-import Button from '../Button';
+import Logo from '@/assets/logoatla3.png';
 import { Link } from 'react-scroll';
 
 export function Header() {
