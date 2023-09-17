@@ -38,17 +38,18 @@
   p {
     margin: 0;
     margin-bottom: 1em;
-    line-height: 2em;
+    line-height: 1.75em;
     white-space: pre-wrap;
-    text-indent: 3em;
-    font-size: 2rem;
+    text-indent: 1.5em;
+    font-size: 2.5rem;
     letter-spacing: 0.3rem;
 
     @media (max-width: 768px) {
-      font-size: 1.5rem;
+      margin: 0 2rem;
+      font-size: 2rem;
+      line-height: 2.25em;
       letter-spacing: 0.2rem;
-      white-space: normal;
-      text-align: center;
+      white-space: pre-wrap;
     }
   }
 
@@ -110,7 +111,11 @@
   padding: 5rem 0;
 
   h1 {
-    text-align: center;
+    font-size: 4rem;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
   }
 
   p {

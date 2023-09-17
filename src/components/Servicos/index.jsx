@@ -50,11 +50,11 @@ export function Servicos() {
 
       <section>
         <div className={styles.textGoals}>
-          <h2>
+          <h1>
             <span>
               Estamos preparados para cumprir com nosso único objetivo:
             </span>
-          </h2>
+          </h1>
 
           <p>
             Ajudar o seu negócio e faturamento a crescer de forma exponencial
