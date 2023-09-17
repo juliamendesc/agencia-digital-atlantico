@@ -1,7 +1,7 @@
 import React from 'react';
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
-import EmailTemplate from '../../../react-email-starter/emails/email-template.tsx';
+import EmailTemplate from 'react-email-starter/emails/email-template.tsx';
 
 const {
   GMAIL_USER,
