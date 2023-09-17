@@ -26,6 +26,7 @@ const transporter = nodemailer.createTransport({
     expires: 3599,
   },
 });
+
 export default function sendEmail(req, res) {
   const emailHtml = render(
     <EmailTemplate
