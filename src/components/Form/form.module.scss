@@ -35,7 +35,7 @@
     }
     .textForm {
       margin: 0 2rem 0 2rem;
-    }
+    }}
 
   .loginBox {
     position: absolute;
@@ -94,15 +94,6 @@
     color: #fff;
     pointer-events: none;
     transition: .5s;
-  }
-
-
-  .loginBox .userBox input:focus ~ label,
-  .loginBox .userBox input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #03e9f4;
-    font-size: 12px;
   }
 
 
@@ -184,3 +175,4 @@
       bottom: 100%;
     }
   }
+}

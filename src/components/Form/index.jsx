@@ -49,6 +49,6 @@ export function FormContact() {
           </form>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
