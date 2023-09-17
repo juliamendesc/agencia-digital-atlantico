@@ -1,7 +1,7 @@
-import styles from './button.module.scss';
 import React from 'react';
-
-export function Button({ title, loading, ...rest }) {
+import PropTypes from 'prop-types';
+import styles from './button.module.scss';
+export default function Button({ title, loading, ...rest }) {
   return (
     <button className={styles.bn3637} disabled={loading} {...rest}>
       {title}
@@ -9,4 +9,7 @@ export function Button({ title, loading, ...rest }) {
   );
 }
 
-export default Button;
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+  loading: PropTypes.bool,
+};

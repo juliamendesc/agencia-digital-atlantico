@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { styled } from '@mui/system';
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import PropTypes from 'prop-types';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Accordion = styled((props) => (
@@ -71,3 +70,17 @@ export default function CustomizedAccordions({
     </div>
   );
 }
+
+CustomizedAccordions.propTypes = {
+  defaultContent: PropTypes.shape({
+    ariaLabel: PropTypes.string.isRequired,
+    key: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    content: PropTypes.oneOfType([
+      PropTypes.string.isRequired,
+      PropTypes.element.isRequired,
+    ]).isRequired,
+  }).isRequired,
+  expanded: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

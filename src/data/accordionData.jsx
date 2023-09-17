@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './accordionData.module.scss';
 
 export const accordionData = [

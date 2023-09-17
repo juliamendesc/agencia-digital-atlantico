@@ -14,6 +14,7 @@ const logger = winston.createLogger({
     winston.format.json(),
   ),
   transports: [
+    fileRotateTransport,
     new winston.transports.File({
       filename: 'error.log',
       level: 'error',
