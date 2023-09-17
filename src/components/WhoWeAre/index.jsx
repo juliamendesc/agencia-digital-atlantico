@@ -13,7 +13,7 @@ import 'animate.css';
 
 export function WhoWeAre() {
   return (
-    <div id="quemsomos">
+    <div id="quemsomos" className={styles.quemSomosWrapper}>
       <h2 className={styles.heading}>Quem Somos</h2>
 
       <div className={styles.container}>

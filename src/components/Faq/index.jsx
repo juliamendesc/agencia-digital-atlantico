@@ -12,8 +12,8 @@ export function Faq() {
   };
 
   return (
-    <div className={styles.container}>
-      <h2 id="faq">
+    <div id="faq" className={styles.container}>
+      <h2>
         <span>Perguntas Frequentes</span>
       </h2>
 

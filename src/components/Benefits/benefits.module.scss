@@ -1,73 +1,44 @@
-.benefitsSectionIntro {
-  font-size: 3rem;
-  color: #2ce6e8;
-  margin: 0 5rem;
+.benefitsWrapper {
   padding-bottom: 5rem;
+  margin: 0 5rem;
 
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-    padding-bottom: 1rem;
+  h2 {
+    padding-bottom: 5rem;
+
+    @media (max-width: 1000px) {
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    margin: 0 2rem;
   }
 }
 
 .container {
-  margin: 0 5rem;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding-bottom: 5rem;
+  gap: 3rem;
+  text-align: center;
 
   .benefitsListHeading {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
 
-    @media (max-width: 768px) {
-      font-size: 3.25rem;
-    }
-  }
-
-  h1 {
-    font-size: 4rem;
-    text-align: center;
-    font-weight: 700;
-
-    span {
-      color: #2ce6e8;
-    }
-
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       font-size: 3rem;
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1000px) {
+    align-items: flex-start;
     margin: 0 2rem;
   }
 }
 
 .benefitsList {
-  li {
-    font-size: 2.5rem;
-    margin: 0;
-    margin-bottom: 1em;
-    white-space: pre-wrap;
-    letter-spacing: 0.3rem;
-    text-indent: 3em;
-
-    @media (max-width: 1400px) {
-      text-indent: 0;
-    }
-
-    @media (max-width: 800px) {
-      font-size: 2rem;
-      letter-spacing: 0.2rem;
-      text-align: center;
-      text-indent: 0;
-    }
-  }
+  text-align: center;
 }
 
 .beneficiosCheckList {
@@ -79,11 +50,7 @@
   text-wrap: wrap;
 
   p {
-    font-size: 2.5rem;
-    font-weight: 500;
-    letter-spacing: 0.3rem;
     margin-bottom: 1em;
-    white-space: pre-wrap;
   }
 
   @media (max-width: 1400px) {
@@ -91,15 +58,14 @@
     text-indent: 0;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     margin: 0 2rem;
     padding: 0;
     grid-template-columns: 1fr;
     align-items: center;
+    justify-items: center;
 
     p {
-      font-size: 2.25rem;
-      letter-spacing: 0.2rem;
       text-align: center;
       text-indent: 0;
     }

@@ -49,10 +49,10 @@ const beneficiosCheckList = [
 
 export function Benefits() {
   return (
-    <>
+    <div id="beneficios" className={styles.benefitsWrapper}>
       <h2 className={styles.benefitsSectionIntro}>Benefícios</h2>
-      <div id="beneficios" className={styles.container}>
-        <h1>
+      <div className={styles.container}>
+        <h1 className={styles.benefitMainHeading}>
           A melhor forma de expandir a sua presença online e alcançar novos
           clientes <span>é com anúncios online</span>.
         </h1>
@@ -85,6 +85,6 @@ export function Benefits() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -19,8 +19,13 @@ export function Header() {
   };
 
   function handleScrollClick(id) {
+    const headerOffset = '7rem';
     const el = document.getElementById(id);
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
     el?.scrollIntoView({
+      top: offsetPosition,
       behavior: 'smooth',
     });
   }
@@ -31,10 +36,10 @@ export function Header() {
         <div className={styles.logoContainer}>
           <Image src={Logo} alt="logo atlântico" width={75} height={75} />
           <div className={styles.textLogo}>
-            <h1>
+            <h2>
               <span>Agência</span>
               <span>Digital Atlântico</span>
-            </h1>
+            </h2>
           </div>
         </div>
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>

@@ -8,8 +8,8 @@ import 'animate.css';
 
 export function Servicos() {
   return (
-    <div id="servicos" className={styles.wrapper}>
-      <section>
+    <section>
+      <div id="servicos" className={styles.wrapper}>
         <h2>Serviço</h2>
         <h1>Como funciona o serviço</h1>
         <div className={styles.imageWrapper}>
@@ -48,9 +48,7 @@ export function Servicos() {
             <Image src={dataCollectionIcon} alt="Data Collection Icon" />
           </aside>
         </div>
-      </section>
 
-      <section>
         <div className={styles.textGoals}>
           <h1>
             <span>
@@ -64,7 +62,7 @@ export function Servicos() {
             estratégicas e eficazes para o seu negócio.
           </p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

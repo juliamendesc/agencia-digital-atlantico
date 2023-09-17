@@ -6,9 +6,15 @@
   --text-scale-ratio: 0.75;
   --font-primary: 'Poppins', sans-serif;
 
+  --color-white: #fff;
   --color-primary: #2ce6e8;
   --color-seconday: #06fcff;
   --color-tertiary: #4669ff;
+  --color-footer: #666;
+  --color-text-dark: #222;
+
+  --color-header-border: linear-gradient(to bottom, #000000 90%, #2ce6e8 100%);
+  --font-family-footer: 'Open Sans', 'cursive', sans-serif;
   font-size: 62.5%; // 62.5% = 10px
 }
 
@@ -55,4 +61,64 @@ a {
 button:hover,
 a:hover {
   filter: brightness(0.9);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+
+  @media (max-width: 1000px) {
+    font-size: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  color: var(--color-primary);
+
+  @media (max-width: 1000px) {
+    font-size: 2rem;
+  }
+}
+
+span {
+  color: var(--color-primary);
+}
+
+p {
+  line-height: 1.75em;
+  white-space: pre-wrap;
+  text-indent: 1.5em;
+  font-size: 2.25rem;
+  letter-spacing: 0.3rem;
+
+  @media (max-width: 1000px) {
+    font-size: 2rem;
+    line-height: 2.25em;
+    letter-spacing: 0.2rem;
+    white-space: pre-wrap;
+    margin: 0;
+    text-align: justify;
+  }
+}
+
+li {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  white-space: pre-wrap;
+  letter-spacing: 0.3rem;
+  text-indent: 3em;
+
+  @media (max-width: 1400px) {
+    text-indent: 0;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    text-indent: 0;
+  }
 }

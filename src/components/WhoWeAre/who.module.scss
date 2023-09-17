@@ -1,19 +1,23 @@
-.heading {
-  font-size: 3rem;
-  color: #2ce6e8;
-  padding-bottom: 2rem;
+.quemSomosWrapper {
   margin: 0 5rem;
 
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-    margin-right: 0;
-    text-align: center;
+  @media (max-width: 1000px) {
     margin: 0 2rem;
+  }
+}
+
+.heading {
+  padding-bottom: 2rem;
+
+  @media (max-width: 1000px) {
+    margin-right: 0;
+    text-align: start;
   }
 }
 
 .container {
   margin: 0 5rem;
+
   padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
@@ -21,32 +25,15 @@
   align-items: center;
   gap: 2rem;
 
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-
-    @media (max-width: 768px) {
-      font-size: 3rem;
-    }
-  }
-
   p {
-    font-size: 2.5rem;
-    font-weight: 500;
-    letter-spacing: 0.3rem;
-
-    @media (max-width: 800px) {
-      font-size: 2.25rem;
-      letter-spacing: 0.2rem;
+    @media (max-width: 1000px) {
       text-indent: 0;
+      text-align: center;
     }
   }
 
-  span {
-    color: #2ce6e8;
-  }
-
-  @media (max-width: 767px) {
+  @media (max-width: 1000px) {
+    text-align: center;
     margin: 0 2rem;
     padding-bottom: 1rem;
     gap: 1rem;
@@ -57,16 +44,22 @@
   img {
     width: 300px;
     height: 300px;
+    margin: 0 auto;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1000px) {
       width: 250px;
       height: 250px;
+    }
+
+    @media (max-width: 767px) {
+      width: 200px;
+      height: 200px;
     }
   }
 }
 
 .line {
-  margin-top: 3rem;
+  margin: 3rem 0;
   width: 50vw;
   border: 1px solid white;
 }
@@ -84,32 +77,36 @@
   }
 }
 
-.logo div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0 1rem;
-  position: relative;
-  text-decoration: none;
-  color: black;
+.logo {
+  padding-bottom: 5rem;
 
-  p {
-    color: #fff;
-    font-size: 1.75rem;
-  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    text-decoration: none;
+    color: black;
 
-  img {
-    width: 200px;
-    height: 200px;
+    p {
+      color: #fff;
+      font-size: 2rem;
+    }
 
-    @media (max-width: 900px) {
-      width: 100px;
-      height: 100px;
+    img {
+      width: 200px;
+      height: 200px;
+
+      @media (max-width: 1000px) {
+        width: 100px;
+        height: 100px;
+      }
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     margin: 0 2rem;
   }
 }
