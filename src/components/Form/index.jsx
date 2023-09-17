@@ -1,4 +1,3 @@
-'use client';
 import Styles from './form.module.scss';
 import React from 'react';
 
@@ -49,6 +48,6 @@ export function FormContact() {
           </form>
         </div>
       </div>
-      </div>
+    </div>
   );
 }

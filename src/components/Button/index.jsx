@@ -1,4 +1,3 @@
-'use client';
 import styles from './button.module.scss';
 import React from 'react';
 
@@ -10,6 +9,4 @@ export function Button({ title, loading, ...rest }) {
   );
 }
 
-export default Button
-
-
+export default Button;

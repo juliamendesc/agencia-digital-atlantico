@@ -1,5 +1,3 @@
-'use client';
-
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React from 'react';
 import { CodeContainer } from '../../../components/code-container';
