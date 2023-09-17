@@ -27,7 +27,6 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.25.3",
-    "fa-icons": "^0.2.0",
     "framer-motion": "^10.16.4",
     "next": "13.4.10",
     "nodemailer": "^6.9.5",
@@ -36,8 +35,6 @@
     "react-awesome-reveal": "^4.2.5",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.46.1",
-    "react-scroll": "^1.8.9",
-    "react-scrollspy": "^3.4.3",
     "webpack": "^5.88.2",
     "winston": "^3.10.0",
     "winston-daily-rotate-file": "^4.7.1"

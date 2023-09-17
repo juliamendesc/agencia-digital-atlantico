@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,200&family=Poppins:wght@200;400&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700');
 
 :root {
-  font-size: 62.5%; // 62.5% = 10px
   --text-base-size: 1rem;
   --text-scale-ratio: 0.75;
   --font-primary: 'Poppins', sans-serif;
@@ -9,13 +9,17 @@
   --color-primary: #2ce6e8;
   --color-seconday: #06fcff;
   --color-tertiary: #4669ff;
+  font-size: 62.5%; // 62.5% = 10px
 }
 
+*,
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
 
+body {
   background: linear-gradient(
     128deg,
     rgba(0, 0, 0, 1) 80%,

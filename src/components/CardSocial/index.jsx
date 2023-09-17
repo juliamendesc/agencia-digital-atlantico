@@ -1,3 +1,4 @@
+'use client';
 import styles from './cards.module.scss';
 
 export function CardSocial() {

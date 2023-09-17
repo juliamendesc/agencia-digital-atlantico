@@ -1,7 +1,9 @@
-import styles from './benefits.module.scss';
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
-import checkLogo from '@/assets/checklogo.svg';
+import checkLogo from '../../assets/checklogo.svg';
+import styles from './benefits.module.scss';
 
 const benefitsList = [
   'Otimização e Maximização do investimento aplicado em publicidade.',
@@ -52,7 +54,7 @@ export function Benefits() {
       <div id="beneficios" className={styles.container}>
         <h1>
           A melhor forma de expandir a sua presença online e alcançar novos
-          clientes, <span>é com anúncios online</span>.
+          clientes <span>é com anúncios online</span>.
         </h1>
 
         <h1>

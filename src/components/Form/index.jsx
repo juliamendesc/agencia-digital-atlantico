@@ -1,3 +1,5 @@
+'use client';
+
 import Styles from './form.module.scss';
 import React from 'react';
 

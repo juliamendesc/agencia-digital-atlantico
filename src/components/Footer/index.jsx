@@ -1,87 +1,56 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
-import Styles from './footer.module.scss';
-import { Link } from 'react-scroll';
-import  logo  from '../../assets/logoatla4.png'
+import styles from './footer.module.scss';
+import emailIcon from '../../assets/mail.svg';
+import phoneIcon from '../../assets/phone.svg';
 
 export function Footer() {
+  function handleClick(id) {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
+
   return (
-    <footer className={Styles.footerDistributed}>
-      <div className={Styles.footerLeft}>
-        <h3>
-          Agência<span>Digital Atlântico</span>
-        </h3>
+    <footer className={styles.footerWrapper}>
+      <div className={styles.footerDistributed}>
+        <div className={styles.footerLeft}>
+          <h1>
+            Agência <span>Digital Atlântico</span>
+          </h1>
 
-        <p className={Styles.footerLinks}>
-          <Link
-            Link
-            href="#home"
-            to="home"
-            smooth={true}
-            duration={700}
-            className={Styles.link1}
-          >
-            Home
-          </Link>
-
-          <Link href="#servicos" 
-          to="servicos" 
-          smooth={true} 
-          duration={800}>
-            Serviços
-          </Link>
-
-          <Link
-              href="#beneficios"
-              to="beneficios"
-              smooth={true}
-              duration={700}>
-                Benefícios</Link>
-
-          <Link
-              href="#quemsomos"
-              to="quemsomos"
-              smooth={true}
-              duration={700}>Quem Somos</Link>
-
-          <Link
-              href="#faq"
-              to="faq"
-              smooth={true}
-              duration={700}>Faq</Link>
-
-          <Link
-              href="#atendimento"
-              to="atendimento"
-              smooth={true}
-              duration={700}>Atendimento</Link>
-        </p>
-
-        <p className={Styles.footerCompanyName}>Agência Digital Atlântico © 2023</p>
-      </div>
-
-      <div className={Styles.footerCenter}>
-        <div>
-          <i ><fa-icon className="fa fa-map-marker" ></fa-icon> </i>
-          <p>
-            <span>Address</span> conselho, Lisboa
+          <p className={styles.footerLinks}>
+            <button onClick={() => handleClick('home')}>Home</button>
+            <button onClick={() => handleClick('servicos')}>Serviços</button>
+            <button onClick={() => handleClick('beneficios')}>
+              Benefícios
+            </button>
+            <button onClick={() => handleClick('quemsomos')}>Quem Somos</button>
+            <button onClick={() => handleClick('faq')}>FAQ</button>
+            <button onClick={() => handleClick('atendimento')}>
+              Atendimento
+            </button>
           </p>
         </div>
 
-        <div>
-          <i></i>
-          <p>Contato +351....</p>
-        </div>
+        <div className={styles.footerCenter}>
+          <div>
+            <Image src={phoneIcon} alt="logo" width={20} height={20} />
+            <p>+351 999 999 999</p>
+          </div>
 
-        <div>
-          <i class="fa fa-envelope"></i>
-          <p>
-            <a href="mailto:support@company.com">support@company.com</a>
-          </p>
+          <div>
+            <Image src={emailIcon} alt="logo" width={20} height={20} />
+            <p>support@company.com</p>
+          </div>
         </div>
       </div>
 
-      <div className={Styles.footerRight}>
+      <div className={styles.footerCompanyName}>
+        Agência Digital Atlântico © 2023
       </div>
     </footer>
   );
