@@ -54,7 +54,7 @@
 /* Footer left */
 
 .footerDistributed h3 span {
-  color: lightseagreen;
+  color: #20b2aa;
 }
 
 /* Footer links */
@@ -117,7 +117,7 @@
 }
 
 .footerLinks button:not(:first-child)::before {
-  content: '|';
+  content: ' |';
   font-weight: 300;
   font-size: 20px;
   left: 0;

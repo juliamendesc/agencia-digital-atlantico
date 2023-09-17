@@ -1,3 +1,5 @@
+import styles from './accordionData.module.scss';
+
 export const accordionData = [
   {
     key: '1',
@@ -13,7 +15,7 @@ export const accordionData = [
     title:
       'Que tipos de formas existem, de publicidade online ou tráfego pago?',
     content: (
-      <>
+      <div className={styles.accordionDataWrapper}>
         <p>
           <strong>Anúncios de Pesquisa: </strong>
           São os anúncios exibidos nos mecanismos de busca, como o Google,
@@ -56,7 +58,7 @@ export const accordionData = [
           demonstraram interesse anteriormente, com o objetivo de reconectar,
           engajar e converter esses visitantes em clientes.
         </p>
-      </>
+      </div>
     ),
   },
   {
@@ -71,7 +73,7 @@ export const accordionData = [
     ariaLabel: 'Quantas métricas existem e quais?',
     title: 'Quantas métricas existem e quais?',
     content: (
-      <>
+      <div className={styles.accordionDataWrapper}>
         <p>Algumas métricas comuns de tráfego pago:</p>
         <p>
           <strong>Impressões: </strong>O número de vezes que um anúncio foi
@@ -116,7 +118,7 @@ export const accordionData = [
           para determinar se a campanha está gerando um retorno positivo ou
           negativo em relação aos recursos investidos.
         </p>
-      </>
+      </div>
     ),
   },
   {

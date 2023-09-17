@@ -49,10 +49,6 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(0, 0, 0, .125)',
   '& > *': {
     fontSize: '2.5rem',
-
-    '@media (max-width: 1400px)': {
-      fontSize: '2rem', // Reduced font size for smaller viewport
-    },
   },
 }));
 
@@ -68,15 +64,9 @@ export default function CustomizedAccordions({
           aria-controls={defaultContent.ariaLabel}
           id={defaultContent.key}
         >
-          <Typography variant="body1" sx={{ fontSize: '3rem' }}>
-            {defaultContent.title}
-          </Typography>
+          {defaultContent.title}
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="body1" sx={{ fontSize: '2.5rem' }}>
-            {defaultContent.content}
-          </Typography>
-        </AccordionDetails>
+        <AccordionDetails>{defaultContent.content}</AccordionDetails>
       </Accordion>
     </div>
   );
