@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { styled } from '@mui/system';
 import PropTypes from 'prop-types';
+import { styled } from '@mui/system';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';

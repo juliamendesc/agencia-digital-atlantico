@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import checkLogo from '../../assets/checklogo.svg';
-import styles from './benefits.module.scss';
+import checkLogo from 'src/assets/checklogo.svg';
+import styles from 'src/components/Benefits/benefits.module.scss';
 
 const benefitsList = [
   'Otimização e Maximização do investimento aplicado em publicidade.',

@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import dataCollectionIcon from '../../assets/data-collection.svg';
-import styles from './servicos.module.scss';
+import dataCollectionIcon from 'src/assets/data-collection.svg';
+import styles from 'src/components/Servicos/servicos.module.scss';
 import 'animate.css';
 
 export function Servicos() {

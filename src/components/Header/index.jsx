@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Logo from '../../assets/logoatla3.png';
-import styles from './header.module.scss';
+import Logo from 'src/assets/logoatla3.png';
+import styles from 'src/components/Header/header.module.scss';
 import 'animate.css';
 
 export function Header() {

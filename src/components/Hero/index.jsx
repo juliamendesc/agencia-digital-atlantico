@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Button } from '../Button';
-import styles from './hero.module.scss';
+import { Button } from 'src/components/Button';
+import styles from 'src/components/Hero/hero.module.scss';
 import 'animate.css';
 
 export function Hero() {

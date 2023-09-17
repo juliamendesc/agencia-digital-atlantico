@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import styles from './faq.module.scss';
-import CustomizedAccordions from '../ui/Accordion';
-import { accordionData } from '../../data/accordionData';
+import styles from 'src/components/Faq/faq.module.scss';
+import CustomizedAccordions from 'src/components/ui/Accordion';
+import { accordionData } from 'src/data/accordionData';
 
 export function Faq() {
   const [expanded, setExpanded] = React.useState(false);

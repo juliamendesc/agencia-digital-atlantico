@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './button.module.scss';
+import styles from 'src/components/Button/button.module.scss';
 export function Button({ title, loading, ...rest }) {
   return (
     <button className={styles.bn3637} disabled={loading} {...rest}>

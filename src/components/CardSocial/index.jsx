@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import styles from './cards.module.scss';
+import styles from 'src/components/CardSocial/cards.module.scss';
 
 export function CardSocial() {
   return (

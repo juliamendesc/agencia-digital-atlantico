@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Styles from './form.module.scss';
+import Styles from 'src/components/Form/form.module.scss';
 
 export function FormContact() {
   return (

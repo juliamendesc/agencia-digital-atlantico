@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import styles from './footer.module.scss';
-import emailIcon from '../../assets/mail.svg';
-import phoneIcon from '../../assets/phone.svg';
+import styles from 'src/components/Footer/footer.module.scss';
+import emailIcon from 'src/assets/mail.svg';
+import phoneIcon from 'src/assets/phone.svg';
 
 export function Footer() {
   function handleClick(id) {

@@ -2,11 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Logoatla4 from '../../assets/logoatla4.png';
-import LightLogo from '../../assets/lightLogo.png';
-import CopLogo from '../../assets/CopLogo.png';
-import LobLogo from '../../assets/LobLogo.png';
-import OrangeLogo from '../../assets/orangeLogo_light.png';
+import Logoatla4 from 'src/assets/logoatla4.png';
+import LightLogo from 'src/assets/lightLogo.png';
+import CopLogo from 'src/assets/CopLogo.png';
+import LobLogo from 'src/assets/LobLogo.png';
+import OrangeLogo from 'src/assets/orangeLogo_light.png';
 
 import styles from './who.module.scss';
 import 'animate.css';

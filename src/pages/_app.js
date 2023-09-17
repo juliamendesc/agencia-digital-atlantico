@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '../components/Header';
-import '../styles/globals.scss';
+import { Header } from 'src/components/Header';
+import 'src/styles/globals.scss';
 
 export default function App({ Component, pageProps }) {
   return (
