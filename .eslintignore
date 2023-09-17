@@ -1,0 +1,11 @@
+/build
+.next
+.vscode
+node_modules
+package-lock.json
+package.json
+vercel.json
+*.md
+next.config.js
+.gitignore
+.env*
