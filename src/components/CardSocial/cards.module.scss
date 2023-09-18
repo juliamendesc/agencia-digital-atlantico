@@ -31,14 +31,14 @@
 
 .cardsSocial {
   margin: 0 5rem;
-
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   @media (max-width: 1400px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     align-items: start;
     justify-items: center;
     gap: 2rem;
@@ -61,8 +61,8 @@
 .card {
   border-radius: 1rem;
   filter: drop-shadow(0 5px 10px 0 #ffffff);
+  width: 30rem;
   height: fit-content;
-  width: 35rem;
 
   background-color: black;
   padding: 20px;
