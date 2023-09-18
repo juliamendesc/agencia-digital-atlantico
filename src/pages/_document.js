@@ -5,7 +5,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Digital Atlântico</title>
         <link rel="icon" href="/static/favicon.ico" sizes="any" />
       </Head>
       <body>
