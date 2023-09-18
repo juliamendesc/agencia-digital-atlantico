@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import styles from 'src/components/Faq/faq.module.scss';
 import CustomizedAccordions from 'src/components/ui/molecules/Accordion';

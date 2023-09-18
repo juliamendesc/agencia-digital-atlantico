@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Logo from 'src/assets/logoatla3.png';
