@@ -4,7 +4,8 @@ import React from 'react';
 export default function Document() {
   return (
     <Html lang="en">
-      <Head title="Digital Atlântico">
+      <Head>
+        <title>Digital Atlântico</title>
         <link rel="icon" href="/static/favicon.ico" sizes="any" />
       </Head>
       <body>
