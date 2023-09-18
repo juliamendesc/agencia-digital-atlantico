@@ -1,4 +1,5 @@
 .footerWrapper {
+  height: fit-content;
   background: var(--color-footer);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   padding: 5.5rem 5rem;
@@ -7,10 +8,10 @@
   font-size: 1.6rem;
 
   display: grid;
-  grid-template-rows: 1fr 0.3fr;
+  grid-template-rows: 3.7fr 0.3fr;
 
   @media (max-width: 1000px) {
-    padding: 5.5rem 2rem;
+    padding: 2rem 2rem 1rem;
   }
 }
 
@@ -61,6 +62,34 @@
     font-size: 2rem;
     color: #ffff;
     position: relative;
+
+    @media (max-width: 425px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media (max-width: 425px) {
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 320px) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
   }
 }
 
@@ -71,7 +100,7 @@
 
   place-self: end;
 
-  @media (max-width: 880px) {
+  @media (max-width: 820px) {
     place-self: center;
   }
 }
@@ -92,7 +121,7 @@
     gap: 1rem;
   }
 
-  @media (max-width: 880px) {
+  @media (max-width: 820px) {
     gap: 0;
   }
 }
@@ -102,6 +131,14 @@
   color: #ffffff;
   font-weight: 400;
   margin: 0;
+
+  @media (max-width: 425px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 1.3rem;
+  }
 }
 
 .footerLinks button:not(:first-child)::before {
@@ -112,4 +149,8 @@
   color: #fff;
   display: inline-block;
   padding-right: 0.5rem;
+
+  @media (max-width: 820px) {
+    display: none;
+  }
 }

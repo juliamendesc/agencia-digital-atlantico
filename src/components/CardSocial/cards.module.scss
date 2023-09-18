@@ -22,6 +22,10 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
+
+    @media (max-width: 320px) {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -46,6 +50,10 @@
     align-items: center;
     margin: 0 2rem;
   }
+
+  @media (max-width: 320px) {
+    margin: 0 1rem;
+  }
 }
 
 .card {
@@ -68,6 +76,10 @@
     @media (max-width: 800px) {
       font-size: 2rem;
     }
+
+    @media (max-width: 320px) {
+      font-size: 1.75rem;
+    }
   }
 
   p {
@@ -75,6 +87,10 @@
 
     @media (max-width: 800px) {
       font-size: 2rem;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 1.5rem;
     }
   }
 

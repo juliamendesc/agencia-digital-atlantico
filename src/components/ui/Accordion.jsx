@@ -39,6 +39,12 @@ const AccordionSummary = styled((props) => (
       '@media (max-width: 1400px)': {
         fontSize: '2.5rem', // Reduced font size for smaller viewport
       },
+      '@media (max-width: 600px)': {
+        fontSize: '2rem',
+      },
+      '@media (max-width: 400px)': {
+        fontSize: '1.5rem',
+      },
     },
   },
 }));
@@ -46,8 +52,13 @@ const AccordionSummary = styled((props) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   borderTop: '1px solid rgba(0, 0, 0, .125)',
-  '& > *': {
-    fontSize: '2.5rem',
+
+  fontSize: '2.5rem',
+  '@media (max-width: 1400px)': {
+    fontSize: '2rem',
+  },
+  '@media (max-width: 600px)': {
+    fontSize: '1.5rem',
   },
 }));
 
