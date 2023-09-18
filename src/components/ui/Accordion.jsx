@@ -55,7 +55,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
   fontSize: '2.5rem',
   '@media (max-width: 1400px)': {
-    fontSize: '2rem',
+    fontSize: '1.8rem',
   },
   '@media (max-width: 600px)': {
     fontSize: '1.5rem',
