@@ -6,10 +6,17 @@ import StepButton from '@mui/material/StepButton';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import styles from 'src/components/ui/molecules/StepperDesktop/StepperDesktop.module.scss';
+
 const steps = [
-  'Select campaign settings',
-  'Create an ad group',
-  'Create an ad',
+  'Dados de contato',
+  'Setor de negócio',
+  'Website',
+  'Instagram',
+  'Facebook',
+  'Tamanho da empresa',
+  'Investimento em publicidade',
+  'Orçamento disponível',
 ];
 
 export default function HorizontalNonLinearStepper() {
@@ -68,13 +75,13 @@ export default function HorizontalNonLinearStepper() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%' }} className={styles.container}>
       <Stepper nonLinear activeStep={activeStep}>
         {steps.map((label, index) => {
           const labelProps = {};
           if (isStepFailed(index)) {
             labelProps.optional = (
-              <Typography variant="caption" color="error">
+              <Typography variant="caption" color="error" fontSize={14}>
                 {/* {methods.formState.errors?.steps[index]?.message} */} Erro
               </Typography>
             );
@@ -83,9 +90,23 @@ export default function HorizontalNonLinearStepper() {
           }
 
           return (
-            <Step key={label} completed={completed[index]}>
-              <StepButton color="inherit" onClick={handleStep(index)}>
-                {label}
+            <Step
+              key={label}
+              completed={completed[index]}
+              className={styles.step}
+            >
+              <StepButton
+                color="var(--color-footer)"
+                onClick={handleStep(index)}
+                className={styles.stepButton}
+              >
+                <Typography
+                  variant="caption"
+                  color="var(--color-text-dark)"
+                  fontSize={14}
+                >
+                  {label}
+                </Typography>
               </StepButton>
             </Step>
           );
@@ -108,12 +129,15 @@ export default function HorizontalNonLinearStepper() {
             <Typography sx={{ mt: 2, mb: 1, py: 1 }}>
               Step {activeStep + 1}
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+            <Box
+              sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}
+              className={styles.stepperButtons}
+            >
               <Button
                 color="inherit"
                 disabled={activeStep === 0}
                 onClick={handleBack}
-                sx={{ mr: 1 }}
+                sx={{ mr: 1, color: 'var(--color-footer)' }}
               >
                 Anterior
               </Button>
@@ -125,7 +149,10 @@ export default function HorizontalNonLinearStepper() {
                 (completed[activeStep] ? (
                   <Typography
                     variant="caption"
-                    sx={{ display: 'inline-block' }}
+                    sx={{
+                      display: 'inline-block',
+                      color: 'var(--color-tertiary)',
+                    }}
                   >
                     Passo {activeStep + 1} já foi completado.
                   </Typography>

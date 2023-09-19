@@ -13,6 +13,12 @@
   --color-footer: #666;
   --color-text-dark: #222;
 
+  --background: linear-gradient(
+    128deg,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(44, 230, 232, 0.74) 100%
+  );
+
   --color-header-border: linear-gradient(to bottom, #000000 90%, #2ce6e8 100%);
   --font-family-footer: 'Open Sans', 'cursive', sans-serif;
   font-size: 62.5%; // 62.5% = 10px
@@ -34,12 +40,7 @@ body {
 }
 
 body {
-  background: linear-gradient(
-    128deg,
-    rgba(0, 0, 0, 1) 80%,
-    rgba(44, 230, 232, 0.74) 100%
-  );
-
+  background: var(--background);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 
