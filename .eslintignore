@@ -9,3 +9,4 @@ vercel.json
 next.config.js
 .gitignore
 .env*
+/react-email-starter
