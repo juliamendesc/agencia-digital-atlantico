@@ -7,8 +7,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import styles from 'src/components/ui/molecules/StepperDesktop/StepperDesktop.module.scss';
+import { useMediaQuery } from '@mui/material';
+import { PersonalData } from '../../organisms/personalData/personalData';
 
-const steps = [
+const formSteps = [
   'Dados de contato',
   'Setor de negócio',
   'Website',
@@ -22,9 +24,10 @@ const steps = [
 export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
+  const verticalStepper = useMediaQuery('(max-width:1300px)');
 
   const totalSteps = () => {
-    return steps.length;
+    return formSteps.length;
   };
 
   const completedSteps = () => {
@@ -44,7 +47,7 @@ export default function HorizontalNonLinearStepper() {
       isLastStep() && !allStepsCompleted()
         ? // It's the last step, but not all steps have been completed,
           // find the first step that has been completed
-          steps.findIndex((step, i) => !(i in completed))
+          formSteps.findIndex((step, i) => !(i in completed))
         : activeStep + 1;
     setActiveStep(newActiveStep);
   };
@@ -75,9 +78,12 @@ export default function HorizontalNonLinearStepper() {
   };
 
   return (
-    <Box sx={{ width: '100%' }} className={styles.container}>
-      <Stepper nonLinear activeStep={activeStep}>
-        {steps.map((label, index) => {
+    <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.container}>
+      <Stepper
+        activeStep={activeStep}
+        orientation={verticalStepper ? 'vertical' : 'horizontal'}
+      >
+        {formSteps.map((label, index) => {
           const labelProps = {};
           if (isStepFailed(index)) {
             labelProps.optional = (
@@ -113,6 +119,10 @@ export default function HorizontalNonLinearStepper() {
         })}
       </Stepper>
 
+      <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.container}>
+        <PersonalData />
+      </Box>
+
       <div>
         {allStepsCompleted() ? (
           <React.Fragment>
@@ -145,7 +155,7 @@ export default function HorizontalNonLinearStepper() {
               <Button onClick={handleNext} sx={{ mr: 1 }}>
                 Seguinte
               </Button>
-              {activeStep !== steps.length &&
+              {activeStep !== formSteps.length &&
                 (completed[activeStep] ? (
                   <Typography
                     variant="caption"

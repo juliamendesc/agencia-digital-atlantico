@@ -1,13 +1,18 @@
-import React from 'react';
-import { Box, Chip, Typography } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box, Typography } from '@mui/material';
 import StepperMobile from 'src/components/ui/molecules/StepperMobile/StepperMobile';
 import StepperDesktop from 'src/components/ui/molecules/StepperDesktop/StepperDesktop';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import styles from 'src/components/ui/organisms/ContactForm.module.scss';
+import styles from 'src/components/ui/templates/ContactForm.module.scss';
 
 export default function ContactForm() {
+  const [isMobile, setIsMobile] = React.useState(false);
   const mobile = useMediaQuery('(max-width:600px)');
+
+  useEffect(() => {
+    setIsMobile(mobile);
+  }, [mobile]);
 
   return (
     <Box className={styles.container}>
@@ -24,13 +29,11 @@ export default function ContactForm() {
         </Typography>
       </Box>
 
-      <Chip
-        label="8 perguntas - tempo médio de duração 1 minuto"
-        className={styles.chip}
-        variant="outlined"
-      />
+      <div className={styles.chip}>
+        8 perguntas - tempo médio de duração 1 minuto
+      </div>
 
-      <Box>{mobile ? <StepperMobile /> : <StepperDesktop />}</Box>
+      <Box>{isMobile ? <StepperMobile /> : <StepperDesktop />}</Box>
     </Box>
   );
 }
