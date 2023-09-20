@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'src/components/Faq/faq.module.scss';
-import CustomizedAccordions from 'src/components/ui/molecules/Accordion';
+import CustomizedAccordions from 'src/components/ui/molecules/Accordion/Accordion';
 import { accordionData } from 'src/data/accordionData';
 
 export function Faq() {

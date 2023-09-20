@@ -4,9 +4,9 @@ import StepperMobile from 'src/components/ui/molecules/StepperMobile/StepperMobi
 import StepperDesktop from 'src/components/ui/molecules/StepperDesktop/StepperDesktop';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import styles from 'src/components/ui/templates/ContactForm.module.scss';
+import styles from 'src/components/ui/templates/MultiStepContactForm/MultiStepContactForm.module.scss';
 
-export default function ContactForm() {
+export default function MultiStepContactForm() {
   const [isMobile, setIsMobile] = React.useState(false);
   const mobile = useMediaQuery('(max-width:600px)');
 

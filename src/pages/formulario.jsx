@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactForm from 'src/components/ui/templates/ContactForm';
+import MultiStepContactForm from 'src/components/ui/templates/MultiStepContactForm/MultiStepContactForm';
 
 export default function FormularioGratuito() {
-  return <ContactForm />;
+  return <MultiStepContactForm />;
 }

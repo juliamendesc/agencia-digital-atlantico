@@ -29,6 +29,9 @@ const useStyles = makeStyles({
 
 export default function CountrySelect({ register }) {
   const classes = useStyles();
+  const [value, setValue] = React.useState('');
+
+  console.log('value', value);
 
   return (
     <Autocomplete
@@ -39,7 +42,11 @@ export default function CountrySelect({ register }) {
       }}
       autoHighlight
       sx={{ width: 125 }}
-      getOptionLabel={(option) => option.label}
+      getOptionLabel={(option) => `${option.label} +${option.phone}`}
+      onChange={(event, newValue) => {
+        const newCode = newValue;
+        setValue(newCode);
+      }}
       renderOption={(props, option) => (
         <Box
           component="li"
@@ -56,19 +63,24 @@ export default function CountrySelect({ register }) {
             src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
             alt="country flag"
           />
-          {option.label} +{option.phone}
+          +{option.phone} {option.label}
         </Box>
       )}
-      renderInput={(params) => (
-        <TextField
-          {...register}
-          {...params}
-          inputProps={{
-            ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
-          }}
-        />
-      )}
+      renderInput={(params) => {
+        return (
+          <TextField
+            {...register}
+            {...params}
+            sx={{ label: { color: '#000000' } }}
+            inputProps={{
+              ...params.inputProps,
+              autoComplete: 'new-password', // disable autocomplete and autofill
+            }}
+            label="País"
+            value={value ? value.phone : ''}
+          />
+        );
+      }}
     />
   );
 }

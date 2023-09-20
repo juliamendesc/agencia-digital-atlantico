@@ -1,10 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import styles from 'src/components/Footer/footer.module.scss';
 import emailIcon from 'src/assets/mail.svg';
 import phoneIcon from 'src/assets/phone.svg';
 
 export function Footer() {
+  const router = useRouter();
+
   function handleClick(id) {
     const el = document.getElementById(id);
     el?.scrollIntoView({
@@ -28,7 +31,7 @@ export function Footer() {
             </button>
             <button onClick={() => handleClick('quemsomos')}>Quem Somos</button>
             <button onClick={() => handleClick('faq')}>FAQ</button>
-            <button onClick={() => handleClick('atendimento')}>
+            <button onClick={() => router.push('/atendimento')}>
               Atendimento
             </button>
           </p>
