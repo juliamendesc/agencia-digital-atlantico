@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import Logo from 'src/assets/logoatla3.png';
 import styles from 'src/components/Header/header.module.scss';
 import 'animate.css';
 
 export function Header() {
   const [navActive, setNavActive] = useState(false);
+  const router = useRouter();
 
   const toggleNav = () => {
     setNavActive(!navActive);
@@ -74,7 +76,7 @@ export function Header() {
             FAQ
           </button>
           <button
-            onClick={() => handleLinkClick('atendimento')}
+            onClick={() => router.push('/atendimento')}
             className={styles.navLink}
           >
             Atendimento

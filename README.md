@@ -32,3 +32,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+<details>
+
+<summary>E-mail para envio de comunicações via site: digitalatlantico.pt@gmail.com -> %rt6k5TBe@7%$e
+
+GoogleAds: https://ads.google.com/aw/campaigns/new/express?ocid=1447753101&cmpnInfo=%7B%228%22%3A%226adbb041-ce54-4a58-a1ae-ac1b11c5263d%22%7D&subid=pt-pt-ha-aw-sk-c-bau%21o3~CjwKCAjwsKqoBhBPEiwALrrqiPBzq95y8d4dVa74NFRukxc6PWtNMUbcjJYF98mGd2xA26qc6vEBmxoC8MgQAvD_BwE~118219641267~kwd-94527731~11853311513~598732151983&step=curl&cbdbId=-1964868719182414416&mode=signup&euid=991401752&__u=7858447448&uscid=1447753101&__c=7600187749&authuser=0&sourceid=emp
+
+Gmail:
+</summary>
+</details>

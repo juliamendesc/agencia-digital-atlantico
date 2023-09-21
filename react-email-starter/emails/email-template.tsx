@@ -15,6 +15,7 @@ interface EmailTemplateProps {
   username?: string;
   sender?: string;
   senderEmail?: string;
+  senderPhone?: string;
   message?: string;
   subject?: string;
 }
@@ -29,6 +30,7 @@ const EmailTemplate = ({
   senderEmail = '',
   message = '',
   subject = '',
+  senderPhone = '',
 }: EmailTemplateProps) => (
   <Html>
     <Head />
@@ -55,6 +57,9 @@ const EmailTemplate = ({
           </Text>
           <Text style={text}>
             E-mail para contato: <strong>{senderEmail}</strong>
+          </Text>
+          <Text style={text}>
+            E-mail para contato: <strong>{}</strong>
           </Text>
           <Text style={text}>
             Assunto: <strong>{subject}</strong>
@@ -104,15 +109,6 @@ const section = {
 const text = {
   margin: '0 0 10px 0',
   textAlign: 'left' as const,
-};
-
-const button = {
-  fontSize: '14px',
-  backgroundColor: '#28a745',
-  color: '#fff',
-  lineHeight: 1.5,
-  borderRadius: '0.5em',
-  padding: '0.75em 1.5em',
 };
 
 const footer = {

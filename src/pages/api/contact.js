@@ -33,8 +33,9 @@ export default function sendEmail(req, res) {
       username="Diogo"
       sender={req.body.name}
       senderEmail={req.body.email}
-      message={req.body.message}
       subject={req.body.subject}
+      message={req.body.message}
+      senderPhone={req.body.phone}
     />,
   );
 

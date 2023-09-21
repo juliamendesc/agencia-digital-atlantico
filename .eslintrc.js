@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['next/core-web-vitals', 'prettier'],
+  extends: ['eslint:recommended', 'prettier'],
   overrides: [
     {
       files: ['*.js', '*.jsx'],
