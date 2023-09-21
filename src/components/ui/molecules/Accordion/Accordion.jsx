@@ -95,3 +95,5 @@ CustomizedAccordions.propTypes = {
   expanded: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
+
+module.exports = CustomizedAccordions;

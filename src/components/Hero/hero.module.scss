@@ -1,5 +1,5 @@
 .container {
-  height: calc(100vh + 100px);
+  height: calc(100vh + 200px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,7 +12,7 @@
   );
 
   @media (max-width: 1024px) {
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
     height: fit-content;
   }
 
