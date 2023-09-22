@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 18
       # install dependencies
-      - run: npm ci --legacy-peer-deps
+      - run: npm ci
       # run ESLint & Prettier
       - run: npm run lint
       - run: npm run prettier
