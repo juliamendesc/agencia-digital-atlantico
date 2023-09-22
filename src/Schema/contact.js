@@ -5,32 +5,32 @@ export const contactSchema = z
     nome: z
       .string()
       .min(3, {
-        message: 'Por favor, preencha o campo com seu nome completo.',
+        required_error: 'Por favor, preencha o campo com seu nome completo.',
       })
       .max(50, {
-        message: 'Por favor, abrevie o seu nome.',
+        required_error: 'Por favor, abrevie o seu nome.',
       }),
     email: z.string().email(),
     phone: z
       .string()
       .min(9, {
-        message:
+        required_error:
           'Por favor, preencha o campo com um número de telefone válido.',
       })
       .max(9, {
-        message:
+        required_error:
           'Por favor, preencha o campo com um número de telefone válido.',
       }),
     subject: z.string().min(3, {
-      message: 'Por favor, preencha o campo com um assunto válido.',
+      required_error: 'Por favor, preencha o campo com um assunto válido.',
     }),
     message: z
       .string()
       .min(3, {
-        message: 'Por favor, preencha o campo com uma mensagem válida.',
+        required_error: 'Por favor, preencha o campo com uma mensagem válida.',
       })
       .max(500, {
-        message: 'Por favor, preencha o campo com uma mensagem válida.',
+        required_error: 'Por favor, preencha o campo com uma mensagem válida.',
       }),
   })
   .required();

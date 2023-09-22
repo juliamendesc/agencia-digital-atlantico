@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 import styles from 'src/components/ui/molecules/StepperDesktop/StepperDesktop.module.scss';
 import { useMediaQuery } from '@mui/material';
-import { PersonalData } from '../../organisms/personalData/personalData';
+import { PersonalData } from 'src/components/ui/organisms/personalData/personalData';
 
 const formSteps = [
   'Dados de contato',
@@ -152,7 +152,7 @@ export default function HorizontalNonLinearStepper() {
                 Anterior
               </Button>
               <Box sx={{ flex: '1 1 auto' }} />
-              <Button onClick={handleNext} sx={{ mr: 1 }}>
+              <Button onClick={handleNext} sx={{ mr: 1 }} type="submit">
                 Seguinte
               </Button>
               {activeStep !== formSteps.length &&
@@ -167,7 +167,7 @@ export default function HorizontalNonLinearStepper() {
                     Passo {activeStep + 1} já foi completado.
                   </Typography>
                 ) : (
-                  <Button onClick={handleComplete}>
+                  <Button onClick={handleComplete} type="submit">
                     {completedSteps() === totalSteps() - 1
                       ? 'Enviar'
                       : 'Completar Passo'}
