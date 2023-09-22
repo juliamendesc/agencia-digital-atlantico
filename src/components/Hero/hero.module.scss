@@ -10,7 +10,7 @@
   );
 
   @media (max-width: 1317px) {
-    padding-bottom: 5rem;
+    padding-top: 5rem;
     height: fit-content;
   }
 
@@ -48,10 +48,6 @@
   object-fit: cover;
   object-position: center;
   opacity: 0.5;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 }
 
 #TextForm {

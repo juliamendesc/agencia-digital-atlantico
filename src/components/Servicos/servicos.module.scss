@@ -35,7 +35,7 @@
     width: 100%;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
@@ -66,9 +66,9 @@
   object-position: center;
   opacity: 0.5;
 
-  @media (max-width: 750px) {
-    display: none;
-  }
+  // @media (max-width: 768px) {
+  //   display: none;
+  // }
 }
 
 .paragraphs {
