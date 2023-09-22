@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from 'src/components/Button';
+import HeroImage from 'src/assets/hero-transformed.png';
 import styles from 'src/components/Hero/hero.module.scss';
 import 'animate.css';
+import Image from 'next/image';
 
 export function Hero() {
   return (
@@ -23,6 +25,12 @@ export function Hero() {
           <Link href="/formulario">
             <Button title="Formulário gratuito"></Button>
           </Link>
+        </div>
+        <div
+          id={styles.ImageForm}
+          className="ImageForm animate__animated animate__fadeInUpBig"
+        >
+          <Image src={HeroImage} alt="hero" className={styles.heroImage} />
         </div>
       </div>
     </div>
