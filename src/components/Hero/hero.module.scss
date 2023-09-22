@@ -1,9 +1,7 @@
 .container {
-  height: calc(100vh + 100px);
+  height: calc(100vh);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 
   background: linear-gradient(
     128deg,
@@ -28,21 +26,20 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 1000px) {
-    width: 100%;
-  }
-
-  @media (max-width: 750px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
   }
 }
 
 #ImageForm {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @media (max-width: 1317px) {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .heroImage {
@@ -52,18 +49,19 @@
   object-position: center;
   opacity: 0.5;
 
-  @media (max-width: 750px) {
+  @media (max-width: 768px) {
     display: none;
   }
 }
 
 #TextForm {
+  align-self: center;
+
   margin: 0 5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 5rem;
   gap: 7rem;
 
   h1 {
