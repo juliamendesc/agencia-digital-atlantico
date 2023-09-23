@@ -1,7 +1,7 @@
 import React from 'react';
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
-import EmailTemplate from 'react-email-starter/emails/email-template.tsx';
+import SessaoEstrategicaEmailTemplate from 'react-email-starter/emails/big-form-email-template';
 
 const {
   GMAIL_USER,
@@ -29,12 +29,20 @@ const transporter = nodemailer.createTransport({
 
 export default function sendEmail(req, res) {
   const emailHtml = render(
-    <EmailTemplate
+    <SessaoEstrategicaEmailTemplate
       sender={req.body.name}
       senderEmail={req.body.email}
-      subject={req.body.subject}
-      message={req.body.message}
       senderPhone={req.body.phone}
+      businessArea={req.body.businessArea}
+      businessSize={req.body.businessSize}
+      hasPaidAds={req.body.hasPaidAds}
+      hasFacebook={req.body.hasFacebook}
+      facebookAccount={req.body.facebookAccount}
+      hasInstagram={req.body.hasInstagram}
+      instagramAccount={req.body.instagramAccount}
+      hasWebsite={req.body.hasWebsite}
+      websiteUrl={req.body.websiteUrl}
+      monthlyBudget={req.body.monthlyBudget}
     />,
   );
 
@@ -42,7 +50,7 @@ export default function sendEmail(req, res) {
     from: `Digital Atlântico Contact Form <${GMAIL_USER}>`,
     to: GMAIL_FORWARD_TO,
     html: emailHtml,
-    subject: `${req.body.subject}`,
+    subject: 'Solicitação de sessão estratégica',
   };
 
   transporter

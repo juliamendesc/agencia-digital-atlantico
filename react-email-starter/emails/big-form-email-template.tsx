@@ -16,7 +16,16 @@ interface EmailTemplateProps {
   sender?: string;
   senderEmail?: string;
   senderPhone?: string;
-  message?: string;
+  businessArea?: string;
+  businessSize?: string;
+  hasPaidAds?: string;
+  hasFacebook?: string;
+  facebookAccount?: string;
+  hasInstagram?: string;
+  instagramAccount?: string;
+  hasWebsite?: string;
+  websiteUrl?: string;
+  monthlyBudget?: string;
   subject?: string;
 }
 
@@ -24,13 +33,22 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : '';
 
-const EmailTemplate = ({
+const SessaoEstrategicaEmailTemplate = ({
   username = 'Diogo',
+  subject = 'Solicitação de Sessão estratégica com a Digital Atlântico',
   sender = '',
-  senderEmail = '',
-  message = '',
-  subject = '',
   senderPhone = '',
+  senderEmail = '',
+  businessArea = '',
+  businessSize = '',
+  hasPaidAds = '',
+  hasFacebook = '',
+  facebookAccount = '',
+  hasInstagram = '',
+  instagramAccount = '',
+  hasWebsite = '',
+  websiteUrl = '',
+  monthlyBudget = '',
 }: EmailTemplateProps) => (
   <Html>
     <Head />
@@ -67,7 +85,16 @@ const EmailTemplate = ({
         </Section>
 
         <Section style={section}>
-          <Text style={text}>{message}</Text>
+          <Text style={text}>{businessArea}</Text>
+          <Text style={text}>{hasWebsite}</Text>
+          <Text style={text}>{websiteUrl}</Text>
+          <Text style={text}>{hasInstagram}</Text>
+          <Text style={text}>{instagramAccount}</Text>
+          <Text style={text}>{hasFacebook}</Text>
+          <Text style={text}>{facebookAccount}</Text>
+          <Text style={text}>{businessSize}</Text>
+          <Text style={text}>{hasPaidAds}</Text>
+          <Text style={text}>{monthlyBudget}</Text>
         </Section>
 
         <Text style={footer}>
@@ -79,7 +106,7 @@ const EmailTemplate = ({
   </Html>
 );
 
-export default EmailTemplate;
+export default SessaoEstrategicaEmailTemplate;
 
 const main = {
   backgroundColor: '#ffffff',
