@@ -15,9 +15,9 @@ const initialState = {
   monthlyBudget: null,
 };
 
-const CheckoutContext = React.createContext(undefined);
+const MultistepContext = React.createContext(undefined);
 
-const checkoutReducer = (state, action) => {
+const multistepReducer = (state, action) => {
   switch (action.type) {
     case 'update': {
       return {
@@ -32,12 +32,12 @@ const checkoutReducer = (state, action) => {
 };
 
 const MultistepProvider = ({ children }) => {
-  const [state, dispatch] = React.useReducer(checkoutReducer, initialState);
+  const [state, dispatch] = React.useReducer(multistepReducer, initialState);
   const value = { state, dispatch };
   return (
-    <CheckoutContext.Provider value={value}>
+    <MultistepContext.Provider value={value}>
       {children}
-    </CheckoutContext.Provider>
+    </MultistepContext.Provider>
   );
 };
 
@@ -46,7 +46,7 @@ MultistepProvider.propTypes = {
 };
 
 const useMultistepContext = () => {
-  const context = React.useContext(CheckoutContext);
+  const context = React.useContext(MultistepContext);
   if (context) {
     return context;
   }

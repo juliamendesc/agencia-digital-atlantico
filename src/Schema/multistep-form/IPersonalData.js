@@ -12,11 +12,6 @@ export const personalDataSchema = z
         required_error: 'Campo obrigatório',
       })
       .email({ message: 'E-mail inválido' }),
-    countryCode: z
-      .string({
-        required_error: 'Campo obrigatório',
-      })
-      .min(2, { message: 'País inválido' }),
     phone: z
       .string({
         required_error: 'Campo obrigatório',

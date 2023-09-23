@@ -5,6 +5,7 @@ import StepperDesktop from 'src/components/ui/molecules/StepperDesktop/StepperDe
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import styles from 'src/components/ui/templates/MultiStepContactForm/MultiStepContactForm.module.scss';
+import { MultistepProvider } from 'src/context/multistepContext';
 
 export default function MultiStepContactForm() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -33,7 +34,9 @@ export default function MultiStepContactForm() {
         8 perguntas - tempo médio de duração 1 minuto
       </div>
 
-      {isMobile ? <StepperMobile /> : <StepperDesktop />}
+      <MultistepProvider>
+        {isMobile ? <StepperMobile /> : <StepperDesktop />}
+      </MultistepProvider>
     </Box>
   );
 }

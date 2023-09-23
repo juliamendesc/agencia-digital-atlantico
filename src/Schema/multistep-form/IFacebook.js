@@ -1,7 +1,16 @@
 import { z } from 'zod';
 
 export const facebookSchema = z
-  .string({
-    required_error: 'Campo obrigatório',
+  .object({
+    facebook: z.union([
+      z
+        .string({
+          message: 'Insira um endereço de site válido',
+        })
+        .url()
+        .nullish(),
+      z.literal(''),
+    ]),
+    hasFacebook: z.boolean(),
   })
-  .url({ message: 'URL inválida' });
+  .required();

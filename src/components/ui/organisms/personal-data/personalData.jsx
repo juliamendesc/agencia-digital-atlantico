@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Box, InputLabel, OutlinedInput } from '@mui/material';
 import { useMultistepContext } from 'src/context/multistepContext';
-import { FormProvider, useForm } from 'react-hook-form';
+import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import PropTypes from 'prop-types';
-import { personalDataSchema } from 'src/Schema/multistep-form/IPersonalData';
-import styles from './PersonalData.module.scss';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import styles from './PersonalData.module.scss';
+import { personalDataSchema } from 'src/Schema/multistep-form/IPersonalData';
 
-export function PersonalData() {
+const PhontInputComponent = forwardRef((props, ref) => {
+  return (
+    <OutlinedInput {...props} className={styles.phoneField} inputRef={ref} />
+  );
+});
+export default function PersonalData() {
   const multiStepContext = useMultistepContext();
-
-  console.log(multiStepContext);
 
   const methods = useForm({
     resolver: zodResolver(personalDataSchema),
@@ -24,16 +26,17 @@ export function PersonalData() {
     multiStepContext.dispatch({ type: 'update', payload: data });
   }
 
-  console.log(methods.getValues());
-  console.log(methods.formState.errors);
+  console.log(multiStepContext);
+  console.log('form', methods.getValues());
+  console.log('errors', methods.formState.errors);
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <Box className={styles.container}>
           <Box className={styles.wrapper}>
-            <InputLabel htmlFor="name">Nome:</InputLabel>
-            <OutlinedInput id="name" {...methods.register('nome')} />
+            <InputLabel htmlFor="nome">Nome:</InputLabel>
+            <OutlinedInput id="nome" {...methods.register('nome')} />
           </Box>
           <Box className={styles.wrapper}>
             <InputLabel htmlFor="email">E-mail:</InputLabel>
@@ -44,36 +47,43 @@ export function PersonalData() {
             />
           </Box>
           <Box className={styles.phoneField}>
-            <InputLabel htmlFor="phone">Telefone:</InputLabel>
-            <PhoneInput
-              style={{
-                '--PhoneInputCountry': {
-                  height: '100%',
-                },
-                '--PhoneInputCountryFlag': {
-                  height: 'strech',
-                  marginLeft: '2rem',
-                },
-              }}
-              defaultCountry="PT"
-              errors={methods.formState.errors?.phone?.message}
-              placeholder="Enter phone number"
-              inputComponent={() => {
-                return (
-                  <OutlinedInput
-                    className={styles.phoneField}
-                    register={{ ...methods.register('phone') }}
+            <InputLabel htmlFor="phone-input">Telefone:</InputLabel>
+            <Controller
+              name="phone"
+              control={methods.control}
+              render={({ field }) => (
+                <>
+                  <PhoneInput
+                    id="phone-input"
+                    style={{
+                      '--PhoneInputCountry': {
+                        height: '100%',
+                      },
+                      '--PhoneInputCountryFlag': {
+                        height: 'strech',
+                        marginLeft: '2rem',
+                      },
+                    }}
+                    defaultCountry="PT"
+                    errors={methods.formState.errors?.phone?.message}
+                    placeholder="Enter phone number"
+                    {...field}
+                    inputComponent={PhontInputComponent}
                   />
-                );
-              }}
+                  {methods.formState.errors.phone && (
+                    <p className={styles.error}>
+                      {methods.formState.errors.phone?.message}
+                    </p>
+                  )}
+                </>
+              )}
             />
           </Box>
         </Box>
+        <button type="submit">Submit</button>
       </form>
     </FormProvider>
   );
 }
 
-PersonalData.propTypes = {
-  setActiveStep: PropTypes.func,
-};
+PhontInputComponent.displayName = 'PhontInputComponent';

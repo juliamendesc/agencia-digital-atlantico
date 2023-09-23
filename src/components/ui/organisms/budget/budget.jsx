@@ -3,14 +3,14 @@ import { Box, InputLabel, OutlinedInput } from '@mui/material';
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useMultistepContext } from 'src/context/multistepContext';
-import styles from './BusinessArea.module.scss';
+import styles from './Budget.module.scss';
 import { multistepFormSchema } from 'src/Schema/multistepForm';
 
-export default function BusinessArea() {
+export default function Budget() {
   const multiStepContext = useMultistepContext();
 
   const methods = useForm({
-    resolver: zodResolver(multistepFormSchema.businessAreaSchema),
+    resolver: zodResolver(multistepFormSchema.monthlyBudgetSchema),
     defaultValues: multiStepContext.state,
   });
 
@@ -29,12 +29,13 @@ export default function BusinessArea() {
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <Box className={styles.container}>
           <Box className={styles.wrapper}>
-            <InputLabel htmlFor="business-area">
-              Qual é o seu setor de negócio?
+            <InputLabel htmlFor="budget">
+              Quanto pretende gastar em anúncios mensalmente?
             </InputLabel>
             <OutlinedInput
-              id="business-area"
-              {...methods.register('businessArea')}
+              type="number"
+              id="budget"
+              {...methods.register('monthlyBudget')}
             />
           </Box>
         </Box>

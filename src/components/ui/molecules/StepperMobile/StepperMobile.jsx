@@ -5,21 +5,28 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
+import PersonalData from 'src/components/ui/organisms/personal-data/personalData';
+import BusinessArea from 'src/components/ui/organisms/business-area/businessArea';
+import Facebook from 'src/components/ui/organisms/facebook/facebook';
+import Instagram from 'src/components/ui/organisms/instagram/instagram';
+import Website from 'src/components/ui/organisms/website/website';
+import BusinessSize from 'src/components/ui/organisms/business-size/businessSize';
+import HasHiredPaidAds from 'src/components/ui/organisms/has-hired-paid-ads/hasHiredPaidAds';
+import Budget from 'src/components/ui/organisms/budget/budget';
 import styles from 'src/components/ui/molecules/StepperMobile/StepperMobile.module.scss';
-import { PersonalData } from '../../organisms/personal-data/personalData';
 
 export const steps = [
   {
     label: 'Dados de contato',
     description: <PersonalData />,
   },
-  { label: 'Setor de negócio', description: '' },
-  { label: 'Website', description: '' },
-  { label: 'Instagram', description: '' },
-  { label: 'Facebook', description: '' },
-  { label: 'Tamanho da empresa', description: '' },
-  { label: 'Investimento em publicidade', description: '' },
-  { label: 'Orçamento disponível', description: '' },
+  { label: 'Setor de negócio', description: <BusinessArea /> },
+  { label: 'Website', description: <Website /> },
+  { label: 'Instagram', description: <Instagram /> },
+  { label: 'Facebook', description: <Facebook /> },
+  { label: 'Tamanho da empresa', description: <BusinessSize /> },
+  { label: 'Investimento em publicidade', description: <HasHiredPaidAds /> },
+  { label: 'Orçamento disponível', description: <Budget /> },
 ];
 
 export default function TextMobileStepper() {
@@ -52,7 +59,6 @@ export default function TextMobileStepper() {
           maxWidth: 400,
           width: '100%',
           p: 2,
-          background: '#000',
         }}
       >
         {steps[activeStep].description}
