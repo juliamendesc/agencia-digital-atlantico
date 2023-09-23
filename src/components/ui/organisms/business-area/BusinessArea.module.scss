@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: 4rem;
+  margin-top: 5rem;
 
   label {
     font-size: 2rem;
@@ -28,32 +28,20 @@
 }
 
 .wrapper {
-  width: fit-content;
+  height: fit-content;
 
   display: grid;
-  grid-template-columns: 0.3fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 
   div {
-    width: 50rem;
     place-self: start;
+    width: 100%;
   }
-}
 
-.phoneField {
-  width: fit-content;
-  display: grid;
-  grid-template-columns: 0.3fr 1fr;
-
-  label {
-    place-self: start;
-  }
-}
-
-.phoneWrapper {
-  display: flex;
-  flex-direction: row;
-
-  .input {
-    width: 37.5rem;
+  @media (max-width: 1300px) {
+    grid-template-columns: 1fr;
   }
 }

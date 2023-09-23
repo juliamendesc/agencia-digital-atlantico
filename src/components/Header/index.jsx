@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Logo from 'src/assets/logoatla3.png';
 import styles from 'src/components/Header/header.module.scss';
 import 'animate.css';
+import { Link } from '@mui/material';
 
 export function Header() {
   const [navActive, setNavActive] = useState(false);
@@ -13,22 +14,9 @@ export function Header() {
     setNavActive(!navActive);
   };
 
-  const handleLinkClick = (id) => {
-    handleScrollClick(id);
+  const handleLinkClick = () => {
     setNavActive(false);
   };
-
-  function handleScrollClick(id) {
-    const headerOffset = '7rem';
-    const el = document.getElementById(id);
-    const elementPosition = el.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    el?.scrollIntoView({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
-  }
 
   return (
     <header className={styles.header}>
@@ -45,45 +33,35 @@ export function Header() {
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>
 
         <div className={styles.navList}>
-          <button
-            onClick={() => handleLinkClick('home')}
-            className={styles.navLink}
-          >
-            Home
-          </button>
-          <button
-            onClick={() => handleLinkClick('servicos')}
-            className={styles.navLink}
-          >
-            Serviços
-          </button>
-          <button
-            onClick={() => handleLinkClick('beneficios')}
-            className={styles.navLink}
-          >
-            Benefícios
-          </button>
-          <button
-            onClick={() => handleLinkClick('quemsomos')}
-            className={styles.navLink}
-          >
-            Quem somos
-          </button>
-          <button
-            onClick={() => handleLinkClick('faq')}
-            className={styles.navLink}
-          >
-            FAQ
-          </button>
-          <button
-            onClick={() => router.push('/atendimento')}
-            className={styles.navLink}
-          >
-            Atendimento
-          </button>
+          <Link href="/" className={styles.navLink}>
+            <button onClick={handleLinkClick}>Home</button>
+          </Link>
+          <Link href="/#servicos" className={styles.navLink}>
+            <button onClick={handleLinkClick}>Serviços</button>
+          </Link>
+
+          <Link href="/#beneficios" className={styles.navLink}>
+            <button onClick={handleLinkClick}>Benefícios</button>
+          </Link>
+
+          <Link href="/#quemsomos" className={styles.navLink}>
+            <button onClick={handleLinkClick}>Quem somos</button>
+          </Link>
+
+          <Link href="/#faq" className={styles.navLink}>
+            <button onClick={handleLinkClick}>FAQ</button>
+          </Link>
+
+          <Link href="/atendimento" className={styles.navLink}>
+            <button onClick={handleLinkClick}>Atendimento</button>
+          </Link>
         </div>
 
-        <button id={styles.btnHeader} title="Solicitar orçamento">
+        <button
+          id={styles.btnHeader}
+          onClick={() => router.push('/atendimento')}
+          title="Solicitar orçamento"
+        >
           Solicitar orçamento
         </button>
       </nav>

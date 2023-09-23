@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, InputLabel, OutlinedInput } from '@mui/material';
-import CountrySelect from 'src/components/ui/molecules/CountrySelect/CountrySelect';
 import { useMultistepContext } from 'src/context/multistepContext';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import PropTypes from 'prop-types';
-import styles from './PersonalData.module.scss';
 import { personalDataSchema } from 'src/Schema/multistep-form/IPersonalData';
+import styles from './PersonalData.module.scss';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 export function PersonalData() {
   const multiStepContext = useMultistepContext();
@@ -43,19 +44,29 @@ export function PersonalData() {
             />
           </Box>
           <Box className={styles.phoneField}>
-            <Box>
-              <InputLabel htmlFor="phone">Telefone:</InputLabel>
-            </Box>
-            <Box className={styles.phoneWrapper}>
-              <CountrySelect
-                register={{ ...methods.register('countryCode') }}
-              />
-              <OutlinedInput
-                id="phone"
-                className={styles.input}
-                {...methods.register('phone')}
-              />
-            </Box>
+            <InputLabel htmlFor="phone">Telefone:</InputLabel>
+            <PhoneInput
+              style={{
+                '--PhoneInputCountry': {
+                  height: '100%',
+                },
+                '--PhoneInputCountryFlag': {
+                  height: 'strech',
+                  marginLeft: '2rem',
+                },
+              }}
+              defaultCountry="PT"
+              errors={methods.formState.errors?.phone?.message}
+              placeholder="Enter phone number"
+              inputComponent={() => {
+                return (
+                  <OutlinedInput
+                    className={styles.phoneField}
+                    register={{ ...methods.register('phone') }}
+                  />
+                );
+              }}
+            />
           </Box>
         </Box>
       </form>

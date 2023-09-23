@@ -6,7 +6,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
 import styles from 'src/components/ui/molecules/StepperMobile/StepperMobile.module.scss';
-import { PersonalData } from '../../organisms/personalData/personalData';
+import { PersonalData } from '../../organisms/personal-data/personalData';
 
 export const steps = [
   {

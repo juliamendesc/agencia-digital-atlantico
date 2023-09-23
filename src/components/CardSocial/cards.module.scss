@@ -6,6 +6,10 @@
 
   padding-bottom: 5rem;
 
+  @media (min-width: 2560px) {
+    padding-bottom: 10rem;
+  }
+
   @media (max-width: 800px) {
     margin: 0 2rem;
   }
@@ -17,6 +21,10 @@
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 5rem;
+
+    @media (min-width: 2560px) {
+      font-size: 5rem;
+    }
 
     @media (max-width: 800px) {
       font-size: 2.5rem;
@@ -33,6 +41,10 @@
   margin: 0 5rem;
   display: flex;
   justify-content: space-around;
+
+  @media (min-width: 2560px) {
+    margin: 0 10rem;
+  }
 
   @media (max-width: 1400px) {
     display: grid;
@@ -75,6 +87,10 @@
     font-size: 2.5rem;
     font-weight: 700;
 
+    @media (min-width: 2560px) {
+      font-size: 4rem;
+    }
+
     @media (max-width: 800px) {
       font-size: 2rem;
     }
@@ -87,6 +103,10 @@
   p {
     font-size: 2.25rem;
 
+    @media (min-width: 2560px) {
+      font-size: 3.5rem;
+    }
+
     @media (max-width: 800px) {
       font-size: 2rem;
     }
@@ -94,6 +114,11 @@
     @media (max-width: 320px) {
       font-size: 1.5rem;
     }
+  }
+
+  @media (min-width: 2560px) {
+    width: 50rem;
+    height: auto;
   }
 
   @media (max-width: 800px) {

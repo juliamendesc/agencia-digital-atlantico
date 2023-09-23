@@ -8,6 +8,10 @@
   padding-bottom: 2rem;
 
   background: var(--color-header-border);
+
+  @media (min-width: 2560px) {
+    height: 150px;
+  }
 }
 
 .logoContainer {
@@ -78,6 +82,10 @@
     &:hover::after {
       width: 100%;
     }
+
+    @media (min-width: 2560px) {
+      font-size: 3.5rem;
+    }
   }
 }
 
@@ -119,6 +127,10 @@
 
   &:hover {
     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  }
+
+  @media (min-width: 2560px) {
+    font-size: 3.5rem;
   }
 }
 

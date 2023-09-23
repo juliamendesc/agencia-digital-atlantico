@@ -1,12 +1,19 @@
 .container {
-  height: calc(100vh);
+  height: 100vh;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   background: linear-gradient(
     128deg,
     rgba(0, 0, 0, 1) 80%,
     rgba(44, 230, 232, 0.74) 100%
   );
+
+  @media (min-width: 2560px) {
+    justify-content: center;
+    align-items: center;
+  }
 
   @media (max-width: 1317px) {
     padding-top: 5rem;
@@ -24,8 +31,10 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     grid-template-columns: 1fr;
   }
 }
@@ -42,16 +51,17 @@
 }
 
 .heroImage {
-  width: 100%;
   height: auto;
   object-fit: cover;
   object-position: center;
   opacity: 0.5;
+
+  @media (min-width: 2056px) {
+    width: 100rem;
+  }
 }
 
 #TextForm {
-  align-self: center;
-
   margin: 0 5rem;
   display: flex;
   flex-direction: column;
@@ -85,7 +95,7 @@
   }
 
   @media (min-width: 2560px) {
-    gap: 12rem;
+    gap: 10rem;
 
     h1 {
       font-size: 15rem;
@@ -98,7 +108,7 @@
     }
 
     button {
-      font-size: 3rem;
+      font-size: 3.5rem;
       padding: 3rem 5rem;
     }
   }

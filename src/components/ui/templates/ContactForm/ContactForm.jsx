@@ -82,7 +82,6 @@ export default function ContactForm() {
             <div className={styles.userBox}>
               <input
                 type="number"
-                name="assunto"
                 placeholder="+351"
                 id="form-phone"
                 {...methods.register('phone', {
@@ -108,7 +107,6 @@ export default function ContactForm() {
             <div className={styles.userBox}>
               <input
                 type="email"
-                name="email"
                 id="form-email"
                 {...methods.register('email', {
                   required: 'Por favor, preencha o campo com seu email.',

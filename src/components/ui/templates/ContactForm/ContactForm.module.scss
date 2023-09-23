@@ -3,12 +3,20 @@
   width: 100vw;
   background: linear-gradient(#215c72, #243b55);
   padding: 3rem 0;
+
+  @media (min-width: 2560px) {
+    padding: 5rem 0;
+  }
 }
 
 .container {
   display: grid;
   grid-template-rows: 0.3fr 1fr;
   gap: 2rem;
+
+  @media (min-width: 2560px) {
+    gap: 5rem;
+  }
 
   @media (max-width: 800px) {
     display: flex;
@@ -27,8 +35,16 @@
   align-items: center;
   gap: 2rem;
 
+  @media (min-width: 2560px) {
+    margin: 0 10rem;
+  }
+
   p {
     text-align: justify;
+
+    @media (min-width: 2560px) {
+      font-size: 3.5rem;
+    }
   }
 }
 
@@ -39,6 +55,10 @@
   margin: 0 5rem;
   padding: 4rem;
   border-radius: 1rem;
+
+  @media (min-width: 2560px) {
+    margin: 0 10rem;
+  }
 }
 
 .formBox h2 {
@@ -50,6 +70,10 @@
 
 .formBox .userBox {
   position: relative;
+
+  @media (min-width: 2560px) {
+    margin: 2rem 10rem;
+  }
 }
 
 .selectBox {
@@ -68,6 +92,11 @@
 
     color: var(--color-primary);
     font-size: 1.4rem;
+
+    @media (min-width: 2560px) {
+      font-size: 3.5rem;
+      margin: 0 10rem;
+    }
 
     @media (max-width: 800px) {
       font-size: 1.2rem;
@@ -88,6 +117,17 @@
 
   option {
     color: #000;
+
+    @media (min-width: 2560px) {
+      font-size: 1.5rem;
+      padding: 2rem 0;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    font-size: 3.5rem;
+    margin: 0 10rem;
+    padding: 4rem 0;
   }
 }
 
@@ -100,6 +140,11 @@
   border: none;
   border-bottom: 1px solid var(--color-white);
   background: transparent;
+
+  @media (min-width: 2560px) {
+    font-size: 3.5rem;
+    padding: 2rem 0;
+  }
 }
 
 .userBox textarea {
@@ -112,6 +157,10 @@
   outline: none;
   background: transparent;
 
+  @media (min-width: 2560px) {
+    font-size: 3.5rem;
+  }
+
   @media (max-width: 800px) {
     font-size: 1.4rem;
   }
@@ -122,11 +171,17 @@
   top: -20px;
   left: 0;
 
-  padding: 10px 0;
+  padding: 1rem 0;
   pointer-events: none;
 
   color: var(--color-primary);
   font-size: 1.4rem;
+
+  @media (min-width: 2560px) {
+    font-size: 3.5rem;
+    padding: 0;
+    top: -30px;
+  }
 
   @media (max-width: 800px) {
     font-size: 1.2rem;
@@ -137,6 +192,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 2560px) {
+    margin: 0 10rem;
+  }
 }
 
 .formBox form button {
@@ -151,6 +210,11 @@
   margin-top: 4rem;
   letter-spacing: 0.4rem;
   background-color: transparent;
+
+  @media (min-width: 2560px) {
+    font-size: 3.5rem;
+    padding: 2rem 4rem;
+  }
 
   @media (max-width: 800px) {
     font-size: 1.4rem;

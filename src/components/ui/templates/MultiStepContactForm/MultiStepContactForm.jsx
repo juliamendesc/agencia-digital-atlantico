@@ -33,7 +33,7 @@ export default function MultiStepContactForm() {
         8 perguntas - tempo médio de duração 1 minuto
       </div>
 
-      <Box>{isMobile ? <StepperMobile /> : <StepperDesktop />}</Box>
+      {isMobile ? <StepperMobile /> : <StepperDesktop />}
     </Box>
   );
 }

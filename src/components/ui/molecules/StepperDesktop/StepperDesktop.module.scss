@@ -2,19 +2,25 @@
   background: var(--color-white);
   border-radius: 10px;
   padding: 2rem;
+  gap: 2rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  justify-content: space-between;
-
-  height: 100%;
-  width: 100%;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
-.step {
-  height: auto;
-  width: 100%;
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1300px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+  }
 }
 
 .stepButton {

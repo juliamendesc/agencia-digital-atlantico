@@ -1,6 +1,10 @@
 .quemSomosWrapper {
   margin: 0 5rem;
 
+  @media (min-width: 2560px) {
+    margin: 0 10rem;
+  }
+
   @media (max-width: 1000px) {
     margin: 0 2rem;
   }
@@ -8,6 +12,10 @@
 
 .heading {
   padding-bottom: 2rem;
+
+  @media (min-width: 2560px) {
+    font-size: 5rem;
+  }
 
   @media (max-width: 1000px) {
     margin-right: 0;
@@ -26,10 +34,22 @@
   gap: 2rem;
 
   p {
+    @media (min-width: 2560px) {
+      font-size: 3.5rem;
+      line-height: 5rem;
+      text-indent: 5rem;
+      text-align: justify;
+    }
+
     @media (max-width: 1000px) {
       text-indent: 0;
       text-align: center;
     }
+  }
+
+  @media (min-width: 2560px) {
+    gap: 3.5rem;
+    margin: 0 10rem;
   }
 
   @media (max-width: 1000px) {
@@ -85,6 +105,10 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 
+  @media (min-width: 2560px) {
+    gap: 3rem;
+  }
+
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -112,17 +136,30 @@
     p {
       color: #fff;
       font-size: 2rem;
+
+      @media (min-width: 2560px) {
+        font-size: 3rem;
+      }
     }
 
     img {
       width: 200px;
       height: 200px;
 
+      @media (min-width: 2560px) {
+        width: 400px;
+        height: 400px;
+      }
+
       @media (max-width: 1000px) {
         width: 100px;
         height: 100px;
       }
     }
+  }
+
+  @media (min-width: 2560px) {
+    padding-bottom: 10rem;
   }
 
   @media (max-width: 1000px) {

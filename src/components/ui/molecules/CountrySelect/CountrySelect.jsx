@@ -38,7 +38,6 @@ export default function CountrySelect({ register }) {
         className: classes.select,
       }}
       autoHighlight
-      sx={{ width: 125 }}
       getOptionLabel={(option) =>
         `+${option.phone}             ${option.label} `
       }
@@ -65,7 +64,14 @@ export default function CountrySelect({ register }) {
         return (
           <TextField
             {...params}
-            sx={{ label: { color: '#000000' } }}
+            sx={{
+              label: {
+                color: '#000000',
+                display: 'grid',
+                gridTemplateColumns: '0.3fr 1fr',
+                gap: '4rem',
+              },
+            }}
             inputProps={{
               ...params.inputProps,
               autoComplete: 'new-password', // disable autocomplete and autofill

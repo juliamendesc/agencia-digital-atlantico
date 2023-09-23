@@ -78,6 +78,10 @@ h1 {
   font-size: 3.5rem;
   font-weight: 700;
 
+  @media (min-width: 2056px) {
+    font-size: 4rem;
+  }
+
   @media (max-width: 1000px) {
     font-size: 2.75rem;
   }
@@ -92,6 +96,10 @@ h2 {
   font-weight: 700;
 
   color: var(--color-primary);
+
+  @media (min-width: 2056px) {
+    font-size: 4rem;
+  }
 
   @media (max-width: 1000px) {
     font-size: 2rem;
@@ -112,6 +120,10 @@ p {
   text-indent: 1.5em;
   font-size: 2.25rem;
   letter-spacing: 0.3rem;
+
+  @media (min-width: 2056px) {
+    font-size: 3rem;
+  }
 
   @media (max-width: 1000px) {
     font-size: 2rem;
@@ -138,6 +150,10 @@ li {
   white-space: pre-wrap;
   letter-spacing: 0.3rem;
   text-indent: 3em;
+
+  @media (min-width: 2056px) {
+    font-size: 3rem;
+  }
 
   @media (max-width: 1400px) {
     text-indent: 0;

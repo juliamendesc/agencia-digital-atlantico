@@ -8,7 +8,8 @@ import Typography from '@mui/material/Typography';
 
 import styles from 'src/components/ui/molecules/StepperDesktop/StepperDesktop.module.scss';
 import { useMediaQuery } from '@mui/material';
-import { PersonalData } from 'src/components/ui/organisms/personalData/personalData';
+import { PersonalData } from 'src/components/ui/organisms/personal-data/personalData';
+import BusinessArea from 'src/components/ui/organisms/business-area/businessArea';
 
 const formSteps = [
   'Dados de contato',
@@ -79,50 +80,53 @@ export default function HorizontalNonLinearStepper() {
 
   return (
     <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.container}>
-      <Stepper
-        activeStep={activeStep}
-        orientation={verticalStepper ? 'vertical' : 'horizontal'}
-      >
-        {formSteps.map((label, index) => {
-          const labelProps = {};
-          if (isStepFailed(index)) {
-            labelProps.optional = (
-              <Typography variant="caption" color="error" fontSize={14}>
-                {/* {methods.formState.errors?.steps[index]?.message} */} Erro
-              </Typography>
-            );
-
-            labelProps.error = true;
-          }
-
-          return (
-            <Step
-              key={label}
-              completed={completed[index]}
-              className={styles.step}
-            >
-              <StepButton
-                color="var(--color-footer)"
-                onClick={handleStep(index)}
-                className={styles.stepButton}
-              >
-                <Typography
-                  variant="caption"
-                  color="var(--color-text-dark)"
-                  fontSize={14}
-                >
-                  {label}
+      <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.formContainer}>
+        <Stepper
+          activeStep={activeStep}
+          orientation={verticalStepper ? 'vertical' : 'horizontal'}
+          className={styles.stepper}
+        >
+          {formSteps.map((label, index) => {
+            const labelProps = {};
+            if (isStepFailed(index)) {
+              labelProps.optional = (
+                <Typography variant="caption" color="error" fontSize={14}>
+                  {/* {methods.formState.errors?.steps[index]?.message} */} Erro
                 </Typography>
-              </StepButton>
-            </Step>
-          );
-        })}
-      </Stepper>
+              );
 
-      <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.container}>
-        <PersonalData />
+              labelProps.error = true;
+            }
+
+            return (
+              <Step
+                key={label}
+                completed={completed[index]}
+                className={styles.step}
+              >
+                <StepButton
+                  color="var(--color-footer)"
+                  onClick={handleStep(index)}
+                  className={styles.stepButton}
+                >
+                  <Typography
+                    variant="caption"
+                    color="var(--color-text-dark)"
+                    fontSize={14}
+                  >
+                    {label}
+                  </Typography>
+                </StepButton>
+              </Step>
+            );
+          })}
+        </Stepper>
+
+        <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.container}>
+          {activeStep === 0 && <PersonalData />}
+          {activeStep === 1 && <BusinessArea />}
+        </Box>
       </Box>
-
       <div>
         {allStepsCompleted() ? (
           <React.Fragment>
