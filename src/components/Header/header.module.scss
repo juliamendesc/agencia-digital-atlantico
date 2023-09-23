@@ -28,8 +28,8 @@
       color: var(--color-white);
     }
 
-    @media (max-width: 1200px) {
-      font-size: 2rem;
+    @media (max-width: 1220px) {
+      font-size: 1.75rem;
     }
 
     @media (max-width: 320px) {
@@ -122,7 +122,7 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1145px) {
   .header {
     display: flex;
     justify-content: space-evenly;

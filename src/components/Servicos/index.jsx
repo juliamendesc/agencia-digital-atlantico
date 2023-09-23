@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import dataCollectionIcon from 'src/assets/data-collection.svg';
+import dataCollectionIcon from 'src/assets/servicos.jpg';
 import styles from 'src/components/Servicos/servicos.module.scss';
 import 'animate.css';
 
@@ -10,7 +10,7 @@ export function Servicos() {
       <div id="servicos" className={styles.wrapper}>
         <h2>Serviço</h2>
         <h1>Como funciona o serviço</h1>
-        <div className={styles.imageWrapper}>
+        <div className={styles.main1}>
           <div className={styles.paragraphs}>
             <p>
               Diariamente coletamos dados indicadores, que nos permitem entender
@@ -42,9 +42,13 @@ export function Servicos() {
               as atualizações algorítmicas das plataformas de anúncios.
             </p>
           </div>
-          <aside className={styles.imageConfig}>
-            <Image src={dataCollectionIcon} alt="Data Collection Icon" />
-          </aside>
+          <div className={styles.imageWrapper}>
+            <Image
+              src={dataCollectionIcon}
+              alt="Data Collection Icon"
+              className={styles.imageConfig}
+            />
+          </div>
         </div>
 
         <div className={styles.textGoals}>
