@@ -34,7 +34,7 @@ export default function StepperDesktop({
   setActiveStep = () => {},
 }) {
   const [completed, setCompleted] = React.useState({});
-  const verticalStepper = useMediaQuery('(max-width:1300px)');
+  const verticalStepper = useMediaQuery('(max-width:765px)');
   const [isFormDirty, setIsFormDirty] = React.useState(true);
 
   const methods = useFormContext();
@@ -87,21 +87,16 @@ export default function StepperDesktop({
                     color="var(--color-footer)"
                     onClick={handleStep(index)}
                     className={styles.stepButton}
-                  >
-                    <Typography
-                      variant="caption"
-                      color="var(--color-text-dark)"
-                      fontSize={14}
-                    >
-                      {label}
-                    </Typography>
-                  </StepButton>
+                  />
                 </Step>
               );
             })}
           </Stepper>
 
-          <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.container}>
+          <Box
+            sx={{ width: '100%', flexGrow: 1 }}
+            className={styles.componentContainer}
+          >
             <FormProvider {...methods}>
               {activeStep === 0 && (
                 <PersonalData

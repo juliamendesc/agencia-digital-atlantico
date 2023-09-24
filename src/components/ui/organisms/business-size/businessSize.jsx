@@ -54,10 +54,13 @@ export default function BusinessSize({ activeStep, setActiveStep }) {
                     id="business-size"
                     exclusive
                     sx={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'center',
-                      alignContent: 'center',
+                      '.MuiButtonBase-root': {
+                        padding: '0.5rem 1rem',
+                        fontSize: '1.5rem',
+                        fontWeight: 'bold',
+
+                        margin: '0 auto',
+                      },
                     }}
                     value={field.value}
                     onChange={field.onChange}

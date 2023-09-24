@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
 
-  margin-top: 5rem;
+  margin-top: 3rem;
 
   label,
   input {
@@ -59,4 +59,11 @@
   color: var(--color-red);
   font-size: 1.2rem;
   text-align: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

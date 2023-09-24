@@ -76,9 +76,9 @@ export default function Budget({ activeStep, setActiveStep }) {
               {...methods.register('monthlyBudget')}
             />
             {methods.formState.errors.monthlyBudget && (
-              <span className={styles.error}>
+              <p className={styles.error}>
                 {methods.formState.errors.monthlyBudget.message}
-              </span>
+              </p>
             )}
           </Box>
         </Box>

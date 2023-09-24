@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: 4rem;
 
+  margin-top: 3rem;
+
   label,
   input {
     font-size: 2rem;
@@ -110,4 +112,11 @@
   color: var(--color-red);
   font-size: 1.2rem;
   text-align: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
