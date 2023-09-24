@@ -1,45 +1,53 @@
-import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Box,
   InputLabel,
   ToggleButton,
   ToggleButtonGroup,
+  useMediaQuery,
 } from '@mui/material';
 import React from 'react';
-import { Controller, FormProvider, useForm } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import { useMultistepContext } from 'src/context/multistepContext';
 import styles from './HasHiredPaidAds.module.scss';
-import { multistepFormSchema } from 'src/Schema/multistepForm';
+import SubmitButton from 'src/components/ui/atoms/Submit-button';
+import PropTypes from 'prop-types';
 
-export default function HasHiredPaidAds() {
+export default function HasHiredPaidAds({ activeStep, setActiveStep }) {
   const multiStepContext = useMultistepContext();
-
-  const methods = useForm({
-    resolver: zodResolver(multistepFormSchema.hasHiredPaidAdsSchema),
-    defaultValues: multiStepContext.state,
-  });
+  const methods = useFormContext();
+  const mobile = useMediaQuery('(max-width:767px)');
 
   function onSubmit(data) {
     console.log('data', data);
     multiStepContext.dispatch({ type: 'update', payload: data });
   }
 
-  console.log(multiStepContext);
+  function handleNext() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep + 1);
+  }
 
-  console.log(methods.getValues());
-  console.log(methods.formState.errors);
+  function handleBack() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep - 1);
+  }
+
+  console.log('state', multiStepContext);
+  console.log('values', methods.getValues());
+  console.log('erros', methods.formState.errors);
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <Box className={styles.container}>
-          <Box className={styles.wrapper}>
-            <InputLabel htmlFor="hasHiredPaidAds">
-              Já alguma vez investiu em publicidade paga?
-            </InputLabel>
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <Box className={styles.container}>
+        <Box className={styles.wrapper}>
+          <InputLabel htmlFor="hasHiredPaidAds">
+            Já alguma vez investiu em publicidade paga?
+            <sup>*</sup>
+          </InputLabel>
 
+          <Box className={styles.input}>
             <Controller
-              name="hasHiredPaidAds"
+              name="hasHiredPaidAds.hasHiredPaidAds"
               control={methods.control}
               render={({ field }) => (
                 <>
@@ -55,13 +63,39 @@ export default function HasHiredPaidAds() {
                     onChange={field.onChange}
                     {...field}
                   >
-                    <ToggleButton value={'Sim'}>Sim</ToggleButton>
-                    <ToggleButton value={'Não'}>Não</ToggleButton>
+                    <ToggleButton
+                      sx={{
+                        '&.Mui-selected': {
+                          backgroundColor: '#F2F2F2',
+                          color: '#000000',
+                        },
+                        fontSize: '1.5rem',
+                      }}
+                      value={'Sim'}
+                    >
+                      Sim
+                    </ToggleButton>
+                    <ToggleButton
+                      sx={{
+                        '&.Mui-selected': {
+                          backgroundColor: '#F2F2F2',
+                          color: '#000000',
+                        },
+                        fontSize: '1.5rem',
+                      }}
+                      value={'Não'}
+                    >
+                      Não
+                    </ToggleButton>
                   </ToggleButtonGroup>
 
-                  {methods.formState.errors.hasHiredPaidAds && (
+                  {methods.formState.errors.hasHiredPaidAds
+                    ?.hasHiredPaidAds && (
                     <p className={styles.error}>
-                      {methods.formState.errors.hasHiredPaidAds?.message}
+                      {
+                        methods.formState.errors.hasHiredPaidAds
+                          ?.hasHiredPaidAds?.message
+                      }
                     </p>
                   )}
                 </>
@@ -69,7 +103,21 @@ export default function HasHiredPaidAds() {
             />
           </Box>
         </Box>
-      </form>
-    </FormProvider>
+      </Box>
+      {!mobile && (
+        <SubmitButton
+          activeStep={6}
+          setActiveStep={setActiveStep}
+          handleBack={handleBack}
+          handleNext={handleNext}
+          text="Próximo"
+        />
+      )}
+    </form>
   );
 }
+
+HasHiredPaidAds.propTypes = {
+  activeStep: PropTypes.number,
+  setActiveStep: PropTypes.func,
+};

@@ -1,8 +1,8 @@
 import { z } from 'zod';
 
 export const monthlyBudgetSchema = z
-  .number({
+  .string({
     required_error: 'Campo obrigatório',
   })
-  .min(0, { message: 'Valor inválido' })
+  .nonempty({ message: 'Campo obrigatório' })
   .nullable();

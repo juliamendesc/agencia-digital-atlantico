@@ -2,15 +2,17 @@ import { z } from 'zod';
 
 export const facebookSchema = z
   .object({
-    facebook: z.union([
+    facebookAccount: z.union([
       z
         .string({
-          message: 'Insira um endereço de site válido',
+          required_error: 'Insira um endereço de site válido',
         })
-        .url()
+        .url({
+          message: 'Insira uma url válida',
+        })
         .nullish(),
       z.literal(''),
     ]),
-    hasFacebook: z.boolean(),
+    hasFacebook: z.union([z.literal('Sim'), z.literal('Não')]),
   })
   .required();

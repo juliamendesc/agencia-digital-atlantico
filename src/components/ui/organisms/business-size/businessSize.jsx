@@ -1,44 +1,52 @@
-import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Box,
   InputLabel,
   ToggleButton,
   ToggleButtonGroup,
+  useMediaQuery,
 } from '@mui/material';
 import React from 'react';
-import { Controller, FormProvider, useForm } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import { useMultistepContext } from 'src/context/multistepContext';
 import styles from './BusinessSize.module.scss';
-import { multistepFormSchema } from 'src/Schema/multistepForm';
+import PropTypes from 'prop-types';
+import SubmitButton from 'src/components/ui/atoms/Submit-button';
 
-export default function BusinessSize() {
+export default function BusinessSize({ activeStep, setActiveStep }) {
   const multiStepContext = useMultistepContext();
-
-  const methods = useForm({
-    resolver: zodResolver(multistepFormSchema.businessSizeSchema),
-    defaultValues: multiStepContext.state,
-  });
+  const methods = useFormContext();
+  const mobile = useMediaQuery('(max-width:767px)');
 
   function onSubmit(data) {
     console.log('data', data);
     multiStepContext.dispatch({ type: 'update', payload: data });
   }
 
-  console.log(multiStepContext);
+  function handleNext() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep + 1);
+  }
 
-  console.log(methods.getValues());
-  console.log(methods.formState.errors);
+  function handleBack() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep - 1);
+  }
+
+  console.log('state', multiStepContext);
+  console.log('values', methods.getValues());
+  console.log('erros', methods.formState.errors);
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <Box className={styles.container}>
-          <Box className={styles.wrapper}>
-            <InputLabel htmlFor="business-size">
-              Quantas pessoas trabalham na sua empresa?
-            </InputLabel>
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <Box className={styles.container}>
+        <Box className={styles.wrapper}>
+          <InputLabel htmlFor="business-size">
+            Quantas pessoas trabalham na sua empresa?
+            <sup>*</sup>
+          </InputLabel>
+          <Box className={styles.input}>
             <Controller
-              name="businessSize"
+              name="businessSize.businessSize"
               control={methods.control}
               render={({ field }) => (
                 <>
@@ -61,9 +69,12 @@ export default function BusinessSize() {
                     <ToggleButton value="21-50">21-50</ToggleButton>
                   </ToggleButtonGroup>
 
-                  {methods.formState.errors.businessSize && (
+                  {methods.formState.errors.businessSize?.businessSize && (
                     <p className={styles.error}>
-                      {methods.formState.errors.businessSize?.message}
+                      {
+                        methods.formState.errors.businessSize?.businessSize
+                          ?.message
+                      }
                     </p>
                   )}
                 </>
@@ -71,7 +82,21 @@ export default function BusinessSize() {
             />
           </Box>
         </Box>
-      </form>
-    </FormProvider>
+      </Box>
+      {!mobile && (
+        <SubmitButton
+          activeStep={5}
+          setActiveStep={setActiveStep}
+          handleBack={handleBack}
+          handleNext={handleNext}
+          text="Próximo"
+        />
+      )}
+    </form>
   );
 }
+
+BusinessSize.propTypes = {
+  activeStep: PropTypes.number,
+  setActiveStep: PropTypes.func,
+};

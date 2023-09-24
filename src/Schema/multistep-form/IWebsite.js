@@ -2,15 +2,15 @@ import { z } from 'zod';
 
 export const websiteSchema = z
   .object({
-    website: z.union([
-      z
-        .string({
-          message: 'Insira um endereço de site válido',
-        })
-        .url()
-        .nullish(),
-      z.literal(''),
-    ]),
-    hasWebsite: z.boolean(),
+    websiteUrl: z
+      .string({
+        required_error: 'Campo obrigatório',
+      })
+      .url({
+        message: 'Por favor, insira um link válido.',
+      })
+      .optional()
+      .nullish(),
+    hasWebsite: z.union([z.literal('Sim'), z.literal('Não')]),
   })
   .required();

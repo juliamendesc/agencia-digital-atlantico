@@ -13,7 +13,12 @@ import Website from 'src/components/ui/organisms/website/website';
 import BusinessSize from 'src/components/ui/organisms/business-size/businessSize';
 import HasHiredPaidAds from 'src/components/ui/organisms/has-hired-paid-ads/hasHiredPaidAds';
 import Budget from 'src/components/ui/organisms/budget/budget';
+import SubmittedForm from 'src/components/ui/organisms/submitted-form/submittedForm';
+import PropTypes from 'prop-types';
 import styles from 'src/components/ui/molecules/StepperMobile/StepperMobile.module.scss';
+import { useFormContext } from 'react-hook-form';
+import { useMultistepContext } from 'src/context/multistepContext';
+import sendMultistepEmail from 'src/utils/sendMultiStepEmail';
 
 export const steps = [
   {
@@ -27,11 +32,14 @@ export const steps = [
   { label: 'Tamanho da empresa', description: <BusinessSize /> },
   { label: 'Investimento em publicidade', description: <HasHiredPaidAds /> },
   { label: 'Orçamento disponível', description: <Budget /> },
+  { label: 'Formulário enviado', description: <SubmittedForm /> },
 ];
 
-export default function TextMobileStepper() {
+export default function StepperMobile() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const multistepContext = useMultistepContext();
+  const methods = useFormContext();
 
   const maxSteps = steps.length;
 
@@ -39,14 +47,27 @@ export default function TextMobileStepper() {
   const isLastStep = activeStep === maxSteps - 1;
 
   const handleNext = () => {
+    multistepContext.dispatch({
+      type: 'update',
+      payload: methods.getValues(),
+    });
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
+    multistepContext.dispatch({
+      type: 'update',
+      payload: methods.getValues(),
+    });
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    await sendMultistepEmail(
+      multistepContext.state,
+      setActiveStep,
+      methods.reset(),
+    );
     console.log('submit');
     setIsSubmitted(true);
   };
@@ -64,6 +85,7 @@ export default function TextMobileStepper() {
         {steps[activeStep].description}
       </Box>
       <MobileStepper
+        className={styles.stepper}
         variant="text"
         steps={maxSteps}
         position="static"
@@ -88,3 +110,8 @@ export default function TextMobileStepper() {
     </Box>
   );
 }
+
+StepperMobile.propTypes = {
+  activeStep: PropTypes.number,
+  setActiveStep: PropTypes.func,
+};

@@ -1,15 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import StepperMobile from 'src/components/ui/molecules/StepperMobile/StepperMobile';
 import StepperDesktop from 'src/components/ui/molecules/StepperDesktop/StepperDesktop';
 import useMediaQuery from '@mui/material/useMediaQuery';
-
-import styles from 'src/components/ui/templates/MultiStepContactForm/MultiStepContactForm.module.scss';
 import { MultistepProvider } from 'src/context/multistepContext';
+import styles from 'src/components/ui/templates/MultiStepContactForm/MultiStepContactForm.module.scss';
+import { FormProvider, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { multistepFormSchema } from 'src/Schema/multistep-form/multistepForm';
 
 export default function MultiStepContactForm() {
-  const [isMobile, setIsMobile] = React.useState(false);
-  const mobile = useMediaQuery('(max-width:600px)');
+  const [activeStep, setActiveStep] = useState(0);
+
+  const [isMobile, setIsMobile] = useState(false);
+  const mobile = useMediaQuery('(max-width:767px)');
+  const methods = useForm({
+    resolver: zodResolver(multistepFormSchema),
+    mode: 'onBlur',
+  });
 
   useEffect(() => {
     setIsMobile(mobile);
@@ -35,7 +43,19 @@ export default function MultiStepContactForm() {
       </div>
 
       <MultistepProvider>
-        {isMobile ? <StepperMobile /> : <StepperDesktop />}
+        <FormProvider {...methods}>
+          {isMobile ? (
+            <StepperMobile
+              setActiveStep={setActiveStep}
+              activeStep={activeStep}
+            />
+          ) : (
+            <StepperDesktop
+              setActiveStep={setActiveStep}
+              activeStep={activeStep}
+            />
+          )}
+        </FormProvider>
       </MultistepProvider>
     </Box>
   );

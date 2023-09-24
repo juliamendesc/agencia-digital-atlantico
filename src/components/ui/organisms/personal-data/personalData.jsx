@@ -1,56 +1,109 @@
 import React, { forwardRef } from 'react';
-import { Box, InputLabel, OutlinedInput } from '@mui/material';
+import { Box, InputLabel, OutlinedInput, useMediaQuery } from '@mui/material';
 import { useMultistepContext } from 'src/context/multistepContext';
-import { Controller, FormProvider, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { Controller, useFormContext } from 'react-hook-form';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import styles from './PersonalData.module.scss';
-import { personalDataSchema } from 'src/Schema/multistep-form/IPersonalData';
+import SubmitButton from 'src/components/ui/atoms/Submit-button';
+import PropTypes from 'prop-types';
 
 const PhontInputComponent = forwardRef((props, ref) => {
   return (
     <OutlinedInput {...props} className={styles.phoneField} inputRef={ref} />
   );
 });
-export default function PersonalData() {
+export default function PersonalData({ activeStep, setActiveStep }) {
   const multiStepContext = useMultistepContext();
-
-  const methods = useForm({
-    resolver: zodResolver(personalDataSchema),
-    defaultValues: multiStepContext.state,
-  });
+  const methods = useFormContext();
+  const mobile = useMediaQuery('(max-width:767px)');
 
   function onSubmit(data) {
-    console.log('data', data);
     multiStepContext.dispatch({ type: 'update', payload: data });
+
+    console.log('data', data);
   }
 
-  console.log(multiStepContext);
-  console.log('form', methods.getValues());
-  console.log('errors', methods.formState.errors);
+  function handleNext() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep + 1);
+  }
+
+  function handleBack() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep - 1);
+  }
+
+  console.log('state', multiStepContext);
+  console.log('values', methods.getValues());
+  console.log('erros', methods.formState.errors);
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <Box className={styles.container}>
-          <Box className={styles.wrapper}>
-            <InputLabel htmlFor="nome">Nome:</InputLabel>
-            <OutlinedInput id="nome" {...methods.register('nome')} />
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <Box className={styles.container}>
+        <Box className={styles.wrapper}>
+          <InputLabel htmlFor="nome">
+            Nome:
+            <sup>*</sup>
+          </InputLabel>
+          <Box className={styles.input}>
+            <OutlinedInput
+              id="nome"
+              {...methods.register('personalData.nome')}
+            />
+            {methods.formState.errors.personalData?.nome && (
+              <p className={styles.error}>
+                {methods.formState.errors.personalData?.nome?.message}
+              </p>
+            )}
           </Box>
-          <Box className={styles.wrapper}>
-            <InputLabel htmlFor="email">E-mail:</InputLabel>
+        </Box>
+        <Box className={styles.wrapper}>
+          <InputLabel htmlFor="email">
+            E-mail:
+            <sup>*</sup>
+          </InputLabel>
+          <Box className={styles.input}>
             <OutlinedInput
               id="email"
               className={styles.input}
-              {...methods.register('email')}
+              {...methods.register('personalData.email', {
+                required: 'Por favor, preencha o campo com seu e-mail.',
+                validate: {
+                  matchPattern: (value) =>
+                    / {22}^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/.test(
+                      value,
+                    ) || 'Por favor, preencha o campo com um email válido.',
+                },
+              })}
             />
+            {methods.formState.errors.personalData?.email && (
+              <p className={styles.error}>
+                {methods.formState.errors.personalData?.email?.message}
+              </p>
+            )}
           </Box>
-          <Box className={styles.phoneField}>
-            <InputLabel htmlFor="phone-input">Telefone:</InputLabel>
+        </Box>
+        <Box className={styles.phoneField}>
+          <InputLabel htmlFor="phone-input">
+            Telefone:
+            <sup>*</sup>
+          </InputLabel>
+          <Box className={styles.input}>
             <Controller
-              name="phone"
+              name="personalData.phone"
               control={methods.control}
+              rules={{
+                validate: {
+                  matchPattern: (value) =>
+                    /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/.test(
+                      value,
+                    ) ||
+                    'Por favor, preencha o campo com um número de telefone válido.',
+                },
+                required:
+                  'Por favor, preencha o campo com seu número de telefone.',
+              }}
               render={({ field }) => (
                 <>
                   <PhoneInput
@@ -65,14 +118,16 @@ export default function PersonalData() {
                       },
                     }}
                     defaultCountry="PT"
-                    errors={methods.formState.errors?.phone?.message}
+                    errors={
+                      methods.formState.errors?.personalData?.phone?.message
+                    }
                     placeholder="Enter phone number"
                     {...field}
                     inputComponent={PhontInputComponent}
                   />
-                  {methods.formState.errors.phone && (
+                  {methods.formState.errors.personalData?.phone && (
                     <p className={styles.error}>
-                      {methods.formState.errors.phone?.message}
+                      {methods.formState.errors.personalData?.phone?.message}
                     </p>
                   )}
                 </>
@@ -80,10 +135,25 @@ export default function PersonalData() {
             />
           </Box>
         </Box>
-        <button type="submit">Submit</button>
-      </form>
-    </FormProvider>
+      </Box>
+      {!mobile && (
+        <SubmitButton
+          activeStep={0}
+          setActiveStep={setActiveStep}
+          handleBack={handleBack}
+          handleNext={handleNext}
+          text="Próximo"
+        />
+      )}
+    </form>
   );
 }
 
 PhontInputComponent.displayName = 'PhontInputComponent';
+
+PersonalData.displayName = 'PersonalData';
+
+PersonalData.propTypes = {
+  activeStep: PropTypes.number,
+  setActiveStep: PropTypes.func,
+};

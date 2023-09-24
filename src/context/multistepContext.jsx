@@ -2,16 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const initialState = {
-  nome: '',
-  email: '',
-  countryCode: '',
-  phone: '',
+  personalData: {
+    nome: '',
+    email: '',
+    telefone: '',
+  },
   businessArea: '',
-  website: '',
-  instagram: '',
-  facebook: '',
-  businessSize: null,
-  hasHiredPaidAds: null,
+  businessSize: {
+    businessSize: '',
+  },
+  website: {
+    hasWebsite: '',
+    websiteUrl: '',
+  },
+  instagram: {
+    hasInstagram: '',
+    instagramAccount: '',
+  },
+  facebook: {
+    hasFacebook: '',
+    facebookAccount: '',
+  },
+  hasHiredPaidAds: {
+    hasHiredPaidAds: '',
+  },
   monthlyBudget: null,
 };
 

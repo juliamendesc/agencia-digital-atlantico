@@ -7,4 +7,7 @@ export const businessAreaSchema = z
   .min(3, { message: 'Área de negócio deve ter mais de 3 caracteres' })
   .max(100, {
     message: 'Área de negócio deve ter menos de 100 caracteres',
+  })
+  .nonempty({
+    message: 'Campo obrigatório',
   });

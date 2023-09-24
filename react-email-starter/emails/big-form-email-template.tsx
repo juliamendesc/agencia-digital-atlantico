@@ -85,16 +85,34 @@ const SessaoEstrategicaEmailTemplate = ({
         </Section>
 
         <Section style={section}>
-          <Text style={text}>{businessArea}</Text>
-          <Text style={text}>{hasWebsite}</Text>
-          <Text style={text}>{websiteUrl}</Text>
-          <Text style={text}>{hasInstagram}</Text>
-          <Text style={text}>{instagramAccount}</Text>
-          <Text style={text}>{hasFacebook}</Text>
-          <Text style={text}>{facebookAccount}</Text>
-          <Text style={text}>{businessSize}</Text>
-          <Text style={text}>{hasPaidAds}</Text>
-          <Text style={text}>{monthlyBudget}</Text>
+          <Text style={text}>Qual o seu setor de negócio? {businessArea}</Text>
+          <Text style={text}>
+            Tem algum website associado ao seu negócio? {hasWebsite}
+          </Text>
+          {!!websiteUrl && <Text style={text}>Website: {websiteUrl}</Text>}
+          <Text style={text}>
+            Tem alguma conta de Instagram associada ao seu negócio?
+            {hasInstagram}
+          </Text>
+          {!!instagramAccount && (
+            <Text style={text}>Instagram: {instagramAccount}</Text>
+          )}
+          <Text style={text}>
+            Tem alguma página do Facebook associada ao seu negócio?
+            {hasFacebook}
+          </Text>
+          {!!facebookAccount && (
+            <Text style={text}>Facebook: {facebookAccount}</Text>
+          )}
+          <Text style={text}>
+            Quantas pessoas trabalham na empresa: {businessSize}
+          </Text>
+          <Text style={text}>
+            Já alguma vez investiu em publicidade paga? {hasPaidAds}
+          </Text>
+          <Text style={text}>
+            Quanto pretende gastar em anúncios mensalmente? {monthlyBudget}
+          </Text>
         </Section>
 
         <Text style={footer}>

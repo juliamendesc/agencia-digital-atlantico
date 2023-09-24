@@ -10,17 +10,15 @@ export const contactSchema = z
       .max(50, {
         required_error: 'Por favor, abrevie o seu nome.',
       }),
-    email: z.string().email(),
-    phone: z
-      .string()
-      .min(9, {
-        required_error:
-          'Por favor, preencha o campo com um número de telefone válido.',
+    email: z
+      .string({
+        required_error: 'Campo obrigatório',
       })
-      .max(9, {
-        required_error:
-          'Por favor, preencha o campo com um número de telefone válido.',
-      }),
+      .email({ message: 'E-mail inválido' }),
+    phone: z.string().min(9, {
+      required_error:
+        'Por favor, preencha o campo com um número de telefone válido.',
+    }),
     subject: z.string().min(3, {
       required_error: 'Por favor, preencha o campo com um assunto válido.',
     }),

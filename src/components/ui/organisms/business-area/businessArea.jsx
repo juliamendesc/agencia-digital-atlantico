@@ -1,44 +1,70 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, InputLabel, OutlinedInput } from '@mui/material';
+import { Box, InputLabel, OutlinedInput, useMediaQuery } from '@mui/material';
 import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 import { useMultistepContext } from 'src/context/multistepContext';
 import styles from './BusinessArea.module.scss';
-import { multistepFormSchema } from 'src/Schema/multistepForm';
+import SubmitButton from 'src/components/ui/atoms/Submit-button';
+import PropTypes from 'prop-types';
 
-export default function BusinessArea() {
+export default function BusinessArea({ activeStep, setActiveStep }) {
   const multiStepContext = useMultistepContext();
-
-  const methods = useForm({
-    resolver: zodResolver(multistepFormSchema.businessAreaSchema),
-    defaultValues: multiStepContext.state,
-  });
+  const methods = useFormContext();
+  const mobile = useMediaQuery('(max-width:767px)');
 
   function onSubmit(data) {
     console.log('data', data);
     multiStepContext.dispatch({ type: 'update', payload: data });
   }
 
-  console.log(multiStepContext);
+  function handleNext() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep + 1);
+  }
 
-  console.log(methods.getValues());
-  console.log(methods.formState.errors);
+  function handleBack() {
+    onSubmit(methods.getValues());
+    setActiveStep(activeStep - 1);
+  }
+
+  console.log('state', multiStepContext);
+  console.log('values', methods.getValues());
+  console.log('erros', methods.formState.errors);
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <Box className={styles.container}>
-          <Box className={styles.wrapper}>
-            <InputLabel htmlFor="business-area">
-              Qual é o seu setor de negócio?
-            </InputLabel>
+    <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <Box className={styles.container}>
+        <Box className={styles.wrapper}>
+          <InputLabel htmlFor="business-area">
+            Qual é o seu setor de negócio?
+            <sup>*</sup>
+          </InputLabel>
+          <Box className={styles.input}>
             <OutlinedInput
               id="business-area"
               {...methods.register('businessArea')}
             />
+            {methods.formState.errors.businessArea && (
+              <span className={styles.error}>
+                {methods.formState.errors.businessArea.message}
+              </span>
+            )}
           </Box>
         </Box>
-      </form>
-    </FormProvider>
+      </Box>
+      {!mobile && (
+        <SubmitButton
+          activeStep={1}
+          setActiveStep={setActiveStep}
+          handleBack={handleBack}
+          handleNext={handleNext}
+          text="Próximo"
+        />
+      )}
+    </form>
   );
 }
+
+BusinessArea.propTypes = {
+  activeStep: PropTypes.number,
+  setActiveStep: PropTypes.func,
+};
