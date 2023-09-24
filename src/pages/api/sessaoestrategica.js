@@ -9,7 +9,7 @@ const {
   OAUTH_CLIENT_ID,
   OAUTH_SECRET,
   OAUTH_ACCESS_TOKEN,
-  // GMAIL_FORWARD_TO,
+  GMAIL_FORWARD_TO,
 } = process.env;
 
 const transporter = nodemailer.createTransport({
@@ -48,7 +48,7 @@ export default function sendEmail(req, res) {
 
   const mailData = {
     from: `Digital Atlântico Contact Form <${GMAIL_USER}>`,
-    to: 'xulia10@gmail.com', //GMAIL_FORWARD_TO,
+    to: GMAIL_FORWARD_TO,
     html: emailHtml,
     subject: 'Solicitação de sessão estratégica',
   };
