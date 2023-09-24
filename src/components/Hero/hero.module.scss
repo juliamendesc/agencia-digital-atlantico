@@ -59,6 +59,10 @@
   @media (min-width: 2056px) {
     width: 100rem;
   }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 }
 
 #TextForm {
