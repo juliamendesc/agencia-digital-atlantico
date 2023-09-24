@@ -96,7 +96,7 @@ export default function StepperMobile() {
             onClick={isLastStep ? handleSubmit : handleNext}
             disabled={isSubmitted || activeStep === 8}
           >
-            {isLastStep ? 'Enviar' : 'Seguinte'}
+            {isLastStep ? 'Submeter' : 'Seguinte'}
             <KeyboardArrowRight />
           </Button>
         }
