@@ -44,7 +44,7 @@ export default function StepperMobile() {
   const maxSteps = steps.length;
 
   const isFirstStep = activeStep === 0;
-  const isLastStep = activeStep === maxSteps - 1;
+  const isLastStep = activeStep === 7;
 
   const handleNext = () => {
     multistepContext.dispatch({
@@ -94,7 +94,7 @@ export default function StepperMobile() {
           <Button
             size="small"
             onClick={isLastStep ? handleSubmit : handleNext}
-            disabled={isSubmitted}
+            disabled={isSubmitted || activeStep === 8}
           >
             {isLastStep ? 'Enviar' : 'Seguinte'}
             <KeyboardArrowRight />

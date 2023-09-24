@@ -2,6 +2,17 @@
   width: 100vw;
   padding-bottom: 5rem;
   background-color: var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  label,
+  input {
+    font-size: 1.5rem;
+    text-align: center;
+    text-wrap: wrap;
+  }
 }
 
 .stepper {
@@ -9,7 +20,7 @@
   align-items: center;
   padding: 0 1rem;
 
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 
   button {
     font-size: 1.2rem;
