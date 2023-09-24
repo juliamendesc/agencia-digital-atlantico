@@ -82,7 +82,7 @@ export default function ContactForm() {
             <div className={styles.userBox}>
               <input
                 type="number"
-                placeholder="+351"
+                placeholder="+351 999 999 999"
                 id="form-phone"
                 {...methods.register('phone', {
                   required:
