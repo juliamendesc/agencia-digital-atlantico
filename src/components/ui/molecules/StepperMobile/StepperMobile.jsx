@@ -73,13 +73,13 @@ export default function StepperMobile() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }} className={styles.container}>
+    <Box sx={{ maxWidth: 400 }} className={styles.container}>
       <Box
         sx={{
           height: 255,
           maxWidth: 400,
           width: '100%',
-          p: 2,
+          py: 2,
         }}
       >
         {steps[activeStep].description}

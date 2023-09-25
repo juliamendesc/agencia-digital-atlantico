@@ -1,24 +1,35 @@
 .container {
   width: 100vw;
-  padding-bottom: 5rem;
+  height: fit-content;
   background-color: var(--color-white);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: space-between;
+
+  h2 {
+    @media (max-width: 425px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 1.5rem;
+    }
+  }
 
   label,
   input {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: center;
     text-wrap: wrap;
   }
 }
 
 .stepper {
+  padding: 2rem 0;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
 
   font-size: 1.5rem;
 
