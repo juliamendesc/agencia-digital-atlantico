@@ -38,25 +38,6 @@
     @media (max-width: 320px) {
       font-size: 2rem;
     }
-
-    h2 {
-      font-size: 3rem;
-      margin: 0 auto;
-      text-align: center;
-      text-wrap: balance;
-
-      @media (min-width: 2560px) {
-        font-size: 5rem;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 2rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 1.5rem;
-      }
-    }
   }
 
   @media (max-width: 768px) {
@@ -70,6 +51,7 @@
   text-align: center;
   margin: 0 auto;
   font-size: 3.5rem;
+  font-weight: 700;
 
   @media (min-width: 2560px) {
     font-size: 5rem;
@@ -80,7 +62,7 @@
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   @media (max-width: 320px) {
