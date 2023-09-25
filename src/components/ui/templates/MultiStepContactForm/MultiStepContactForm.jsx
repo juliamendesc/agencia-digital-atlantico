@@ -32,10 +32,10 @@ export default function MultiStepContactForm() {
       </Box>
 
       <Box>
-        <Typography variant="h2" className={styles.typography}>
+        <h2 className={styles.typography}>
           Assim que nos enviar o formulário completo, vamos analisar as suas
           respostas para fazermos uma análise preliminar acerca do seu negócio.
-        </Typography>
+        </h2>
       </Box>
 
       <div className={styles.chip}>
