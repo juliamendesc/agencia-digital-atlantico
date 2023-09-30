@@ -4,6 +4,9 @@ import { Analytics } from '@vercel/analytics/react';
 import { Header } from 'src/components/Header';
 import 'src/styles/globals.scss';
 import Head from 'next/head';
+import { Caveat, Lato, OpenSans, Poppins } from 'src/styles/globals';
+
+const fonts = [Caveat, Lato, OpenSans, Poppins];
 
 export default function App({ Component, pageProps }) {
   return (
@@ -58,7 +61,9 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Header />
-      <Component {...pageProps} />
+      <main className={fonts.className}>
+        <Component {...pageProps} />
+      </main>
       <Analytics mode={'production'} />
     </>
   );
