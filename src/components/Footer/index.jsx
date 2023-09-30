@@ -1,19 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import styles from 'src/components/Footer/footer.module.scss';
 import emailIcon from 'src/assets/mail.svg';
 import phoneIcon from 'src/assets/phone.svg';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import { Link } from 'react-scroll';
+
+// Or Access Link,Element,etc as follows
 
 export function Footer() {
-  const router = useRouter();
-
-  function handleClick(id) {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ top: 100, behavior: 'smooth' });
-  }
-
   return (
     <footer className={styles.footerWrapper}>
       <div className={styles.footerDistributed}>
@@ -23,15 +18,68 @@ export function Footer() {
           </h1>
 
           <p className={styles.footerLinks}>
-            <button onClick={() => handleClick('home')}>Home</button>
-            <button onClick={() => handleClick('servicos')}>Serviços</button>
-            <button onClick={() => handleClick('beneficios')}>
-              Benefícios
+            <button>
+              <Link
+                to={'home'}
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={500}
+              >
+                Home
+              </Link>
             </button>
-            <button onClick={() => handleClick('quemsomos')}>Quem Somos</button>
-            <button onClick={() => handleClick('faq')}>FAQ</button>
-            <button onClick={() => router.push('/atendimento')}>
-              Atendimento
+
+            <button>
+              <Link
+                to={'servicos'}
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={500}
+              >
+                Serviços
+              </Link>
+            </button>
+
+            <button>
+              <Link
+                to={'beneficios'}
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={500}
+              >
+                Benefícios
+              </Link>
+            </button>
+
+            <button>
+              <Link
+                to={'quemsomos'}
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={500}
+              >
+                Quem Somos
+              </Link>
+            </button>
+
+            <button>
+              <Link
+                to={'faq'}
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={500}
+              >
+                FAQ
+              </Link>
+            </button>
+
+            <button>
+              <NextLink href="/contactos">Atendimento</NextLink>
             </button>
           </p>
         </div>
@@ -44,9 +92,9 @@ export function Footer() {
 
           <div>
             <Image src={emailIcon} alt="logo" width={20} height={20} />
-            <Link href="mailto:digitalatlantico.pt@gmail.com">
+            <NextLink href="mailto:digitalatlantico.pt@gmail.com">
               <p>digitalatlantico.pt@gmail.com</p>
-            </Link>
+            </NextLink>
           </div>
         </div>
       </div>
