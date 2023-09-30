@@ -4,23 +4,6 @@ import { Analytics } from '@vercel/analytics/react';
 import { Header } from 'src/components/Header';
 import 'src/styles/globals.scss';
 import Head from 'next/head';
-import { Caveat, Lato, OpenSans, Poppins } from 'src/styles/fonts.css';
-
-export const caveat = Caveat({
-  weight: [400, 700],
-});
-
-export const lato = Lato({
-  weight: [400, 700],
-});
-
-export const openSans = OpenSans({
-  weight: [300, 400],
-});
-
-export const poppins = Poppins({
-  weight: [300, 400, 700],
-});
 
 export default function App({ Component, pageProps }) {
   return (

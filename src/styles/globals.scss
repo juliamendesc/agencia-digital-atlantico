@@ -1,3 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Lato:wght@400;700&family=Open+Sans:wght@300;400;700&family=Poppins:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Caveat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Caveat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
 :root {
   --text-base-size: 1rem;
   --text-scale-ratio: 0.75;
@@ -35,7 +85,6 @@
 body {
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-poppins);
 }
 
 body {
