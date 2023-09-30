@@ -19,10 +19,8 @@ export function Header() {
         <div className={styles.logoContainer}>
           <Image src={Logo} alt="logo atlântico" width={75} height={75} />
           <div className={styles.textLogo}>
-            <h1>
-              <span>Agência</span>
-              <span>Digital Atlântico</span>
-            </h1>
+            <h1>Agência</h1>
+            <h1>Digital Atlântico</h1>
           </div>
         </div>
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>

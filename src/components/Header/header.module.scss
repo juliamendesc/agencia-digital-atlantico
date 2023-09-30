@@ -22,11 +22,12 @@
 }
 
 .textLogo {
-  h2 {
+  h1 {
     color: var(--color-white);
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
+    font-size: 3rem;
 
     span {
       color: var(--color-white);
