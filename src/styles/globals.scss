@@ -73,6 +73,23 @@ a:hover {
   filter: brightness(0.9);
 }
 
+.benefitsListHeading {
+  font-size: 5rem;
+  letter-spacing: -0.1rem;
+
+  @media (min-width: 2056px) {
+    font-size: 6rem;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 2.5rem;
+  }
+}
+
 h1 {
   font-size: 3.5rem;
   font-weight: 700;
@@ -91,21 +108,21 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 400;
 
   color: var(--color-primary);
 
   @media (min-width: 2056px) {
-    font-size: 3.75rem;
+    font-size: 3rem;
   }
 
   @media (max-width: 1000px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   @media (max-width: 425px) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -116,7 +133,6 @@ span {
 p {
   line-height: 1.75em;
   white-space: pre-wrap;
-  text-indent: 1.5em;
   font-size: 2.25rem;
   letter-spacing: 0.3rem;
 
@@ -148,28 +164,21 @@ li {
   margin-bottom: 1em;
   white-space: pre-wrap;
   letter-spacing: 0.3rem;
-  text-indent: 3em;
+  text-align: left;
+  margin-top: 3rem;
 
   @media (min-width: 2056px) {
-    font-size: 3rem;
-  }
-
-  @media (max-width: 1400px) {
-    text-indent: 0;
+    font-size: 3.5rem;
   }
 
   @media (max-width: 1000px) {
     font-size: 2rem;
     letter-spacing: 0.2rem;
-    text-align: center;
-    text-indent: 0;
   }
 
   @media (max-width: 320px) {
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
-    text-align: center;
-    text-indent: 0;
   }
 }
 

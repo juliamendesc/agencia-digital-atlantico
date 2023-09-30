@@ -52,16 +52,15 @@ export function Servicos() {
         </div>
 
         <div className={styles.textGoals}>
-          <h1>
-            <span>
-              Estamos preparados para cumprir com o nosso único objectivo:
-            </span>
-          </h1>
+          <h1>Estamos preparados para cumprir com o nosso único objectivo:</h1>
 
           <p>
-            Ajudar o seu negócio e faturamento a crescer de forma exponencial
-            através da internet, com o foco em alcançar novas soluções
-            estratégicas e eficazes para o seu negócio.
+            <span>
+              Ajudar o seu negócio e faturamento a crescer de forma exponencial
+              através da internet
+            </span>
+            , com o foco em alcançar novas soluções estratégicas e eficazes para
+            o seu negócio.
           </p>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import checkLogo from 'src/assets/checklogo.svg';
+import dataCollectionIcon from 'src/assets/beneficios.jpg';
+
 import styles from 'src/components/Benefits/benefits.module.scss';
 
 const benefitsList = [
@@ -50,22 +52,34 @@ export function Benefits() {
     <div id="beneficios" className={styles.benefitsWrapper}>
       <h2 className={styles.benefitsSectionIntro}>Benefícios</h2>
       <div className={styles.container}>
-        <h1 className={styles.benefitMainHeading}>
-          A melhor forma de expandir a sua presença online e alcançar novos
-          clientes <span>é com anúncios online</span>.
-        </h1>
-
-        <h1>
-          <span className={styles.benefitsListHeading}>Benefícios</span> em
-          contratar um gestor especializado em marketing digital:
-        </h1>
-        <div className={styles.benefitsList}>
-          {benefitsList.map((benefit, index) => (
-            <li key={index}>{benefit}</li>
-          ))}
+        <div className={styles.benefitMainHeading}>
+          <h1>
+            A melhor forma de expandir a sua presença online e alcançar novos
+            clientes <span>é com anúncios online</span>.
+          </h1>
+        </div>
+        <div className={styles.benefitWrapper}>
+          <div className={styles.textSection}>
+            <div className={styles.title}>
+              <h1 className="benefitsListHeading">
+                <span>Benefícios</span>
+                <h1 className={styles.heading}>
+                  em contratar um gestor especializado em marketing digital:
+                </h1>
+              </h1>
+            </div>
+            <div className={styles.benefitsList}>
+              {benefitsList.map((benefit, index) => (
+                <li key={index}>{benefit}</li>
+              ))}
+            </div>
+          </div>
+          <div className={styles.image}>
+            <Image src={dataCollectionIcon} alt="servicos" />
+          </div>
         </div>
 
-        <h1>
+        <h1 className={styles.acesso}>
           <span>Você terá acesso:</span>
         </h1>
 

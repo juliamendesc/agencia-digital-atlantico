@@ -5,6 +5,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import styles from '../../../Faq/faq.module.scss';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -51,15 +52,9 @@ const AccordionSummary = styled((props) => (
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
+  background: '#000',
+  color: '#fff',
   borderTop: '1px solid rgba(0, 0, 0, .125)',
-
-  fontSize: '2.5rem',
-  '@media (max-width: 1400px)': {
-    fontSize: '1.8rem',
-  },
-  '@media (max-width: 600px)': {
-    fontSize: '1.5rem',
-  },
 }));
 
 export default function CustomizedAccordions({
@@ -68,11 +63,13 @@ export default function CustomizedAccordions({
   onChange,
 }) {
   return (
-    <div>
-      <Accordion expanded={expanded} onChange={onChange}>
+    <div className={styles.wrapper}>
+      <Accordion square={false}>
         <AccordionSummary
           aria-controls={defaultContent.ariaLabel}
           id={defaultContent.key}
+          expanded={expanded}
+          onChange={onChange}
         >
           {defaultContent.title}
         </AccordionSummary>
