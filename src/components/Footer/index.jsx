@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styles from 'src/components/Footer/footer.module.scss';
 import emailIcon from 'src/assets/mail.svg';
-// import phoneIcon from 'src/assets/phone.svg';
+import phoneIcon from 'src/assets/phone.svg';
 import Link from 'next/link';
 
 export function Footer() {
@@ -11,9 +11,7 @@ export function Footer() {
 
   function handleClick(id) {
     const el = document.getElementById(id);
-    el?.scrollIntoView({
-      behavior: 'smooth',
-    });
+    el?.scrollIntoView({ top: 100, behavior: 'smooth' });
   }
 
   return (
@@ -39,10 +37,10 @@ export function Footer() {
         </div>
 
         <div className={styles.footerCenter}>
-          {/* <div>
+          <div>
             <Image src={phoneIcon} alt="logo" width={20} height={20} />
-            <p>+351 999 999 999</p>
-          </div> */}
+            <p>(+351) 914 323 149</p>
+          </div>
 
           <div>
             <Image src={emailIcon} alt="logo" width={20} height={20} />
