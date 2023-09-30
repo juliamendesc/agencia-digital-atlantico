@@ -22,7 +22,7 @@ export function Hero() {
             marketing digital.
           </p>
 
-          <Link hreflang="portuguese" href="/formulario">
+          <Link hrefLang="portuguese" href="/formulario">
             <Button title="Formulário gratuito"></Button>
           </Link>
         </div>

@@ -20,7 +20,7 @@ export function Footer() {
           <p className={styles.footerLinks}>
             <button>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'home'}
                 spy={true}
                 smooth={true}
@@ -33,7 +33,7 @@ export function Footer() {
 
             <button>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'servicos'}
                 spy={true}
                 smooth={true}
@@ -46,7 +46,7 @@ export function Footer() {
 
             <button>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'beneficios'}
                 spy={true}
                 smooth={true}
@@ -59,7 +59,7 @@ export function Footer() {
 
             <button>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'quemsomos'}
                 spy={true}
                 smooth={true}
@@ -72,7 +72,7 @@ export function Footer() {
 
             <button>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'faq'}
                 spy={true}
                 smooth={true}
@@ -84,7 +84,7 @@ export function Footer() {
             </button>
 
             <button>
-              <NextLink hreflang="portuguese" href="/contactos">
+              <NextLink hrefLang="portuguese" href="/contactos">
                 Atendimento
               </NextLink>
             </button>

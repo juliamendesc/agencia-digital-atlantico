@@ -31,7 +31,7 @@ export function Header() {
           <div className={styles.navListHeader}>
             <button className={styles.navLink}>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'home'}
                 spy={true}
                 smooth={true}
@@ -46,7 +46,7 @@ export function Header() {
           <div className={styles.navListHeader}>
             <button className={styles.navLink}>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'servicos'}
                 spy={true}
                 smooth={true}
@@ -61,7 +61,7 @@ export function Header() {
           <div className={styles.navListHeader}>
             <button className={styles.navLink}>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'beneficios'}
                 spy={true}
                 smooth={true}
@@ -76,7 +76,7 @@ export function Header() {
           <div className={styles.navListHeader}>
             <button className={styles.navLink}>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'quemsomos'}
                 spy={true}
                 smooth={true}
@@ -91,7 +91,7 @@ export function Header() {
           <div className={styles.navListHeader}>
             <button className={styles.navLink}>
               <Link
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 to={'faq'}
                 spy={true}
                 smooth={true}
@@ -106,7 +106,7 @@ export function Header() {
           <div className={styles.navListHeader}>
             <button className={styles.navLink}>
               <NextLink
-                hreflang="portuguese"
+                hrefLang="portuguese"
                 href="/atendimento"
                 className={styles.navLink}
               >

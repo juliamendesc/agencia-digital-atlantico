@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: space-evenly;
+  align-items: stretch;
   justify-content: center;
   gap: 1rem;
   padding-bottom: 10rem;
@@ -30,6 +30,8 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: stretch;
   gap: 5rem;
 
   @media (max-width: 1000px) {
@@ -46,7 +48,7 @@
 .imageWrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   @media (max-width: 1400px) {
     flex-direction: column;
@@ -61,20 +63,35 @@
 }
 
 .imageConfig {
-  width: 100%;
-  height: auto;
+  max-height: 100vh;
+  width: auto;
   object-fit: cover;
   object-position: center;
   opacity: 0.5;
+
+  border-image: linear-gradient(#000, #000) 90;
+  border-width: 4rem;
+  border-style: solid;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.5;
+  }
 }
 
 .paragraphs {
   max-width: 100rem;
   min-height: 4rem;
+  max-height: auto;
 
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 2rem;
 }
 
 .textGoals {
