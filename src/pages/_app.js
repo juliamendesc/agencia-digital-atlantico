@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Header } from 'src/components/Header';
 import 'src/styles/globals.scss';
 import Head from 'next/head';
-import { Caveat, Lato, OpenSans, Poppins } from 'src/styles/globals';
+import { Caveat, Lato, OpenSans, Poppins } from 'src/styles/fonts';
 
 export const caveat = Caveat({
   weight: [400, 700],
