@@ -6,7 +6,21 @@ import 'src/styles/globals.scss';
 import Head from 'next/head';
 import { Caveat, Lato, OpenSans, Poppins } from 'src/styles/globals';
 
-const fonts = [Caveat, Lato, OpenSans, Poppins];
+export const caveat = Caveat({
+  weight: [400, 700],
+});
+
+export const lato = Lato({
+  weight: [400, 700],
+});
+
+export const openSans = OpenSans({
+  weight: [300, 400],
+});
+
+export const poppins = Poppins({
+  weight: [300, 400, 700],
+});
 
 export default function App({ Component, pageProps }) {
   return (
@@ -61,9 +75,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Header />
-      <main className={fonts.className}>
-        <Component {...pageProps} />
-      </main>
+      <Component {...pageProps} />
       <Analytics mode={'production'} />
     </>
   );

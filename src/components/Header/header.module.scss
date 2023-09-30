@@ -1,5 +1,5 @@
 .header {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-caveat), cursive;
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -22,7 +22,7 @@
 }
 
 .textLogo {
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-caveat), cursive;
   h1 {
     color: var(--color-white);
     display: flex;
@@ -49,7 +49,7 @@
 }
 
 .navList {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-lato), sans-serif;
   width: 100%;
   padding: 0;
   display: flex;

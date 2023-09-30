@@ -23,7 +23,7 @@
 }
 
 .main1 {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-lato), sans-serif;
 
   overflow: hidden;
   flex-wrap: wrap;

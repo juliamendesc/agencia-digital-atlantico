@@ -11,7 +11,6 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  optimizeFonts: false,
   distDir: 'build',
   webpack: (config) => {
     config.resolve.modules.push(path.resolve('.'));
