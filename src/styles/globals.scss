@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/Caveat-Bold.ttf') format('truetype');
+  src: url('/fonts/Caveat/static/Caveat-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/Caveat-Bold.ttf') format('truetype');
+  src: url('/fonts/Caveat/static/Caveat-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  src: url('/fonts/Lato/Lato-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -29,7 +29,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/Lato-Bold.ttf') format('truetype');
+  src: url('/fonts/Lato/Lato-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -37,7 +37,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/fonts/OpenSans-Light.ttf') format('truetype');
+  src: url('/fonts/Open_Sans/static/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
@@ -45,7 +45,23 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+  src: url('/fonts/Open_Sans/static/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 
 :root {
