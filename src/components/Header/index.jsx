@@ -19,10 +19,10 @@ export function Header() {
         <div className={styles.logoContainer}>
           <Image src={Logo} alt="logo atlântico" width={75} height={75} />
           <div className={styles.textLogo}>
-            <h2>
+            <h1>
               <span>Agência</span>
               <span>Digital Atlântico</span>
-            </h2>
+            </h1>
           </div>
         </div>
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>
