@@ -62,10 +62,8 @@ export function Benefits() {
           <div className={styles.textSection}>
             <div className={styles.title}>
               <h1 className="benefitsListHeading">
-                <span>Benefícios</span>
-                <h1 className={styles.heading}>
-                  em contratar um gestor especializado em marketing digital:
-                </h1>
+                <span>Benefícios </span>
+                em contratar um gestor especializado em marketing digital:
               </h1>
             </div>
             <div className={styles.benefitsList}>

@@ -138,19 +138,21 @@ a:hover {
 }
 
 .benefitsListHeading {
-  font-size: 5rem;
-  letter-spacing: -0.1rem;
+  span {
+    font-size: 5rem;
+    letter-spacing: -0.1rem;
 
-  @media (min-width: 2056px) {
-    font-size: 6rem;
-  }
+    @media (min-width: 2056px) {
+      font-size: 6rem;
+    }
 
-  @media (max-width: 1000px) {
-    font-size: 3.5rem;
-  }
+    @media (max-width: 1000px) {
+      font-size: 3.5rem;
+    }
 
-  @media (max-width: 320px) {
-    font-size: 2.5rem;
+    @media (max-width: 320px) {
+      font-size: 2.5rem;
+    }
   }
 }
 

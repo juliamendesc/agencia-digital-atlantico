@@ -6,7 +6,7 @@ import { accordionData } from 'src/data/accordionData';
 export function Faq() {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange = (panel) => (event, newExpanded) => {
+  const handleChange = (panel) => (_event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 

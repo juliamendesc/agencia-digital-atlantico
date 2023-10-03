@@ -64,12 +64,10 @@ export default function CustomizedAccordions({
 }) {
   return (
     <div className={styles.wrapper}>
-      <Accordion square={false}>
+      <Accordion square={false} onChange={onChange} expanded={expanded}>
         <AccordionSummary
           aria-controls={defaultContent.ariaLabel}
           id={defaultContent.key}
-          expanded={expanded}
-          onChange={onChange}
         >
           {defaultContent.title}
         </AccordionSummary>

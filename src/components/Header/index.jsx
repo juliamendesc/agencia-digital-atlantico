@@ -30,7 +30,7 @@ export function Header() {
             <button className={styles.navLink}>
               <Link
                 hrefLang="portuguese"
-                to={'home'}
+                to={'/home'}
                 spy={true}
                 smooth={true}
                 offset={-150}
@@ -65,7 +65,7 @@ export function Header() {
                 smooth={true}
                 offset={-150}
                 duration={500}
-                href="#beneficios"
+                href="/#beneficios"
               >
                 Benefícios
               </Link>
