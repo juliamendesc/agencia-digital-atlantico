@@ -92,6 +92,10 @@ export default function HasHiredPaidAds({ activeStep, setActiveStep }) {
                       onChange={(e) => {
                         field.onChange(e);
                         setStateValues({ hasHiredPaidAds: e.target.value });
+                        multiStepContext.dispatch({
+                          type: 'update',
+                          payload: { hasHiredPaidAds: e.target.value },
+                        });
                       }}
                     >
                       <ToggleButton
