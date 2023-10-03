@@ -160,6 +160,8 @@ export default function Instagram({ activeStep, setActiveStep }) {
                               ...stateValues,
                               instagramAccount: e.target.value,
                             });
+                          }}
+                          onBlur={(e) => {
                             multiStepContext.dispatch({
                               type: 'update',
                               payload: {
