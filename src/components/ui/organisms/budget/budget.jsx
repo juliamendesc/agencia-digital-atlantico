@@ -25,7 +25,7 @@ const ErrorModal = () => {
   );
 };
 
-export default function Budget({ activeStep, setActiveStep }) {
+export default function Budget({ activeStep, setActiveStep, setFormStatus }) {
   const multiStepContext = useMultistepContext();
   const [stateValue, setStateValue] = React.useState({
     monthlyBudget: '',
@@ -76,7 +76,7 @@ export default function Budget({ activeStep, setActiveStep }) {
     }
     if (isFormValid && Object.keys(errors).length === 0) {
       console.log('envio com sucesso', data);
-      await sendMultistepEmail(data);
+      await sendMultistepEmail(data, setFormStatus);
     }
   }
 
@@ -144,4 +144,5 @@ export default function Budget({ activeStep, setActiveStep }) {
 Budget.propTypes = {
   activeStep: PropTypes.number,
   setActiveStep: PropTypes.func,
+  setFormStatus: PropTypes.func,
 };

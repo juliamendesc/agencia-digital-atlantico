@@ -1,6 +1,6 @@
 import getBody from './getbody';
 
-async function sendMultistepEmail(data) {
+async function sendMultistepEmail(data, setFormStatus) {
   const body = await getBody(data);
 
   await fetch('/api/sessaoestrategica', {
@@ -13,7 +13,10 @@ async function sendMultistepEmail(data) {
   })
     .then((res) => {
       if (res.status === 200) {
-        window.location.href = '/sucesso';
+        setFormStatus({
+          clientName: data.personalData.name,
+          success: true,
+        });
       }
     })
     .catch(() => {

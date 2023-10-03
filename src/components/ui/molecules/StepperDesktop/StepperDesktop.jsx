@@ -29,6 +29,7 @@ export const formSteps = [
 export default function StepperDesktop({
   activeStep = 0,
   setActiveStep = () => {},
+  setFormStatus = () => {},
 }) {
   const verticalStepper = useMediaQuery('(max-width:765px)');
   const [isFormDirty, setIsFormDirty] = React.useState(true);
@@ -98,7 +99,11 @@ export default function StepperDesktop({
             />
           )}
           {activeStep === 7 && (
-            <Budget activeStep={activeStep} setActiveStep={setActiveStep} />
+            <Budget
+              activeStep={activeStep}
+              setActiveStep={setActiveStep}
+              setFormStatus={setFormStatus}
+            />
           )}
         </Box>
       </Box>
@@ -109,4 +114,5 @@ export default function StepperDesktop({
 StepperDesktop.propTypes = {
   activeStep: PropTypes.number.isRequired,
   setActiveStep: PropTypes.func.isRequired,
+  setFormStatus: PropTypes.func.isRequired,
 };
