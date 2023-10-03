@@ -1,13 +1,12 @@
 import { z } from 'zod';
 
-export const businessAreaSchema = z
-  .string({
-    required_error: 'Campo obrigatório',
-  })
-  .min(3, { message: 'Área de negócio deve ter mais de 3 caracteres' })
-  .max(100, {
-    message: 'Área de negócio deve ter menos de 100 caracteres',
-  })
-  .nonempty({
-    message: 'Campo obrigatório',
-  });
+export const businessAreaSchema = z.object({
+  businessArea: z
+    .string({
+      required_error: 'Campo obrigatório',
+    })
+    .min(3, { message: 'Nome deve ter no mínimo 3 caracteres' })
+    .nonempty({
+      message: 'Campo obrigatório',
+    }),
+});

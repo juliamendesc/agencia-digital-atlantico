@@ -1,29 +1,17 @@
 .container {
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
-
-  p {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+  @media (max-width: 795px) {
+    p {
+      margin: 0 2rem;
+    }
   }
 
   @media (max-width: 425px) {
-    h1 {
-      font-size: 2rem;
-    }
-
     p {
-      font-size: 1.5rem;
       margin: 0 2rem;
     }
   }

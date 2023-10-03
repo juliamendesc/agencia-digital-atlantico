@@ -5,6 +5,7 @@ import { Header } from 'src/components/Header';
 import 'src/styles/globals.scss';
 import Head from 'next/head';
 import { Footer } from 'src/components/Footer';
+import { MultistepProvider } from 'src/context/multistepContext';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -59,7 +60,9 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Header />
-      <Component {...pageProps} />
+      <MultistepProvider>
+        <Component {...pageProps} />
+      </MultistepProvider>
       <Footer />
       <Analytics mode={'production'} />
     </>

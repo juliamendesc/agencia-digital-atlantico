@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepButton from '@mui/material/StepButton';
-import Typography from '@mui/material/Typography';
 import styles from 'src/components/ui/molecules/StepperDesktop/StepperDesktop.module.scss';
 import { useMediaQuery } from '@mui/material';
 import PersonalData from 'src/components/ui/organisms/personal-data/personalData';
@@ -14,8 +13,6 @@ import Instagram from 'src/components/ui//organisms/instagram/instagram';
 import BusinessSize from 'src/components/ui/organisms/business-size/businessSize';
 import HasHiredPaidAds from 'src/components/ui/organisms/has-hired-paid-ads/hasHiredPaidAds';
 import Budget from 'src/components/ui/organisms/budget/budget';
-import SubmittedForm from 'src/components/ui/organisms/submitted-form/submittedForm';
-import { FormProvider, useFormContext } from 'react-hook-form';
 import PropTypes from 'prop-types';
 
 export const formSteps = [
@@ -33,122 +30,78 @@ export default function StepperDesktop({
   activeStep = 0,
   setActiveStep = () => {},
 }) {
-  const [completed, setCompleted] = React.useState({});
   const verticalStepper = useMediaQuery('(max-width:765px)');
   const [isFormDirty, setIsFormDirty] = React.useState(true);
-
-  const methods = useFormContext();
 
   const handleStep = (step) => () => {
     setActiveStep(step);
   };
 
-  const isStepFailed = (index) => {
-    if (methods.formState.isValid) {
-      setCompleted({ ...completed, [index]: true });
-      return true;
-    }
-    return false;
-  };
-
   return (
     <Box sx={{ width: '100%' }} className={styles.container}>
-      {activeStep === 8 ? (
-        <SubmittedForm />
-      ) : (
+      <Box sx={{ width: '100%', flexGrow: 1 }} className={styles.formContainer}>
+        <Stepper
+          activeStep={activeStep}
+          orientation={verticalStepper ? 'vertical' : 'horizontal'}
+          className={styles.stepper}
+        >
+          {formSteps.map((label, index) => {
+            return (
+              <Step key={label} className={styles.step}>
+                <StepButton
+                  color="var(--color-footer)"
+                  onClick={handleStep(index)}
+                  className={styles.stepButton}
+                />
+              </Step>
+            );
+          })}
+        </Stepper>
+
         <Box
           sx={{ width: '100%', flexGrow: 1 }}
-          className={styles.formContainer}
+          className={styles.componentContainer}
         >
-          <Stepper
-            activeStep={activeStep}
-            orientation={verticalStepper ? 'vertical' : 'horizontal'}
-            className={styles.stepper}
-          >
-            {formSteps.map((label, index) => {
-              const labelProps = {};
-              if (isStepFailed(index)) {
-                labelProps.optional = (
-                  <Typography variant="caption" color="error" fontSize={14}>
-                    {methods.formState.errors?.formSteps?.[activeStep]?.message}
-                  </Typography>
-                );
-
-                labelProps.error = true;
-              }
-
-              return (
-                <Step
-                  key={label}
-                  completed={completed[index]}
-                  className={styles.step}
-                >
-                  <StepButton
-                    color="var(--color-footer)"
-                    onClick={handleStep(index)}
-                    className={styles.stepButton}
-                  />
-                </Step>
-              );
-            })}
-          </Stepper>
-
-          <Box
-            sx={{ width: '100%', flexGrow: 1 }}
-            className={styles.componentContainer}
-          >
-            <FormProvider {...methods}>
-              {activeStep === 0 && (
-                <PersonalData
-                  activeStep={activeStep}
-                  setActiveStep={setActiveStep}
-                  isFormDirty={isFormDirty}
-                  setIsFormDirty={setIsFormDirty}
-                />
-              )}
-              {activeStep === 1 && (
-                <BusinessArea
-                  activeStep={activeStep}
-                  setActiveStep={setActiveStep}
-                />
-              )}
-              {activeStep === 2 && (
-                <Website
-                  activeStep={activeStep}
-                  setActiveStep={setActiveStep}
-                />
-              )}
-              {activeStep === 3 && (
-                <Instagram
-                  activeStep={activeStep}
-                  setActiveStep={setActiveStep}
-                />
-              )}
-              {activeStep === 4 && (
-                <Facebook
-                  activeStep={activeStep}
-                  setActiveStep={setActiveStep}
-                />
-              )}
-              {activeStep === 5 && (
-                <BusinessSize
-                  activeStep={activeStep}
-                  setActiveStep={setActiveStep}
-                />
-              )}
-              {activeStep === 6 && (
-                <HasHiredPaidAds
-                  activeStep={activeStep}
-                  setActiveStep={setActiveStep}
-                />
-              )}
-              {activeStep === 7 && (
-                <Budget activeStep={activeStep} setActiveStep={setActiveStep} />
-              )}
-            </FormProvider>
-          </Box>
+          {activeStep === 0 && (
+            <PersonalData
+              activeStep={activeStep}
+              setActiveStep={setActiveStep}
+              isFormDirty={isFormDirty}
+              setIsFormDirty={setIsFormDirty}
+            />
+          )}
+          {activeStep === 1 && (
+            <BusinessArea
+              activeStep={activeStep}
+              setActiveStep={setActiveStep}
+            />
+          )}
+          {activeStep === 2 && (
+            <Website activeStep={activeStep} setActiveStep={setActiveStep} />
+          )}
+          {activeStep === 3 && (
+            <Instagram activeStep={activeStep} setActiveStep={setActiveStep} />
+          )}
+          {activeStep === 4 && (
+            <Facebook activeStep={activeStep} setActiveStep={setActiveStep} />
+          )}
+          {activeStep === 5 && (
+            <BusinessSize
+              activeStep={activeStep}
+              setActiveStep={setActiveStep}
+            />
+          )}
+          {activeStep === 6 && (
+            <HasHiredPaidAds
+              activeStep={activeStep}
+              setActiveStep={setActiveStep}
+            />
+          )}
+          {activeStep === 7 && (
+            <Budget activeStep={activeStep} setActiveStep={setActiveStep} />
+          )}
         </Box>
-      )}
+      </Box>
     </Box>
   );
 }

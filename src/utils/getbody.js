@@ -17,16 +17,14 @@ export default async function getBody(data) {
     businessArea: businessArea,
     businessSize: businessSize?.businessSize,
     hasWebsite: website?.hasWebsite,
-    websiteUrl: website?.websiteUrl || '',
+    websiteUrl: website?.websiteUrl || null,
     hasInstagram: instagram?.hasInstagram,
-    instagramAccount: instagram?.instagramAccount || '',
+    instagramAccount: instagram?.instagramAccount || null,
     hasFacebook: facebook?.hasFacebook,
-    facebookAccount: facebook?.facebookAccount || '',
+    facebookAccount: facebook?.facebookAccount || null,
     hasHiredPaidAds: hasHiredPaidAds?.hasHiredPaidAds,
     monthlyBudget: monthlyBudget,
   };
-
-  console.log('body', body);
 
   return body;
 }

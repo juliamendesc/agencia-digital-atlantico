@@ -2,17 +2,16 @@ import { z } from 'zod';
 
 export const instagramSchema = z
   .object({
-    instagramAccount: z.union([
+    instagramAccount: z.undefined().or(
       z
-        .string({
-          required_error: 'Insira um endereço de site válido',
+        .string()
+        .trim()
+        .regex(/^(?!http.*$).*/, {
+          message: 'Insira seu nome de usuário do Instagram.',
         })
-        .url({
-          message: 'Insira uma url válida',
-        })
+        .optional()
         .nullish(),
-      z.literal(''),
-    ]),
+    ),
     hasInstagram: z.union([z.literal('Sim'), z.literal('Não')]),
   })
   .required();

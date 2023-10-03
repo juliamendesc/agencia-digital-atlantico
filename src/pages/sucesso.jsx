@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '@mui/material';
 import { useMultistepContext } from 'src/context/multistepContext';
-import styles from './SubmittedForm.module.scss';
+import styles from 'src/components/ui/organisms/submitted-form/SubmittedForm.module.scss';
 
 export default function SubmittedForm() {
   const multiStepContext = useMultistepContext();

@@ -41,8 +41,8 @@ export default function ContactForm() {
       .then(() => {
         window.location.href = '/';
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        console.log("Error: Couldn't send email");
       });
     console.log(data);
   }

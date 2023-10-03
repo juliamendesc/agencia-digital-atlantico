@@ -1,6 +1,6 @@
 import getBody from './getbody';
 
-async function sendMultistepEmail(data, setActiveStep, reset) {
+async function sendMultistepEmail(data) {
   const body = await getBody(data);
 
   await fetch('/api/sessaoestrategica', {
@@ -13,12 +13,11 @@ async function sendMultistepEmail(data, setActiveStep, reset) {
   })
     .then((res) => {
       if (res.status === 200) {
-        reset();
-        setActiveStep(8);
+        window.location.href = '/sucesso';
       }
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
+      console.log("Error: Couldn't send email");
     });
 }
 

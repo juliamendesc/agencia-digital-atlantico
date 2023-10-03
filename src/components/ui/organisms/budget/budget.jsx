@@ -6,12 +6,14 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import React from 'react';
-import { useFormContext } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { useMultistepContext } from 'src/context/multistepContext';
 import styles from './Budget.module.scss';
 import PropTypes from 'prop-types';
 import SubmitButton from 'src/components/ui/atoms/Submit-button';
 import sendMultistepEmail from 'src/utils/sendMultiStepEmail';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { monthlyBudgetSchema } from 'src/Schema/multistep-form/monthlyBudget';
 
 const ErrorModal = () => {
   return (
@@ -25,30 +27,56 @@ const ErrorModal = () => {
 
 export default function Budget({ activeStep, setActiveStep }) {
   const multiStepContext = useMultistepContext();
-  const methods = useFormContext();
+  const [stateValue, setStateValue] = React.useState({
+    monthlyBudget: '',
+  });
   const mobile = useMediaQuery('(max-width:767px)');
+  const methods = useForm({
+    defaultValues: {
+      monthlyBudget: '',
+    },
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
+    resolver: zodResolver(monthlyBudgetSchema),
+  });
+
+  const {
+    trigger,
+    formState: { errors, isValid },
+  } = methods;
+
+  const { monthlyBudget } = multiStepContext.state.monthlyBudget || {};
+
+  React.useEffect(() => {
+    if (monthlyBudget) {
+      setStateValue({
+        monthlyBudget,
+      });
+    }
+  }, [monthlyBudget]);
+
+  async function handleTrigger() {
+    await trigger('monthlyBudget');
+  }
 
   function update(data) {
-    console.log('data', data);
+    handleTrigger();
     multiStepContext.dispatch({ type: 'update', payload: data });
   }
 
-  console.log(multiStepContext);
-
   function validateMultistepForm() {
-    return methods.formState.isValid;
+    return handleTrigger() && isValid;
   }
 
   async function onSubmit() {
     const data = multiStepContext.state;
     const isFormValid = validateMultistepForm(data);
-    console.log('isFormValid', isFormValid);
-    const reset = methods.reset();
-    if (Object.keys(methods.formState.errors).length > 0 || !isFormValid) {
+    if (Object.keys(errors).length > 0 || !isFormValid) {
       return <ErrorModal />;
     }
-    if (isFormValid && Object.keys(methods.formState.errors).length === 0) {
-      await sendMultistepEmail(data, setActiveStep, reset);
+    if (isFormValid && Object.keys(errors).length === 0) {
+      console.log('envio com sucesso', data);
+      await sendMultistepEmail(data);
     }
   }
 
@@ -57,42 +85,59 @@ export default function Budget({ activeStep, setActiveStep }) {
     setActiveStep(activeStep - 1);
   }
 
-  console.log('state', multiStepContext);
-  console.log('values', methods.getValues());
-  console.log('erros', methods.formState.errors);
-
   return (
-    <form onSubmit={methods.handleSubmit(onSubmit)}>
-      <Box className={styles.container}>
-        <Box className={styles.wrapper}>
-          <InputLabel htmlFor="budget">
-            Quanto pretende gastar em anúncios mensalmente?
-            <sup>*</sup>
-          </InputLabel>
-          <Box className={styles.input}>
-            <OutlinedInput
-              type="string"
-              id="budget"
-              {...methods.register('monthlyBudget')}
-            />
-            {methods.formState.errors.monthlyBudget && (
-              <p className={styles.error}>
-                {methods.formState.errors.monthlyBudget.message}
-              </p>
-            )}
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <Box className={styles.container}>
+          <Box className={styles.wrapper}>
+            <InputLabel htmlFor="budget">
+              Quanto pretende gastar em anúncios mensalmente?
+              <sup>*</sup>
+            </InputLabel>
+            <Box className={styles.input}>
+              <OutlinedInput
+                id="budget"
+                sx={{
+                  span: {
+                    fontSize: '1.5rem',
+                    color: '#000',
+                  },
+                }}
+                endAdornment={<span>€</span>}
+                {...methods.register('monthlyBudget', {})}
+                value={stateValue?.monthlyBudget}
+                onChange={(e) => {
+                  methods.register('monthlyBudget').onChange(e);
+                  setStateValue({ monthlyBudget: e.target.value });
+                  multiStepContext.dispatch({
+                    type: 'update',
+                    payload: { monthlyBudget: e.target.value },
+                  });
+                }}
+              />
+              {errors.monthlyBudget && (
+                <p className={styles.error}>{errors.monthlyBudget.message}</p>
+              )}
+            </Box>
           </Box>
+          {!isValid && (
+            <p className={styles.error}>
+              Por favor, preencha todos os campos antes de continuar.
+            </p>
+          )}
         </Box>
-      </Box>
-      {!mobile && (
-        <SubmitButton
-          activeStep={7}
-          setActiveStep={setActiveStep}
-          handleBack={handleBack}
-          handleNext={onSubmit}
-          text="Submeter"
-        />
-      )}
-    </form>
+        {!mobile && (
+          <SubmitButton
+            activeStep={7}
+            setActiveStep={setActiveStep}
+            handleBack={handleBack}
+            handleNext={onSubmit}
+            disabled={!isValid}
+            text="Submeter"
+          />
+        )}
+      </form>
+    </FormProvider>
   );
 }
 

@@ -6,35 +6,62 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import React from 'react';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useMultistepContext } from 'src/context/multistepContext';
 import styles from './BusinessSize.module.scss';
 import PropTypes from 'prop-types';
 import SubmitButton from 'src/components/ui/atoms/Submit-button';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { businessSizeSchema } from 'src/Schema/multistep-form/IBusinessSize';
 
 export default function BusinessSize({ activeStep, setActiveStep }) {
   const multiStepContext = useMultistepContext();
-  const methods = useFormContext();
+  const [stateValue, setStateValue] = React.useState({
+    businessSize: '',
+  });
   const mobile = useMediaQuery('(max-width:767px)');
+  const methods = useForm({
+    defaultValues: {
+      businessSize: '',
+    },
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
+    resolver: zodResolver(businessSizeSchema),
+  });
+  const {
+    trigger,
+    formState: { errors, isValid },
+  } = methods;
+
+  const { businessSize } = multiStepContext.state.businessSize || {};
+
+  React.useEffect(() => {
+    if (businessSize) {
+      setStateValue({
+        businessSize,
+      });
+    }
+  }, [businessSize]);
+
+  async function handleTrigger() {
+    await trigger('businessSize');
+  }
 
   function onSubmit(data) {
-    console.log('data', data);
     multiStepContext.dispatch({ type: 'update', payload: data });
   }
 
   function handleNext() {
-    onSubmit(methods.getValues());
+    handleTrigger();
     setActiveStep(activeStep + 1);
+    onSubmit(methods.getValues());
   }
 
   function handleBack() {
-    onSubmit(methods.getValues());
+    handleTrigger();
     setActiveStep(activeStep - 1);
+    onSubmit(methods.getValues());
   }
-
-  console.log('state', multiStepContext);
-  console.log('values', methods.getValues());
-  console.log('erros', methods.formState.errors);
 
   return (
     <form onSubmit={methods.handleSubmit(onSubmit)}>
@@ -46,7 +73,7 @@ export default function BusinessSize({ activeStep, setActiveStep }) {
           </InputLabel>
           <Box className={styles.input}>
             <Controller
-              name="businessSize.businessSize"
+              name="businessSize"
               control={methods.control}
               render={({ field }) => (
                 <>
@@ -62,9 +89,12 @@ export default function BusinessSize({ activeStep, setActiveStep }) {
                         margin: '0 auto',
                       },
                     }}
-                    value={field.value}
-                    onChange={field.onChange}
                     {...field}
+                    value={stateValue.businessSize}
+                    onChange={(e, value) => {
+                      field.onChange(value);
+                      setStateValue({ businessSize: value });
+                    }}
                   >
                     <ToggleButton value="1-3">1-3</ToggleButton>
                     <ToggleButton value="4-10">4-10</ToggleButton>
@@ -72,12 +102,9 @@ export default function BusinessSize({ activeStep, setActiveStep }) {
                     <ToggleButton value="21-50">21-50</ToggleButton>
                   </ToggleButtonGroup>
 
-                  {methods.formState.errors.businessSize?.businessSize && (
+                  {errors.businessSize && (
                     <p className={styles.error}>
-                      {
-                        methods.formState.errors.businessSize?.businessSize
-                          ?.message
-                      }
+                      {errors.businessSize?.message}
                     </p>
                   )}
                 </>
@@ -85,6 +112,11 @@ export default function BusinessSize({ activeStep, setActiveStep }) {
             />
           </Box>
         </Box>
+        {!isValid && (
+          <p className={styles.error}>
+            Por favor, preencha todos os campos antes de continuar.
+          </p>
+        )}
       </Box>
       {!mobile && (
         <SubmitButton
@@ -92,6 +124,7 @@ export default function BusinessSize({ activeStep, setActiveStep }) {
           setActiveStep={setActiveStep}
           handleBack={handleBack}
           handleNext={handleNext}
+          disabled={!isValid}
           text="Próximo"
         />
       )}

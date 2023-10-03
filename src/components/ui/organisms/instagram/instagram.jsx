@@ -7,137 +7,191 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import React from 'react';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { useMultistepContext } from 'src/context/multistepContext';
 import styles from './Instagram.module.scss';
 import SubmitButton from 'src/components/ui/atoms/Submit-button';
 import PropTypes from 'prop-types';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { instagramSchema } from 'src/Schema/multistep-form/IInstagram';
 
 export default function Instagram({ activeStep, setActiveStep }) {
-  const [hasInstagram, setHasInstagram] = React.useState('');
+  const [stateValues, setStateValues] = React.useState({
+    hasInstagram: '',
+    instagramAccount: '',
+  });
   const multiStepContext = useMultistepContext();
   const mobile = useMediaQuery('(max-width:767px)');
+  const methods = useForm({
+    defaultValues: {
+      hasInstagram: '',
+      instagramAccount: '',
+    },
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
+    resolver: zodResolver(instagramSchema),
+  });
 
-  const methods = useFormContext();
+  const { hasInstagram, instagramAccount } =
+    multiStepContext.state.instagram || {};
+
+  React.useEffect(() => {
+    if (hasInstagram || instagramAccount) {
+      setStateValues({
+        hasInstagram,
+        instagramAccount,
+      });
+    }
+  }, [hasInstagram, instagramAccount]);
+
+  const {
+    trigger,
+    formState: { errors, isValid },
+  } = methods;
+
+  async function handleTrigger() {
+    await trigger(['hasInstagram', 'instagramAccount']);
+  }
 
   function onSubmit(data) {
-    console.log('data', data);
     multiStepContext.dispatch({ type: 'update', payload: data });
   }
 
   function handleNext() {
-    onSubmit(methods.getValues());
+    handleTrigger();
     setActiveStep(activeStep + 1);
+    onSubmit(methods.getValues());
   }
 
   function handleBack() {
-    onSubmit(methods.getValues());
+    handleTrigger();
     setActiveStep(activeStep - 1);
+    onSubmit(methods.getValues());
   }
 
-  console.log('state', multiStepContext);
-  console.log('values', methods.getValues());
-  console.log('erros', methods.formState.errors);
-
   return (
-    <form onSubmit={methods.handleSubmit(onSubmit)}>
-      <Box className={styles.container}>
-        <Box className={styles.wrapper}>
-          <InputLabel htmlFor="hasInstagram">
-            Tem alguma conta de Instagram associada ao seu negócio?
-            <sup>*</sup>
-          </InputLabel>
-          <Controller
-            name="instagram.hasInstagram"
-            control={methods.control}
-            render={({ field: { value, onChange, ...rest } }) => (
-              <>
-                <ToggleButtonGroup
-                  {...rest}
-                  exclusive
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                  }}
-                  value={value}
-                  onChange={(_event, value) => {
-                    setHasInstagram(value);
-                    onChange(value);
-                  }}
-                >
-                  <ToggleButton
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <Box className={styles.container}>
+          <Box className={styles.wrapper}>
+            <InputLabel htmlFor="hasInstagram">
+              Tem alguma conta de Instagram associada ao seu negócio?
+              <sup>*</sup>
+            </InputLabel>
+            <Controller
+              name="hasInstagram"
+              control={methods.control}
+              render={({ field: { onChange, ...rest } }) => (
+                <>
+                  <ToggleButtonGroup
+                    {...rest}
+                    exclusive
                     sx={{
-                      '&.Mui-selected': {
-                        backgroundColor: '#F2F2F2',
-                        color: '#000000',
-                      },
-                      fontSize: '1.5rem',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      alignContent: 'center',
                     }}
-                    value={'Sim'}
-                  >
-                    Sim
-                  </ToggleButton>
-                  <ToggleButton
-                    sx={{
-                      '&.Mui-selected': {
-                        backgroundColor: '#F2F2F2',
-                        color: '#000000',
-                      },
-                      fontSize: '1.5rem',
-                    }}
-                    value={'Não'}
-                  >
-                    Não
-                  </ToggleButton>
-                </ToggleButtonGroup>
-
-                {hasInstagram === 'Sim' && (
-                  <>
-                    <InputLabel htmlFor="instagram">
-                      Por favor, insira o link do seu instagram.
-                    </InputLabel>
-                    <Box className={styles.input}>
-                      <OutlinedInput
-                        id="instagram"
-                        {...methods.register('instagram.instagramAccount', {
-                          required:
-                            'Por favor, preencha o campo com o link do seu website.',
-                          validate: {
-                            matchPattern: (value) =>
-                              /^((https?:)(\/\/\/?)([\w]*(?::[\w]*)?@)?([\d\w.-]+)(?::(\d+))?)?([/\\\w.()-]*)?(?:([?][^#]*)?(#.*)?)*/gim.test(
-                                value,
-                              ) || 'Por favor, insira um link válido.',
+                    value={stateValues.hasInstagram}
+                    onChange={(_event, value) => {
+                      setStateValues(value);
+                      onChange(value);
+                      multiStepContext.dispatch({
+                        type: 'update',
+                        payload: {
+                          instagram: {
+                            hasInstagram: value,
                           },
-                        })}
-                      />
-                      {methods.formState.errors.instagram?.instagramAccount && (
-                        <p className={styles.error}>
-                          {
-                            methods.formState.errors.instagram?.instagramAccount
-                              ?.message
-                          }
-                        </p>
-                      )}
-                    </Box>
-                  </>
-                )}
-              </>
-            )}
-          />
+                        },
+                      });
+
+                      if (value === 'Não') {
+                        methods.setValue('instagramAccount', null, {
+                          shouldValidate: true,
+                          shouldDirty: true,
+                          shouldTouch: true,
+                        });
+                      }
+                    }}
+                  >
+                    <ToggleButton
+                      sx={{
+                        '&.Mui-selected': {
+                          backgroundColor: '#F2F2F2',
+                          color: '#000000',
+                        },
+                        fontSize: '1.5rem',
+                      }}
+                      value={'Sim'}
+                    >
+                      Sim
+                    </ToggleButton>
+                    <ToggleButton
+                      sx={{
+                        '&.Mui-selected': {
+                          backgroundColor: '#F2F2F2',
+                          color: '#000000',
+                        },
+                        fontSize: '1.5rem',
+                      }}
+                      value={'Não'}
+                    >
+                      Não
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+
+                  {stateValues?.hasInstagram === 'Sim' && (
+                    <>
+                      <InputLabel htmlFor="instagram">
+                        Por favor, insira o nome de usuário da sua conta do
+                        instagram.
+                      </InputLabel>
+                      <Box className={styles.input}>
+                        <OutlinedInput
+                          id="instagram"
+                          {...methods.register('instagramAccount', {
+                            required:
+                              'Por favor, preencha o campo com seu nome de usuário do Instagram.',
+                          })}
+                          value={stateValues.instagramAccount}
+                          onChange={(e) => {
+                            methods.register('instagramAccount').onChange(e);
+                            setStateValues({
+                              ...stateValues,
+                              instagramAccount: e.target.value,
+                            });
+                          }}
+                        />
+                        {errors.instagramAccount && (
+                          <p className={styles.error}>
+                            {errors.instagramAccount?.message}
+                          </p>
+                        )}
+                      </Box>
+                    </>
+                  )}
+                </>
+              )}
+            />
+          </Box>
+          {!isValid && (
+            <p className={styles.error}>
+              Por favor, preencha todos os campos antes de continuar.
+            </p>
+          )}
         </Box>
-      </Box>
-      {!mobile && (
-        <SubmitButton
-          activeStep={3}
-          setActiveStep={setActiveStep}
-          handleBack={handleBack}
-          handleNext={handleNext}
-          text="Próximo"
-        />
-      )}
-    </form>
+        {!mobile && (
+          <SubmitButton
+            activeStep={3}
+            setActiveStep={setActiveStep}
+            handleBack={handleBack}
+            handleNext={handleNext}
+            disabled={!isValid}
+            text="Próximo"
+          />
+        )}
+      </form>
+    </FormProvider>
   );
 }
 
