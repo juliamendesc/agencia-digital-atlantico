@@ -94,6 +94,10 @@ export default function BusinessSize({ activeStep, setActiveStep }) {
                     onChange={(e, value) => {
                       field.onChange(value);
                       setStateValue({ businessSize: value });
+                      multiStepContext.dispatch({
+                        type: 'update',
+                        payload: { businessSize: value },
+                      });
                     }}
                   >
                     <ToggleButton value="1-3">1-3</ToggleButton>
