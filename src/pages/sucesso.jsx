@@ -27,5 +27,5 @@ export default function SubmittedForm() {
 }
 
 SubmittedForm.propTypes = {
-  clientName: PropTypes.string.isRequired,
+  clientName: PropTypes.string,
 };
