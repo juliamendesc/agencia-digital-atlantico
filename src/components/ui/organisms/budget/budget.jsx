@@ -75,7 +75,6 @@ export default function Budget({ activeStep, setActiveStep, setFormStatus }) {
       return <ErrorModal />;
     }
     if (isFormValid && Object.keys(errors).length === 0) {
-      console.log('envio com sucesso', data);
       await sendMultistepEmail(data, setFormStatus);
     }
   }

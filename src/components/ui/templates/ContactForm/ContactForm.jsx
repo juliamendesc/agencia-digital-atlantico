@@ -44,7 +44,6 @@ export default function ContactForm() {
       .catch(() => {
         console.log("Error: Couldn't send email");
       });
-    console.log(data);
   }
 
   return (
