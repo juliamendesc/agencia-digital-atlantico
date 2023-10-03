@@ -159,6 +159,14 @@ export default function Facebook({ activeStep, setActiveStep }) {
                               ...stateValues,
                               facebookAccount: e.target.value,
                             });
+                            multiStepContext.dispatch({
+                              type: 'update',
+                              payload: {
+                                facebook: {
+                                  facebookAccount: e.target.value,
+                                },
+                              },
+                            });
                           }}
                         />
                         {errors.facebookAccount && (

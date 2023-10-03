@@ -80,6 +80,10 @@ export default function BusinessArea({ activeStep, setActiveStep }) {
                 onChange={(e) => {
                   methods.register('businessArea').onChange(e);
                   setStateValue({ businessArea: e.target.value });
+                  multiStepContext.dispatch({
+                    type: 'update',
+                    payload: { businessArea: e.target.value },
+                  });
                 }}
               />
               {errors.businessArea && (
