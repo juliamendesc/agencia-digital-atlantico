@@ -9,9 +9,6 @@ export default function SubmittedForm() {
   const router = useRouter();
   const { clientName } = router.query;
 
-  console.log('clientName', clientName);
-  console.log('router.query', router.query);
-
   return (
     <Card
       className={styles.container}
