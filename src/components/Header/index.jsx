@@ -36,11 +36,14 @@ export function Header() {
       <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
         <div className={styles.logoContainer}>
           <Image src={Logo} alt="logo atlântico" width={75} height={75} />
-          <div className={styles.textLogo}>
-            <h1>Agência</h1>
-            <h1>Digital Atlântico</h1>
-          </div>
+          <NextLink href="/">
+            <div className={styles.textLogo}>
+              <h1>Agência</h1>
+              <h1>Digital Atlântico</h1>
+            </div>
+          </NextLink>
         </div>
+
         <button className={`${styles.hamburger} `} onClick={toggleNav}></button>
 
         <div className={styles.navList}>

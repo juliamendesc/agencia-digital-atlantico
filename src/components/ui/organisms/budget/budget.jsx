@@ -128,6 +128,7 @@ export default function Budget({ activeStep, setActiveStep, setFormStatus }) {
         {!mobile && (
           <SubmitButton
             activeStep={7}
+            clientName={multiStepContext.state.personalData.nome}
             setActiveStep={setActiveStep}
             handleBack={handleBack}
             handleNext={onSubmit}

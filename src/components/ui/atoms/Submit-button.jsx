@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Button } from '@mui/material';
 import styles from 'src/components/ui/molecules/StepperDesktop/StepperDesktop.module.scss';
+import Link from 'next/link';
 
 export default function SubmitButton({
   text,
+  clientName,
   activeStep,
   handleBack,
   handleNext,
@@ -32,7 +34,18 @@ export default function SubmitButton({
           onClick={handleNext}
           disabled={disabled}
         >
-          {text}
+          {text === 'Submeter' ? (
+            <Link
+              href={{
+                pathname: '/sucesso',
+                query: { clientName: clientName },
+              }}
+            >
+              {text}
+            </Link>
+          ) : (
+            text
+          )}
         </Button>
       </Box>
     </React.Fragment>
@@ -41,6 +54,7 @@ export default function SubmitButton({
 
 SubmitButton.propTypes = {
   text: PropTypes.string.isRequired,
+  clientName: PropTypes.string,
   activeStep: PropTypes.number.isRequired,
   handleBack: PropTypes.func.isRequired,
   handleNext: PropTypes.func.isRequired,

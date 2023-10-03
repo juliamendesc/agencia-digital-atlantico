@@ -5,9 +5,9 @@ import StepperDesktop from 'src/components/ui/molecules/StepperDesktop/StepperDe
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { MultistepProvider } from 'src/context/multistepContext';
 import styles from 'src/components/ui/templates/MultiStepContactForm/MultiStepContactForm.module.scss';
-import { useRouter } from 'next/router';
 
 export default function MultiStepContactForm() {
+  // eslint-disable-next-line no-unused-vars
   const [formStatus, setFormStatus] = useState({
     clientName: '',
     success: false,
@@ -16,21 +16,10 @@ export default function MultiStepContactForm() {
 
   const [isMobile, setIsMobile] = useState(false);
   const mobile = useMediaQuery('(max-width:767px)');
-  const router = useRouter();
 
   useEffect(() => {
     setIsMobile(mobile);
   }, [mobile]);
-
-  useEffect(() => {
-    if (formStatus.success) {
-      router.push('/sucesso', {
-        query: {
-          clientName: formStatus.clientName,
-        },
-      });
-    }
-  }, [formStatus, router]);
 
   return (
     <Box className={styles.container}>

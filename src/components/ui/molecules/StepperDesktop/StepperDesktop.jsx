@@ -32,7 +32,6 @@ export default function StepperDesktop({
   setFormStatus = () => {},
 }) {
   const verticalStepper = useMediaQuery('(max-width:765px)');
-  const [isFormDirty, setIsFormDirty] = React.useState(true);
 
   const handleStep = (step) => () => {
     setActiveStep(step);
@@ -67,8 +66,7 @@ export default function StepperDesktop({
             <PersonalData
               activeStep={activeStep}
               setActiveStep={setActiveStep}
-              isFormDirty={isFormDirty}
-              setIsFormDirty={setIsFormDirty}
+              setFormStatus={setFormStatus}
             />
           )}
           {activeStep === 1 && (

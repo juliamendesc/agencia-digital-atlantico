@@ -14,7 +14,7 @@ async function sendMultistepEmail(data, setFormStatus) {
     .then((res) => {
       if (res.status === 200) {
         setFormStatus({
-          clientName: data.personalData.name,
+          clientName: data.personalData.nome,
           success: true,
         });
       }
