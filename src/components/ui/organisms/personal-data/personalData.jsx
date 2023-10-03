@@ -179,25 +179,15 @@ export default function PersonalData({ activeStep, setActiveStep }) {
                         },
                       }}
                       defaultCountry="PT"
-                      errors={errors?.personalData?.phone?.message}
+                      errors={errors?.phone?.message}
                       placeholder="Enter phone number"
                       {...field}
-                      value={
-                        stateValues.phone?.length === 13
-                          ? stateValues.phone?.slice(4)
-                          : stateValues.phone || ''
-                      }
+                      value={stateValues.phone}
                       onChange={(value) => {
                         field.onChange(value);
                         setStateValues({ ...stateValues, phone: value });
                       }}
                       inputComponent={PhoneInputComponent}
-                      numberInputProps={{
-                        value:
-                          stateValues.phone?.length === 13
-                            ? stateValues.phone?.slice(4)
-                            : stateValues.phone || '',
-                      }}
                     />
                     {errors.phone && (
                       <p className={styles.error}>{errors.phone?.message}</p>

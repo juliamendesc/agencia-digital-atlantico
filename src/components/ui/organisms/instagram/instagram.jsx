@@ -160,14 +160,6 @@ export default function Instagram({ activeStep, setActiveStep }) {
                               ...stateValues,
                               instagramAccount: e.target.value,
                             });
-                            multiStepContext.dispatch({
-                              type: 'update',
-                              payload: {
-                                instagram: {
-                                  instagramAccount: e.target.value,
-                                },
-                              },
-                            });
                           }}
                         />
                         {errors.instagramAccount && (

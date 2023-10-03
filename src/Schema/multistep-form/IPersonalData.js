@@ -22,7 +22,8 @@ export const personalDataSchema = z
       .string({
         required_error: 'Campo obrigatório',
       })
-      .min(9, { message: 'Telefone inválido' })
+      .min(13, { message: 'Telefone inválido' })
+      .max(14, { message: 'Telefone inválido' })
       .nonempty({
         message: 'Campo obrigatório',
       }),

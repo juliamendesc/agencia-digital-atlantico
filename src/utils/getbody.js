@@ -3,10 +3,12 @@ export default async function getBody(data) {
     personalData,
     businessArea,
     website,
-    instagram,
+    instagramAccount,
     facebook,
     businessSize,
     hasHiredPaidAds,
+    hasInstagram,
+    hasFacebook,
     monthlyBudget,
   } = await data;
 
@@ -15,14 +17,14 @@ export default async function getBody(data) {
     email: personalData?.email,
     phone: personalData?.phone,
     businessArea: businessArea,
-    businessSize: businessSize?.businessSize,
+    businessSize: businessSize,
     hasWebsite: website?.hasWebsite,
     websiteUrl: website?.websiteUrl || null,
-    hasInstagram: instagram?.hasInstagram,
-    instagramAccount: instagram?.instagramAccount || null,
-    hasFacebook: facebook?.hasFacebook,
+    hasInstagram: hasInstagram,
+    instagramAccount: instagramAccount || null,
+    hasFacebook: hasFacebook,
     facebookAccount: facebook?.facebookAccount || null,
-    hasHiredPaidAds: hasHiredPaidAds?.hasHiredPaidAds,
+    hasHiredPaidAds: hasHiredPaidAds,
     monthlyBudget: monthlyBudget,
   };
 
