@@ -159,8 +159,6 @@ export default function Facebook({ activeStep, setActiveStep }) {
                               ...stateValues,
                               facebookAccount: e.target.value,
                             });
-                          }}
-                          onBlur={(e) => {
                             multiStepContext.dispatch({
                               type: 'update',
                               payload: {
