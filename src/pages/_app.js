@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Header } from 'src/components/Header';
 import 'src/styles/globals.scss';
 import Head from 'next/head';
+import { Footer } from 'src/components/Footer';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -59,6 +60,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <Footer />
       <Analytics mode={'production'} />
     </>
   );

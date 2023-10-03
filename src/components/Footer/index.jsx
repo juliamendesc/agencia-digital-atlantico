@@ -4,11 +4,29 @@ import styles from 'src/components/Footer/footer.module.scss';
 import emailIcon from 'src/assets/mail.svg';
 import phoneIcon from 'src/assets/phone.svg';
 import NextLink from 'next/link';
-import { Link } from 'react-scroll';
+import { scroller } from 'react-scroll';
+import { useRouter } from 'next/router';
 
 // Or Access Link,Element,etc as follows
 
 export function Footer() {
+  const router = useRouter();
+  const scrollTarget = (target) =>
+    scroller.scrollTo(target, {
+      smooth: true,
+      duration: 700,
+      spy: true,
+      offset: -150,
+      hrefLang: 'portuguese',
+    });
+
+  const scrollToPage = async (target) => {
+    if (router?.location?.pathname !== '/') {
+      await router.push('/');
+    }
+    scrollTarget(target);
+  };
+
   return (
     <footer className={styles.footerWrapper}>
       <div className={styles.footerDistributed}>
@@ -18,70 +36,19 @@ export function Footer() {
           </h1>
 
           <p className={styles.footerLinks}>
-            <button>
-              <Link
-                hrefLang="portuguese"
-                to={'home'}
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={500}
-              >
-                Home
-              </Link>
+            <button onClick={() => scrollToPage('home')}>Home</button>
+
+            <button onClick={() => scrollToPage('servicos')}>Serviços</button>
+
+            <button onClick={() => scrollToPage('beneficios')}>
+              Benefícios
             </button>
 
-            <button>
-              <Link
-                hrefLang="portuguese"
-                to={'servicos'}
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={500}
-              >
-                Serviços
-              </Link>
+            <button onClick={() => scrollToPage('quemsomos')}>
+              Quem Somos
             </button>
 
-            <button>
-              <Link
-                hrefLang="portuguese"
-                to={'beneficios'}
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={500}
-              >
-                Benefícios
-              </Link>
-            </button>
-
-            <button>
-              <Link
-                hrefLang="portuguese"
-                to={'quemsomos'}
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={500}
-              >
-                Quem Somos
-              </Link>
-            </button>
-
-            <button>
-              <Link
-                hrefLang="portuguese"
-                to={'faq'}
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={500}
-              >
-                FAQ
-              </Link>
-            </button>
+            <button onClick={() => scrollToPage('faq')}>FAQ</button>
 
             <button>
               <NextLink hrefLang="portuguese" href="/contactos">
