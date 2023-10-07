@@ -5,6 +5,7 @@ import { CardSocial } from 'src/components/CardSocial';
 import { Benefits } from 'src/components/Benefits';
 import { WhoWeAre } from 'src/components/WhoWeAre';
 import { Faq } from 'src/components/Faq';
+import { Footer } from 'src/components/Footer';
 
 export default function Main() {
   return (
@@ -15,6 +16,7 @@ export default function Main() {
       <Benefits />
       <WhoWeAre />
       <Faq />
+      <Footer />
     </>
   );
 }
