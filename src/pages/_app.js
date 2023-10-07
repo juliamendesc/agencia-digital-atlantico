@@ -6,7 +6,6 @@ import 'src/styles/globals.scss';
 import Head from 'next/head';
 import { Footer } from 'src/components/Footer';
 import { MultistepProvider } from 'src/context/multistepContext';
-import Custom404 from './404';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -63,7 +62,6 @@ export default function App({ Component, pageProps }) {
       <Header />
       <MultistepProvider>
         <Component {...pageProps} />
-        <Custom404 />
       </MultistepProvider>
       <Footer />
       <Analytics mode={'production'} />
