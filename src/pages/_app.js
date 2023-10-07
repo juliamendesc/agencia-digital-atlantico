@@ -62,8 +62,8 @@ export default function App({ Component, pageProps }) {
       <Header />
       <MultistepProvider>
         <Component {...pageProps} />
+        <Footer />
       </MultistepProvider>
-      <Footer />
       <Analytics mode={'production'} />
     </>
   );
