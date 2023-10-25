@@ -45,5 +45,11 @@
     "sharp": "^0.32.6",
     "webpack": "^5.88.2",
     "zod": "^3.22.4"
+  },
+  "overrides": {
+    "@react-email/components": {
+      "postcss": "8.4.31",
+      "@react-email/tailwind": "0.0.9"
+    }
   }
 }
