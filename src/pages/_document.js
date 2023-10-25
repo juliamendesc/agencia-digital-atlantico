@@ -3,8 +3,10 @@ import React from 'react';
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt">
       <Head>
+        <link rel='canonical' href='https://digitalatlantico.com/' />
+        <link rel='alternate' href='https://www.digitalatlantico.com/' hrefLang='pt-pt' />
         <link
           rel="preload"
           href="/fonts/Caveat"
