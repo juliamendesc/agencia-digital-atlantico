@@ -1,4 +1,4 @@
-# Project Name
+# Agência Digital Atlântico
 
 A collaborative effort between mentor and junior developer to create a stunning landing page for a real client.
 
