@@ -1,6 +1,6 @@
 # Agência Digital Atlântico
 
-A collaborative effort between mentor and junior developer to create a stunning landing page for a real client.
+A collaborative effort between mentor and junior developer to create a stunning landing page for a real client. It was deployed in Vercel using Cloudflare for website protection. You can view the live version [here](https://www.digitalatlantico.com/).
 
 ## Overview
 
