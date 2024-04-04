@@ -1,29 +1,17 @@
-import React from 'react';
-import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
+import nodemailer from 'nodemailer';
+import React from 'react';
 import SessaoEstrategicaEmailTemplate from 'react-email-starter/emails/big-form-email-template';
 
-const {
-  GMAIL_USER,
-  OAUTH_REFRESH_TOKEN,
-  OAUTH_CLIENT_ID,
-  OAUTH_SECRET,
-  OAUTH_ACCESS_TOKEN,
-  GMAIL_FORWARD_TO,
-} = process.env;
+const { GMAIL_USER, GMAIL_FORWARD_TO, EMAIL_PASSWORD } = process.env;
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
   auth: {
-    type: 'OAuth2',
     user: GMAIL_USER,
-    clientId: OAUTH_CLIENT_ID,
-    clientSecret: OAUTH_SECRET,
-    refreshToken: OAUTH_REFRESH_TOKEN,
-    accessToken: OAUTH_ACCESS_TOKEN,
-    expires: 3599,
+    pass: EMAIL_PASSWORD,
   },
 });
 
@@ -35,7 +23,7 @@ export default function sendEmail(req, res) {
       senderPhone={req.body.phone}
       businessArea={req.body.businessArea}
       businessSize={req.body.businessSize}
-      hasPaidAds={req.body.hasPaidAds}
+      hasHiredPaidAds={req.body.hasHiredPaidAds}
       hasFacebook={req.body.hasFacebook}
       facebookAccount={req.body.facebookAccount}
       hasInstagram={req.body.hasInstagram}
@@ -56,10 +44,11 @@ export default function sendEmail(req, res) {
   transporter
     .sendMail(mailData)
     .then(() => {
-      res.status(200) && res.json({ message: 'Email sent' });
+      res.status(200) && res.json({ message: 'Email enviado' });
     })
     .catch((error) => {
-      res.status(500);
-      res.json({ message: 'Something went wrong', error });
+      process.env.NODE_ENV !== 'production' && console.log('Erro: ', error);
+
+      res.status(500) && res.json({ message: 'Erro ao enviar o email' });
     });
 }

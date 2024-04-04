@@ -1,10 +1,10 @@
 'use client';
-import styles from 'src/components/ui/templates/ContactForm/ContactForm.module.scss';
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { contactSchema } from 'src/Schema/contact';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Modal } from '@mui/material';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import styles from 'src/components/ui/templates/ContactForm/ContactForm.module.scss';
+import { contactSchema } from 'src/Schema/contact';
 
 export default function ContactForm() {
   const methods = useForm({
@@ -24,7 +24,6 @@ export default function ContactForm() {
     await fetch('/api/contact', {
       method: 'POST',
       headers: {
-        Accept: 'application/json, text/plain, */*',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ nome, phone, email, subject, message }),
@@ -36,13 +35,11 @@ export default function ContactForm() {
             message="Email enviado com sucesso! Você será redirecionado para a página principal"
           />;
           methods.reset();
+          window.location.href = '/';
         }
       })
-      .then(() => {
-        window.location.href = '/';
-      })
-      .catch(() => {
-        console.log("Error: Couldn't send email");
+      .catch((err) => {
+        console.log("Error: Couldn't send email", err);
       });
   }
 

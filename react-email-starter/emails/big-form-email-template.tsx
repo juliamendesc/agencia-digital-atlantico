@@ -17,7 +17,7 @@ interface EmailTemplateProps {
   senderPhone?: string;
   businessArea?: string;
   businessSize?: string;
-  hasPaidAds?: string;
+  hasHiredPaidAds?: string;
   hasFacebook?: string;
   facebookAccount?: string;
   hasInstagram?: string;
@@ -40,7 +40,7 @@ const SessaoEstrategicaEmailTemplate = ({
   senderEmail = '',
   businessArea = '',
   businessSize = '',
-  hasPaidAds = '',
+  hasHiredPaidAds = '',
   hasFacebook = '',
   facebookAccount = '',
   hasInstagram = '',
@@ -107,7 +107,7 @@ const SessaoEstrategicaEmailTemplate = ({
             Quantas pessoas trabalham na empresa: {businessSize}
           </Text>
           <Text style={text}>
-            Já alguma vez investiu em publicidade paga? {hasPaidAds}
+            Já alguma vez investiu em publicidade paga? {hasHiredPaidAds}
           </Text>
           <Text style={text}>
             Quanto pretende gastar em anúncios mensalmente? {monthlyBudget}

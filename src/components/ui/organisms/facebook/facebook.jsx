@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Box,
   InputLabel,
@@ -6,14 +7,13 @@ import {
   ToggleButtonGroup,
   useMediaQuery,
 } from '@mui/material';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Controller, FormProvider, useForm } from 'react-hook-form';
-import { useMultistepContext } from 'src/context/multistepContext';
-import styles from './Facebook.module.scss';
 import SubmitButton from 'src/components/ui/atoms/Submit-button';
-import PropTypes from 'prop-types';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { useMultistepContext } from 'src/context/multistepContext';
 import { facebookSchema } from 'src/Schema/multistep-form/IFacebook';
+import styles from './Facebook.module.scss';
 
 export default function Facebook({ activeStep, setActiveStep }) {
   const [stateValues, setStateValues] = React.useState({
@@ -30,6 +30,7 @@ export default function Facebook({ activeStep, setActiveStep }) {
     mode: 'onBlur',
     reValidateMode: 'onChange',
     resolver: zodResolver(facebookSchema),
+    persist: true,
   });
 
   const { hasFacebook, facebookAccount } =
